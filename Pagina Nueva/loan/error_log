@@ -1,0 +1,1 @@
+[24-Oct-2012 05:04:04 UTC] PHP Fatal error:  Call to a member function consulta() on a non-object in /home/viko/public_html/crai/loan/obtener_usuario.php on line 5

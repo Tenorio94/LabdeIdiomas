@@ -1,0 +1,32 @@
+<div class="col-lg-10">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h2>Referencias</h2>
+      <hr>
+        <div ng-repeat="reference in references">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span ng-click="filter(reference)">{{ reference.name}}</span>
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                                <b>Descripci&oacute;n:</b>
+                                <span>{{ reference.description}}</span>
+                            </p>
+                            <p>
+                                <b>URL:</b>
+                                <span>{{ reference.url}}</span>
+                            </p>
+                            <p>
+                                <a target="_blank" href="{{reference.url}}" class="btn btn-default"><i class="fa fa-eye"></i> Visitar</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="container">
+    <script type="text/ng-template" id="competenceTree">
+        <div class="competence-tree" style="font-size: 105%">
+            <input type="checkbox" cid="{{competence.id}}" iid="{{interaction.id}}" ng-click="linkCompetenceToInteraction($event, interaction, competence)" />
+            <span ng-hide="competence.edit">{{ competence.name}}</span>
+        </div>
+        <ol ng-if="competence.children">
+            <li ng-repeat="competence in competence.children" ng-include="'competenceTree'"></li>
+        </ol>
+    </script>
+  <popup></popup>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>Paso 5 - Interacciones</h2>
+    </div>
+  </div>
+
+    <div ng-repeat="interaction in interactions">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <input type="text" ng-show="interaction.editName" ng-keydown="changeName($event, interaction)" ng-blur="interaction.editName=false" ng-model="interaction.name" />
+                        <span ng-hide="interaction.editName" ng-click="editName($event, interaction)">{{ interaction.name}}</span>
+                        <button type="button" class="close" ng-click="erase(interaction)">×</button>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            <b>Descripci&oacute;n:</b>
+                            <input type="text" ng-show="interaction.editDescription" ng-keydown="changeDescription($event, interaction)" ng-blur="interaction.editDescription=false" ng-model="interaction.description" />
+                            <span ng-hide="interaction.editDescription" ng-click="editDescription($event, interaction)">{{ interaction.description}}</span>
+                        </p>
+                        <hr>
+                        <ol>
+                            <li ng-repeat="competence in competence.children" ng-include="'competenceTree'"></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+      <a class="btn btn-success btn-block" ng-click="newInteraction($event)"><i class="fa fa-plus"></i> Agregar Interaccion</a>
+        <br>
+        <a ui-sref="coursesNewEval({courseId: '{{courseId}}'})" class="btn btn-primary btn-block">Continuar</a>
+    </div>
+  </div>
+
+</div>

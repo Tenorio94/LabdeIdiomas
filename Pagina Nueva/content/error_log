@@ -1,0 +1,1 @@
+[17-Sep-2012 18:38:23 UTC] PHP Fatal error:  Call to undefined function checkAuth() in /home/viko/public_html/crai/content/index.php on line 7

@@ -1,0 +1,50 @@
+<div class="container">
+    <script type="text/ng-template" id="competenceTree">
+        <div class="competence-tree" style="font-size: 105%">
+            <input type="checkbox" cid="{{competence.id}}" did="{{level.id}}" ng-click="linkCompetenceToLevel($event, level, competence)" />
+            <span ng-hide="competence.edit">{{ competence.name}}</span>
+        </div>
+        <ol ng-if="competence.children">
+            <li ng-repeat="competence in competence.children" ng-include="'competenceTree'"></li>
+        </ol>
+    </script>
+    <popup></popup>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>Paso 3 - Niveles</h2>
+        </div>
+    </div>
+    <div ng-repeat="level in levels">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <input type="text" ng-show="level.editName" ng-keydown="changeName($event, level)" ng-blur="level.editName=false" ng-model="level.name"/>
+                        <span ng-hide="level.editName" ng-click="editName($event, level)">{{ level.name}}</span>
+                        <button type="button" class="close" ng-click="erase(level)">×</button>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            <b>Descripci&oacute;n:</b>
+                            <input type="text" ng-show="level.editDescription" ng-keydown="changeDescription($event, level)" ng-blur="level.editDescription=false" ng-model="level.description" />
+                            <span ng-hide="level.editDescription" ng-click="editDescription($event, level)">{{ level.description}}</span>
+                        </p>
+                        <ol>
+                            <li ng-repeat="competence in competence.children" ng-include="'competenceTree'"></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+        <a class="btn btn-success btn-block" ng-click="newLevel($event)"><i class="fa fa-plus"></i> Agregar Nivel</a>
+        <br>
+        <a ui-sref="coursesNewRefs({courseId: '{{courseId}}'})" class="btn btn-primary btn-block">Continuar</a>
+    </div>
+  </div>
+
+</div>

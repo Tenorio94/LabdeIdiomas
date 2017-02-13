@@ -1,0 +1,1 @@
+[04-Sep-2012 13:25:12 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/viko/public_html/crai/sessions/createToken.php on line 8

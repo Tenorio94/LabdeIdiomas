@@ -1,0 +1,28 @@
+<div class="col-lg-10">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h2>Evaluaciones</h2>
+      <hr>
+        <div ng-repeat="evaluation in evaluations">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span ng-click="filter(evaluation)">{{ evaluation.name}}</span>
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                                <b>Descripci&oacute;n:</b>
+                                <span>{{ evaluation.description}}</span>
+                            </p>
+                            <p>
+                                <a target="_blank" href="{{evaluation.url}}" class="btn btn-default"><i class="fa fa-eye"></i> Visitar</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+
+    <!-- NODOS -->
+        <div ng-repeat="nodo in nodos">
+            <div class="col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                          <p><a ui-sref="coursesView({course: '{{nodo}}'})">{{nodo.name}}</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- /NODOS -->
+    </div>
+</div>

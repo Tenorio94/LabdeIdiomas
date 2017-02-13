@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^([^\.]+)/?$ section.php?url=$1 [L]

@@ -1,0 +1,174 @@
+/* CSS Document */
+
+
+.smallHeader
+{
+	background-color	: #003366;
+	padding				: 0px 0px 0px 0px;
+	height:25px;
+	top:0px;
+	Xleft:0px;
+	Xright:0px;
+	z-index:2;
+	vertical-align:top;
+	font-size:32px;
+	color:#FFFFFF;
+}
+
+/* This is the transparent box */
+.transbox {
+width: 300px;
+margin: 0 50px;
+background-color: #fff;
+border: 1px solid black;
+filter:alpha(opacity=75);
+opacity: 0.75;
+-moz-opacity:0.75;
+}
+
+.bigContainer
+{
+	width	   :1000px;
+	font-family: Arial;
+	color	   :#333333;
+	text-align :center;
+}
+		
+.bigTitle
+{
+		color:#FFFFFF;
+}
+
+.title
+{
+	font-family: Arial;
+	font-weight: bold;
+	color: #333333;
+}
+
+.leftTitle
+{
+	font-family: Arial;
+	font-weight: bold;
+	color: #333333;
+	font-size:14px;
+	text-align:left
+}
+
+.content
+{
+	font-family: Arial;
+	color: #333333;
+	font-size:12px;
+}
+
+.testimonios
+{
+	font-family: Arial;
+	color: #333333;
+	font-size:11px;
+	font-style:italic;
+}
+
+.diasSemana {
+	font-size: small;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+.ligasSemana {
+	font-family: Arial; 
+	font-size: small; 
+}
+
+.columnHeader {
+	color: #FFFFFF; 
+	font-size: x-small;
+	font-weight:bold;
+}
+
+.blankLink {
+color:#FF0000;
+}
+
+.bordeAzul{
+	border: 1px solid #003366;
+	background-color:#EBFAFA;
+}
+
+.mensajeError {
+	color:			#FF1D17;
+	font-family:	"Verdana, Arial, Helvetica, sans-serif";
+	font-size: 		14px;
+	font-weight:	bold;
+	text-align:		center;
+}
+
+.mensajeNormal {
+	color:			#FFFFFF;
+	font-family:	"Verdana, Arial, Helvetica, sans-serif";
+	font-size: 		14px;
+	font-weight:	bold;
+	text-align:		center;
+}
+
+.mensajeGris {
+	color:			#333333;
+	font-family:	"Verdana, Arial, Helvetica, sans-serif";
+	font-size: 		14px;
+	font-weight:	bold;
+	text-align:		center;
+}
+		
+#menu2 {
+	background:#003366;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#menu2 li {
+	float: left;
+	font: 75.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+#menu2 a {
+	background: #003366; url("../imagenes/seperator.gif") bottom right no-repeat;
+	color: #ccc;
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 8px 12px;
+	text-decoration: none;
+}
+#menu2 a:hover {
+	background: #2580a2 url("../imagenes/hover.gif") bottom center no-repeat;
+	color: #fff;
+	padding-bottom: 8px;	
+}
+
+
+/***** TABLE STYLES *****/
+.table {
+	border:	1px inset gray;
+	font-family:Tahoma, Helvetica, Arial, sans-serif;
+	font-size:10pt;
+	font-weight:normal;
+}
+
+.trBottonBorder {
+border-bottom-color:#003366;
+border-bottom-style:solid;
+border-bottom-width:thin;
+}
+
+.trheader {
+	background-color	: #003366;
+	font-size:10pt;
+	font-weight:normal;
+	color: #fff;
+}
+
+.even {
+	background-color	: #e0e0e0;
+}

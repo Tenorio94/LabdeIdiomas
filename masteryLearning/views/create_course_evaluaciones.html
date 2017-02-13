@@ -1,0 +1,58 @@
+<div class="container">
+    <script type="text/ng-template" id="competenceTree">
+        <div class="competence-tree" style="font-size: 105%">
+            <input type="checkbox" cid="{{competence.id}}" eid="{{evaluation.id}}" ng-click="linkCompetenceToEvaluation($event, evaluation, competence)" />
+            <span>{{ competence.name}}</span>
+        </div>
+        <ol ng-if="competence.children">
+            <li ng-repeat="competence in competence.children" ng-include="'competenceTree'"></li>
+        </ol>
+    </script>
+  <popup></popup>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>Paso 6 - Evaluaciones</h2>
+    </div>
+  </div>
+
+    <div ng-repeat="evaluation in evaluations">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <input type="text" ng-show="evaluation.editName" ng-keydown="changeName($event, evaluation)" ng-blur="evaluation.editName=false" ng-model="evaluation.name" />
+                        <span ng-hide="evaluation.editName" ng-click="editName($event, evaluation)">{{ evaluation.name}}</span>
+                        <button type="button" class="close" ng-click="erase(evaluation)">×</button>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            <b>Descripci&oacute;n:</b>
+                            <input type="text" ng-show="evaluation.editDescription" ng-keydown="changeDescription($event, evaluation)" ng-blur="evaluation.editDescription=false" ng-model="evaluation.description" />
+                            <span ng-hide="evaluation.editDescription" ng-click="editDescription($event, evaluation)">{{ evaluation.description}}</span>
+                        </p>
+                        <p>
+                            <b>URL:</b>
+                            <input type="text" ng-show="evaluation.editUrl" ng-keydown="changeUrl($event, evaluation)" ng-blur="evaluation.editUrl=false" ng-model="evaluation.url" />
+                            <span ng-hide="evaluation.editUrl" ng-click="editUrl($event, evaluation)">{{ evaluation.url}}</span>
+                        </p>
+                        <p><a target="_blank" href="{{evaluation.url}}" class="btn btn-default"><i class="fa fa-eye"></i> Visitar</a></p>
+                        <hr>
+                        <ol>
+                            <li ng-repeat="competence in competence.children" ng-include="'competenceTree'"></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+      <a class="btn btn-success btn-block" ng-click="newEvaluation($event)"><i class="fa fa-plus"></i> Agregar Evaluacion</a>
+        <br>
+        <a ui-sref="coursesView({courseId: '{{courseId}}'})" class="btn btn-primary btn-block">Terminar</a>
+    </div>
+  </div>
+
+</div>

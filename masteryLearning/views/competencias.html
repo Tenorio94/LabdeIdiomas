@@ -1,0 +1,19 @@
+<div class="col-lg-10">
+    <script type="text/ng-template" id="competenceTree">
+        <div class="competence-tree" style="font-size: 105%">
+            <a ui-sref="coursesView.filterCourseByCompetence({courseId: '{{courseId}}', competenceId: '{{competence.id}}'})">{{ competence.name}}</a>
+        </div>
+        <ol ng-if="competence.children">
+            <li ng-repeat="competence in competence.children" ng-include="'competenceTree'"></li>
+        </ol>
+    </script>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h2>Competencias</h2>
+      <hr>
+        <ol>
+            <li ng-repeat="competence in competence.children" ng-include="'competenceTree'"></li>
+        </ol>
+    </div>
+  </div>
+</div>

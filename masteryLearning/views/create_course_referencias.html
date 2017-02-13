@@ -1,0 +1,57 @@
+<div class="container">
+    <script type="text/ng-template" id="competenceTree">
+        <div class="competence-tree" style="font-size: 105%">
+            <input type="checkbox" cid="{{competence.id}}" rid="{{reference.id}}" ng-click="linkCompetenceToReference($event, reference, competence)" />
+            <span ng-hide="competence.edit">{{ competence.name}}</span>
+        </div>
+        <ol ng-if="competence.children">
+            <li ng-repeat="competence in competence.children" ng-include="'competenceTree'"></li>
+        </ol>
+    </script>
+  <popup></popup>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>Paso 4 - Referencias</h2>
+    </div>
+  </div>
+
+    <div ng-repeat="reference in references">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <input type="text" ng-show="reference.editName" ng-keydown="changeName($event, reference)" ng-blur="reference.editName=false" ng-model="reference.name" />
+                        <span ng-hide="reference.editName" ng-click="editName($event, reference)">{{ reference.name}}</span>
+                        <button type="button" class="close" ng-click="erase(reference)">×</button>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            <b>Descripci&oacute;n:</b>
+                            <input type="text" ng-show="reference.editDescription" ng-keydown="changeDescription($event, reference)" ng-blur="reference.editDescription=false" ng-model="reference.description" />
+                            <span ng-hide="reference.editDescription" ng-click="editDescription($event, reference)">{{ reference.description}}</span>
+                        </p>
+                        <p><b>URL:</b>
+                            <input type="text" ng-show="reference.editUrl" ng-keydown="changeUrl($event, reference)" ng-blur="reference.editUrl=false" ng-model="reference.url" />
+                            <span ng-hide="reference.editUrl" ng-click="editUrl($event, reference)">{{ reference.url}}</span>
+                        </p>
+                        <p><a target="_blank" href="{{reference.url}}" class="btn btn-default"><i class="fa fa-eye"></i> Visitar</a></p>
+                        <hr>
+                        <ol>
+                            <li ng-repeat="competence in competence.children" ng-include="'competenceTree'"></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+      <a class="btn btn-success btn-block" ng-click="newReference($event)"><i class="fa fa-plus"></i> Agregar Referencia</a>
+        <br>
+        <a ui-sref="coursesNewInte({courseId: '{{courseId}}'})" class="btn btn-primary btn-block">Continuar</a>
+    </div>
+  </div>
+
+</div>
