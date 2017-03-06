@@ -1,0 +1,48 @@
+[01-Oct-2012 14:36:14 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 46
+[01-Oct-2012 14:36:32 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 46
+[01-Oct-2012 14:44:41 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 46
+[01-Oct-2012 14:46:25 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 44
+[01-Oct-2012 14:53:55 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 44
+[01-Oct-2012 14:53:56 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 44
+[01-Oct-2012 14:53:57 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 44
+[01-Oct-2012 16:25:55 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 44
+[01-Oct-2012 16:25:59 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 44
+[01-Oct-2012 16:26:01 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 44
+[01-Oct-2012 16:26:02 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 44
+[01-Oct-2012 16:26:03 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 44
+[01-Oct-2012 16:26:04 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 44
+[01-Oct-2012 16:26:07 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 44
+[01-Oct-2012 16:27:39 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 47
+[01-Oct-2012 16:28:17 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 47
+[01-Oct-2012 16:28:20 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 47
+[01-Oct-2012 16:28:21 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 47
+[01-Oct-2012 16:28:23 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 47
+[01-Oct-2012 16:28:25 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 47
+[01-Oct-2012 16:28:26 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 47
+[01-Oct-2012 16:28:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 47
+[01-Oct-2012 16:28:29 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 47
+[01-Oct-2012 16:28:30 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 47
+[01-Oct-2012 16:43:21 UTC] PHP Fatal error:  Call to a member function consulta() on a non-object in /home/viko/public_html/crai/reservation/desplegar.php on line 5
+[01-Oct-2012 16:44:06 UTC] PHP Fatal error:  Call to a member function consulta() on a non-object in /home/viko/public_html/crai/reservation/desplegar.php on line 5
+[01-Oct-2012 16:46:59 UTC] PHP Fatal error:  Call to a member function consulta() on a non-object in /home/viko/public_html/crai/reservation/desplegar.php on line 5
+[01-Oct-2012 16:51:11 UTC] PHP Fatal error:  Call to a member function consulta() on a non-object in /home/viko/public_html/crai/reservation/desplegar.php on line 5
+[01-Oct-2012 16:51:25 UTC] PHP Fatal error:  Call to a member function consulta() on a non-object in /home/viko/public_html/crai/reservation/desplegar.php on line 5
+[01-Oct-2012 16:51:26 UTC] PHP Fatal error:  Call to a member function consulta() on a non-object in /home/viko/public_html/crai/reservation/desplegar.php on line 5
+[01-Oct-2012 17:08:57 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 54
+[01-Oct-2012 17:09:03 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 54
+[01-Oct-2012 17:09:05 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 54
+[01-Oct-2012 17:09:07 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 54
+[01-Oct-2012 17:11:35 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 54
+[01-Oct-2012 17:11:53 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 54
+[01-Oct-2012 17:11:58 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 54
+[01-Oct-2012 17:12:02 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 54
+[01-Oct-2012 17:12:04 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 54
+[01-Oct-2012 17:19:58 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 55
+[01-Oct-2012 17:20:01 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 55
+[01-Oct-2012 17:20:03 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/viko/public_html/crai/reservation/desplegar.php on line 55
+[05-Oct-2012 19:19:44 UTC] PHP Fatal error:  Function name must be a string in /home/viko/public_html/crai/reservation/desplegar.php on line 24
+[05-Oct-2012 19:54:30 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /home/viko/public_html/crai/reservation/desplegar.php on line 49
+[08-Oct-2012 17:47:20 UTC] PHP Fatal error:  Function name must be a string in /home/viko/public_html/crai/reservation/retro.php on line 4
+[08-Oct-2012 17:47:29 UTC] PHP Fatal error:  Function name must be a string in /home/viko/public_html/crai/reservation/retro.php on line 4
+[08-Oct-2012 18:26:58 UTC] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/viko/public_html/crai/reservation/desplegar.php on line 51
+[10-Oct-2012 05:36:52 UTC] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/viko/public_html/crai/reservation/create.php on line 32
