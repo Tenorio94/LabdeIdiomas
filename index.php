@@ -16,12 +16,15 @@ if(!isset($_SESSION['user'])) {
 }
 $user = $_SESSION['user'];
 ?>
-<html>
+<html lang="es">
 	<head>
 		<title>LABDEI :: <?php echo date('y'); ?></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<link href="recursos/template.css" rel="stylesheet" type="text/css" />
 		<link href="recursos/labdei.js" type="text/javascript" />
+		<script src="recursos/i18next.min.js"></script>
+		<script src="recursos/javascript_functions.js"></script>
+		<script src="recursos/jquery-3.1.1.min.js"></script>
 	</head>
 
 	<body bgcolor="#CCCCCC" style="text-align:center" leftmargin="0px" rightmargin="0px" topmargin="0px" margin-bottom="0px">
@@ -89,15 +92,15 @@ $user = $_SESSION['user'];
 				<table width="900px">
 					<tbody><tr><td>
 					<ul id='menu2' style="width:1000px ">
-						<li><a href='index.php' style="margin-left:20px; width:90px;">Principal</a></li>
-						<li><a href='index.php?p=quienesSomos' style="width:100px;">Quienes Somos</a></li>
-						<li><a href='index.php?p=objetivos' style="width:90px;">Objetivos</a></li>
-						<li><a href='index.php?p=reservaciones' style="width:90px;">Reservaciones</a></li>
-						<li><a href='index.php?p=tutoriales' style="width:90px;">Tutoriales</a></li>
-						<li><a href='index.php?p=tests' style="width:90px;">Aprendizaje autorregulado</a></li>
-						<li><a href='index.php?p=buscarRecursos' style="width:90px;">Buscar Recursos</a></li>
+						<li><a class="multilingual" href='index.php' style="margin-left:20px; width:90px;">principal</a></li>
+						<li><a class="multilingual" href='index.php?p=quienesSomos' style="width:100px;">quienes_somos</a></li>
+						<li><a class="multilingual" href='index.php?p=objetivos' style="width:90px;">objetivos</a></li>
+						<li><a class="multilingual" href='index.php?p=reservaciones' style="width:90px;">reservaciones</a></li>
+						<li><a class="multilingual" href='index.php?p=tutoriales' style="width:90px;">tutoriales</a></li>
+						<li><a class="multilingual" href='index.php?p=tests' style="width:90px;">aprendizaje_autoregulado</a></li>
+						<li><a class="multilingual" href='index.php?p=buscarRecursos' style="width:90px;">buscar_recursos</a></li>
 						<? if($user != null ) { ?>
-						<li><a href='index.php?p=horas' style="width:90px;">Sesiones</a></li>
+						<li><a class="multilingual" href='index.php?p=horas' style="width:90px;">sesiones</a></li>
 						<? } ?>
 					</ul>
 					</td></tr></tbody>
@@ -232,6 +235,10 @@ $user = $_SESSION['user'];
 			<!-- TERMINA SECCION DE PIE DE PAGINA -->
 		</div>
 		</center>
+		<script src="recursos/i18init.js"></script>
+		<script>
+			Utils.applyMultilingualLabels('.bigContainer', '.multilingual');
+		</script>
 	</body>
 </html>
 
