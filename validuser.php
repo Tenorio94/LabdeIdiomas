@@ -3,29 +3,30 @@ $idiomas = getConection();
 $user1 = $_POST["usuario"];
 $pass = $_POST["password"];
 
-$u_consultauser = "1";
-if (isset($user1)) {
-  $u_consultauser = (get_magic_quotes_gpc()) ? $user1 : addslashes($user1);
-}
-$p_consultauser = "1";
-if (isset($pass)) {
-  $p_consultauser = (get_magic_quotes_gpc()) ? $pass : addslashes($pass);
-}
+//$u_consultauser = "1";
+// if (isset($user1)) {
+// 	echo $user1;
+//   $u_consultauser = (get_magic_quotes_gpc()) ? $user1 : addslashes($user1);
+// }
+// $p_consultauser = "1";
+// if (isset($pass)) {
+//   $p_consultauser = (get_magic_quotes_gpc()) ? $pass : addslashes($pass);
+// }
 
 //Obteniendo la informacion del usuario
-$query_mat = sprintf("SELECT * FROM tbl_matriculas WHERE matricula = '%s'", $u_consultauser);
-$consulta_mat = mysql_query($query_mat, $idiomas) or die(mysql_error());
-$rows_mat = mysql_num_rows($consulta_mat);
+//$query_mat = sprintf("SELECT * FROM tbl_matriculas WHERE matricula = '%s'", $u_consultauser);
+$consulta_mat = $idiomas->query("SELECT * FROM tbl_matriculas WHERE matricula = '$user1'");
+//$rows_mat = mysql_num_rows($consulta_mat);
 
 //Si la matricula esta en la base de datos
-if($rows_mat == 1) {
+if($consulta_mat->num_rows == 1) {
 
-	$query_consultauser = sprintf("SELECT * FROM tbl_matriculas WHERE matricula = '%s' AND password = '%s'", $u_consultauser,$p_consultauser);
-	$consultauser = mysql_query($query_consultauser, $idiomas) or die(mysql_error());
-	$usuario = mysql_fetch_array($consultauser);
-	$totalRows_consultauser = mysql_num_rows($consultauser);
+	//$query_consultauser = sprintf("SELECT * FROM tbl_matriculas WHERE matricula = '%s' AND password = '%s'", $u_consultauser,$p_consultauser);
+	$consultauser = $idiomas->query("SELECT * FROM tbl_matriculas WHERE matricula = '$user1' AND password = '$pass'");
+	$usuario = $consultauser->fetch_assoc();
+	//$totalRows_consultauser = mysql_num_rows($consultauser);
 	
-	if($totalRows_consultauser == 1)		
+	if($consultauser->num_rows == 1)		
 	{
 		$_SESSION["user"] = $user1;
 		
