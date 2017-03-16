@@ -16,7 +16,7 @@ if(!isset($_SESSION['user'])) {
 }
 $user = $_SESSION['user'];
 ?>
-<html lang="es">
+<html lang="en">
 	<head>
 		<title>LABDEI :: <?php echo date('y'); ?></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -45,9 +45,9 @@ $user = $_SESSION['user'];
 								<a onclick="location.href='index.php?p=eperfil'" style="cursor:pointer;"><? echo $_SESSION['user']; ?></a>
 								&nbsp; &nbsp; | &nbsp; &nbsp;
 								<? if($user == null ) { ?>
-									<a onclick="showLoginDiv(true);" style="cursor:pointer;">Entrar</a>
+									<a onclick="showLoginDiv(true);" style="cursor:pointer;" class="multilingual">entrar</a>
 								<? } else { ?>
-									<a onclick="location.href='index.php?p=salir'" style="cursor:pointer;">Salir</a>
+									<a onclick="location.href='index.php?p=salir'" style="cursor:pointer;" class="multilingual">salir</a>
 								<? }  ?>
 								&nbsp; &nbsp; &nbsp; &nbsp;
 						</div>
@@ -71,10 +71,10 @@ $user = $_SESSION['user'];
 							<div id="loginDiv" style="color:#FFFFFF; font-size:14px; font-weight:bold; margin-top:15px; margin-right:30px; display:none">
 							  <form name="formLogin" method="POST" action="index.php?p=validuser" onSubmit="return validaLogin();">
 								<table align="center">
-									<tr><td> Usuario : </td><td> <input type="text" name="usuario" /></td></tr>
-									<tr><td> Contrase&ntildea: </td><td> <input type="password" name="password" /></td></tr>
+									<tr><td class="multilingual">usuario</td><td> <input type="text" name="usuario" /></td></tr>
+									<tr><td class="multilingual">pass</td><td> <input type="password" name="password" /></td></tr>
 									<tr><td colspan="2" align="center">
-										<a onclick="return validaOlvidoContra();" style="color:#FFFFFF;font-size:12px;cursor:pointer;">&iquestOlvidaste tu contrase&ntildea?</a>
+										<a onclick="return validaOlvidoContra();" style="color:#FFFFFF;font-size:12px;cursor:pointer;" class="multilingual">olvidaste_tu_contra</a>
 										<input type="submit" name="btnLogin" value="Entrar >>"/>
 									</td></tr>
 								</table>

@@ -14,6 +14,11 @@
             "aprendizaje_autoregulado": "Aprendizaje Autorregulado",
             "buscar_recursos": "Buscar Recursos",
             "sesiones": "Sesiones",
+            "entrar": "Entrar",
+            "salir": "Salir",
+            "usuario": "Usuario:",
+            "pass": "Contraseña:",
+            "olvidaste_tu_contra": "¿Olvidaste tu contraseña?"
           }
         },
         en: {
@@ -26,6 +31,11 @@
             "aprendizaje_autoregulado": "Self-regulated learning",
             "buscar_recursos": "Search Resources",
             "sesiones": "Sessions",
+            "entrar": "Enter",
+            "salir": "Exit",
+            "usuario": "User:",
+            "pass": "Password:",
+            "olvidaste_tu_contra": "Forgot your password?"
           }
         },
         de: {
@@ -37,7 +47,7 @@
             "tutoriales": "Tutorials",
             "aprendizaje_autoregulado": "Selbstlernen",
             "buscar_recursos": "Ressourcen suchen",
-            "sesiones": "Sitzungen",
+            "sesiones": "Sitzungen"
           }
         }
       }
