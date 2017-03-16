@@ -7,9 +7,9 @@ if(($_SESSION['user'] == null && $_SESSION['user'] == '') || !hasChangedPassword
 <? }
 $idiomas = getConection();
 //Para sacar las reservaciones pr�ximas
-	$query_reservaciones_semanas = "SELECT * FROM tbl_reservaciones WHERE matricula = ".$_SESSION['user']." AND semana IN ( SELECT DISTINCT semana FROM tbl_semanas)";
-	$reservaciones_array = mysql_query($query_reservaciones_semanas, $idiomas) or die(mysql_error());
-	$num_reservaciones = mysql_num_rows($reservaciones_array);
+	//$query_reservaciones_semanas = "SELECT * FROM tbl_reservaciones WHERE matricula = ".$_SESSION['user']." AND semana IN ( SELECT DISTINCT semana FROM tbl_semanas)";
+	$reservaciones_array = $idiomas->query("SELECT * FROM tbl_reservaciones WHERE matricula = ".$_SESSION['user']." AND semana IN ( SELECT DISTINCT semana FROM tbl_semanas)");
+	//$num_reservaciones = mysql_num_rows($reservaciones_array);
 ?>
 
 <div class="title">Proceso de Reservaciones</div>
@@ -20,7 +20,7 @@ $idiomas = getConection();
 			<br>
 			<div align="justify">
 					A continuaci�n se detalla el procedimiento para realizar tu reservaci�n para el laboratorio de idiomas.
-				<br /><br />
+				<br /><br />	
 					<li>Selecciona el d�a de la semana.</li> 
 				<li>Selecciona el sal�n 424.</li>
 				<!--<li>Selecciona el sal�n 422.</li>-->
@@ -36,11 +36,11 @@ $idiomas = getConection();
 		<td align="left">
 			<div class="bordeAzul content" style="width:250px; height:350px; margin:10px; overflow:auto;">
 				<br>
-				<? if ($num_reservaciones > 0) {?>
+				<? if ($reservaciones_array->num_rows > 0) {?>
 					&nbsp;&nbsp;Tus reservaciones pr�ximas:
 					<br><br>
 					
-					<? while ($reservacion = mysql_fetch_array($reservaciones_array)) { ?>
+					<? while ($reservacion = $reservaciones_array->fetch_assoc()) { ?>
 						<li><? echo $reservacion['dia'] . ' ' . $reservacion['mes'] ;  ?><br>
 							&nbsp;&nbsp;&nbsp;&nbsp;Hora: <? echo $reservacion['hora']; ?> <br>
 							&nbsp;&nbsp;&nbsp;&nbsp;Sal�n: <? echo $reservacion['salon']; ?> <br>
