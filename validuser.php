@@ -14,17 +14,13 @@ $pass = $_POST["password"];
 // }
 
 //Obteniendo la informacion del usuario
-//$query_mat = sprintf("SELECT * FROM tbl_matriculas WHERE matricula = '%s'", $u_consultauser);
 $consulta_mat = $idiomas->query("SELECT * FROM tbl_matriculas WHERE matricula = '$user1'");
-//$rows_mat = mysql_num_rows($consulta_mat);
 
 //Si la matricula esta en la base de datos
 if($consulta_mat->num_rows == 1) {
 
-	//$query_consultauser = sprintf("SELECT * FROM tbl_matriculas WHERE matricula = '%s' AND password = '%s'", $u_consultauser,$p_consultauser);
 	$consultauser = $idiomas->query("SELECT * FROM tbl_matriculas WHERE matricula = '$user1' AND password = '$pass'");
 	$usuario = $consultauser->fetch_assoc();
-	//$totalRows_consultauser = mysql_num_rows($consultauser);
 	
 	if($consultauser->num_rows == 1)		
 	{
