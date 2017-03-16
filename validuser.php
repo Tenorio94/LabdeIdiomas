@@ -31,7 +31,7 @@ if($consulta_mat->num_rows == 1) {
 		$_SESSION["user"] = $user1;
 		
 		//Si no ha cambiado su password mandar a perfil de usuario.
-		if($usuario[8] == 0) { ?>
+		if($usuario["flagPassword"] == 0) { ?>
 			<script>
 				location.href='index.php?p=eperfil';
 			</script>

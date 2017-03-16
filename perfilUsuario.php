@@ -9,14 +9,14 @@ if($_SESSION['user'] == null && $_SESSION['user'] == '') {
 $idiomas = getConection();
 
 //Obteniendo la informacion del alumno
-$user_info_array = mysql_query("SELECT * FROM tbl_matriculas WHERE matricula = " . $_SESSION['user'], $idiomas) or die(mysql_error());
-$user_info = mysql_fetch_array($user_info_array);
+$user_info_array = $idiomas->query("SELECT * FROM tbl_matriculas WHERE matricula = " . $_SESSION['user']);
+$user_info = $user_info_array->fetch_assoc();
 
 //Si es la primera vez que se loguea, obligarlo a cambiar su password
 if($user_info['flagPassword'] == 0) {
  $password = '';
 } else {
- $password = $user_info[6]; 
+ $password = $user_info['password']; 
 }
 
 //Cerrar la conexion
@@ -25,34 +25,34 @@ closeConection($idiomas);
 
 <form name="perfilUsuarioForm" method="POST" action="index.php?p=peperfil" onSubmit="return validaPerfilUsuarioForm();">
     
-  <p align="center" class="titulo">Información del Usuario</p>
+  <p align="center" class="titulo">Informaciï¿½n del Usuario</p>
   <table border="0" align="center" class="contenido" style="text-align:left ">
     	<tr>
-			<td>Mátricula:</td>
-			<td><? echo $user_info[1]; ?></td>
+			<td>Mï¿½tricula:</td>
+			<td><? echo $user_info['matricula']; ?></td>
 		</tr>
 		<tr>
 			<td>Nombre:</td>
-			<td><input type="text" name="nombre" size="50" maxlength="50" value="<? echo $user_info[2]; ?>"></td>
+			<td><input type="text" name="nombre" size="50" maxlength="50" value="<? echo $user_info['nombre']; ?>"></td>
 		</tr>
 		<tr>
 			<td>Apellido Paterno:</td>
-			<td><input type="text" name="ap_paterno" size="50" maxlength="50" value="<? echo $user_info[3]; ?>"></td>
+			<td><input type="text" name="ap_paterno" size="50" maxlength="50" value="<? echo $user_info['ap_paterno']; ?>"></td>
 		</tr>		
 		<tr>
 			<td>Apellido Materno:</td>
-			<td><input type="text" name="ap_materno" size="50" maxlength="50" value="<? echo $user_info[4]; ?>"></td>
+			<td><input type="text" name="ap_materno" size="50" maxlength="50" value="<? echo $user_info['ap_materno']; ?>"></td>
 		</tr>				
 		<tr>
-			<td>Correo Electrónico:</td>
-			<td><input type="text" name="email" size="50" maxlength="100" value="<? echo $user_info[5]; ?>"></td>
+			<td>Correo Electrï¿½nico:</td>
+			<td><input type="text" name="email" size="50" maxlength="100" value="<? echo $user_info['email']; ?>"></td>
 		</tr>		
 		<tr>
-			<td>Contraseña:</td>
+			<td>Contraseï¿½a:</td>
 			<td><input type="password" name="password" size="50" maxlength="50" value="<? echo $password;?>"></td>
 		</tr>			
 		<tr>
-			<td>Confirmación de Contraseña:</td>
+			<td>Confirmaciï¿½n de Contraseï¿½a:</td>
 			<td><input type="password" name="password2" size="50" maxlength="50" value="<? echo $password; ?>"></td>
 		</tr>
   		<tr> 
@@ -69,25 +69,25 @@ function validaPerfilUsuarioForm()
 	var stringError = '';
 	
 	if (document.perfilUsuarioForm.email.value == '')
-	{   stringError = stringError + ' \n Correo Electrónico es un campo requerido';
+	{   stringError = stringError + ' \n Correo Electrï¿½nico es un campo requerido';
 		document.perfilUsuarioForm.email.focus();
 	} else {
 		if(!validEmail(document.perfilUsuarioForm.email.value)){
-			stringError = stringError + ' \n Correo Electrónico es invalido';
+			stringError = stringError + ' \n Correo Electrï¿½nico es invalido';
 			document.perfilUsuarioForm.email.focus();
 		}
 	}
 	
 	if (document.perfilUsuarioForm.password.value == '')
-	{   stringError = stringError + ' \n Contraseña es un campo requerido';
+	{   stringError = stringError + ' \n Contraseï¿½a es un campo requerido';
 		document.perfilUsuarioForm.password.focus();
 	}
 	if (document.perfilUsuarioForm.password2.value == '')
-	{   stringError = stringError + ' \n Confirmación de Contraseña es un campo requerido';
+	{   stringError = stringError + ' \n Confirmaciï¿½n de Contraseï¿½a es un campo requerido';
 		document.perfilUsuarioForm.password2.focus();
 	}
 	if (document.perfilUsuarioForm.password.value != document.perfilUsuarioForm.password2.value)
-	{   stringError = stringError + ' \n La contraseña y la confirmación de contraseña deben ser iguales';
+	{   stringError = stringError + ' \n La contraseï¿½a y la confirmaciï¿½n de contraseï¿½a deben ser iguales';
 		document.perfilUsuarioForm.password.focus();
 	}
 	
