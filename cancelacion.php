@@ -16,25 +16,24 @@ if($id_reservacion != "") {
 	$idiomas = getConection();
 
 	//Obteniendo informacion del alumno	
-	$query_matricula = mysql_query("SELECT * FROM tbl_matriculas WHERE matricula = ". $_SESSION['user'] . "", $idiomas) or die(mysql_error());
-	$alumno = mysql_fetch_array($query_matricula);
+	$query_matricula = $idiomas->query("SELECT * FROM tbl_matriculas WHERE matricula = ". $_SESSION['user'] . "");
+	$alumno = $query_matricula->fetch_assoc();
 	
 	//Obteniendo informacion de cancelaciones del alumno
-	$cancelacion = mysql_query("SELECT * FROM tbl_cancelaciones WHERE id_alumno = " . $_SESSION['user'] . " AND semana = $id_semana", $idiomas) or die(mysql_error());
-	$rows_cancelacion = mysql_num_rows($cancelacion);
+	$cancelacion = $idiomas->query("SELECT * FROM tbl_cancelaciones WHERE id_alumno = " . $_SESSION['user'] . " AND semana = $id_semana");
 
 	//Si no ha hecho cancelaciones para esa semana.
-	if($rows_cancelacion == 0) {
+	if($cancelacion->num_rows == 0) {
 		//Obteniendo la informacion de la reservacion que se quiere cancelar
-		$reservacion_array = mysql_query("SELECT * FROM tbl_reservaciones WHERE id = $id_reservacion", $idiomas) or die(mysql_error());
-		$reservacion = mysql_fetch_array($reservacion_array);
+		$reservacion_array = $idiomas->query("SELECT * FROM tbl_reservaciones WHERE id = $id_reservacion");
+		$reservacion = $reservacion_array->fetch_assoc();
 		
 		//Si son 24 horas antes..
 		if(valida1horas($reservacion['dia'], $reservacion['mes'], $reservacion['hora'])) {
 			//Si borro la reservacion, hay que agregar la cancelacion a la tabla de cancelaciones
-			if(mysql_query("DELETE FROM tbl_reservaciones WHERE id = $id_reservacion",$idiomas) or die(mysql_error())){
-				mysql_query("INSERT INTO tbl_cancelaciones (id_alumno, semana) VALUES ( " . $_SESSION['user'] . ", $id_semana)",$idiomas) or die(mysql_error());
-				echo "Tu cancelación ha sido realizada con éxito.";
+			if($idiomas->query("DELETE FROM tbl_reservaciones WHERE id = $id_reservacion")){
+				$idiomas->query("INSERT INTO tbl_cancelaciones (id_alumno, semana) VALUES ( " . $_SESSION['user'] . ", $id_semana)");
+				echo "Tu cancelaciï¿½n ha sido realizada con ï¿½xito.";
 				?>
 				<br><br>
 				<table width="40%" border="1" align="center">
@@ -58,7 +57,7 @@ if($id_reservacion != "") {
 				<?
 				//****************para mandar el correo electronico **************
 				/* subject */
-				$subject = "Cancelación :: Laboratorio de Idiomas";
+				$subject = "Cancelaciï¿½n :: Laboratorio de Idiomas";
 				
 				/* message */
 				$message = '<table width="75%" border="0" align="center">
@@ -97,10 +96,10 @@ if($id_reservacion != "") {
 				}
 			}
 		} else {
-			echo "Para cancelar una reservación, debes hacerlo al menos 1 hora antes.";
+			echo "Para cancelar una reservaciï¿½n, debes hacerlo al menos 1 hora antes.";
 		}
 	}  else {
-		echo "Lo sentimos, solo puedes hacer una cancelación por semana.";
+		echo "Lo sentimos, solo puedes hacer una cancelaciï¿½n por semana.";
 	}
 	closeConection($idiomas);
 }
