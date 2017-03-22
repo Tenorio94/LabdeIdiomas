@@ -18,7 +18,7 @@ $recurso = $_GET['id'];
 
 $result = mysqli_query($con,"SELECT * FROM content WHERE resourceId= '".$recurso ."'");
 while($capitulo = mysqli_fetch_array($result)) {
-  echo $capitulo[content] ."<br>";
+  echo $capitulo['content'] ."<br>";
  }
 ?>
 </body>
