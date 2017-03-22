@@ -238,6 +238,9 @@ $user = $_SESSION['user'];
 		<script src="recursos/i18init.js"></script>
 		<script>
 			Utils.applyMultilingualLabels('.bigContainer', '.multilingual');
+			Utils.applyMultilingualLabels('.bigContainer', '.title-multilingual');
+			Utils.applyMultilingualLabels('.bigContainer', '.leftTitle-multilingual');
+			
 		</script>
 	</body>
 </html>

@@ -20,9 +20,7 @@ closeConection($idiomas);
 <table width="940px" align="center" cellpadding="15px">
 	<tbody>
 		<tr>
-			<td colspan="2" align="center" class="title">
-				Bienvenido a la p�gina del Laboratorio de Idiomas del Departamento de Lenguas Modernas <br><br>
-			</td>
+			<td colspan="2" align="center" class="title-multilingual">mensaje_bienvenida</td>
 		</tr>
 		<tr>
 		<!-- Aqui se imprimen los testimonios -->
