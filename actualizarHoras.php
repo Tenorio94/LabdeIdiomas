@@ -35,12 +35,12 @@ while($string = fgets($handle))
 	//echo $matricula. "  ". $horas. "\n";
 
 	//Se busca un alumno y si lo encuentra incrementa en 1 la cantidad de alumnos modificados y se modifica.
-	$alumnos_query = mysql_query("SELECT matricula FROM tbl_matriculas WHERE matricula = ".$matricula, $idiomas) or die(mysql_error());
-	$alumno = mysql_fetch_assoc($alumnos_query);
+	$alumnos_query = $idiomas->query("SELECT matricula FROM tbl_matriculas WHERE matricula = ".$matricula));
+	$alumno = $alumnos_query->fetch_assoc();
 	$total_alumno = mysql_num_rows($alumnos_query);
-	if($total_alumno > 0) {
+	if($alumno->num_rows > 0) {
 		//Se modifican las horas de cada alumno
-		mysql_query("UPDATE tbl_matriculas SET hora = ".$horas." WHERE matricula = ".$matricula,$idiomas);	
+		$idiomas->query("UPDATE tbl_matriculas SET hora = ".$horas." WHERE matricula = ".$matricula,$idiomas);	
 		$contadorInicial = $contadorInicial + 1; 
 	}
 }
@@ -49,7 +49,7 @@ fclose($handle);
 
 $fecha= date ("Y-m-d");
 echo $fecha;
-mysql_query("INSERT INTO tbl_fecha VALUES ('". $fecha ."')", $idiomas);
+$idiomas->query("INSERT INTO tbl_fecha VALUES ('". $fecha ."')", $idiomas);
 //
 //Cerramos conexion con la base de datos
 closeConection($idiomas);

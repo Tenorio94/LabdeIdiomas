@@ -16,8 +16,8 @@ if (mysqli_connect_errno()) {
 
 $recurso = $_GET['id'];
 
-$result = mysqli_query($con,"SELECT * FROM content WHERE resourceId= '".$recurso ."'");
-while($capitulo = mysqli_fetch_array($result)) {
+$result = $con->query("SELECT * FROM content WHERE resourceId= '".$recurso ."'");
+while($capitulo = $result->fetch_assoc()) {
   echo $capitulo['content'] ."<br>";
  }
 ?>
