@@ -1,4 +1,4 @@
-<div class="title">Tutoriales</div>
+<div class="title-multilingual">tutoriales</div>
 <br>
 <table cellpadding="5" width="300px" align="center" class="content">
 	<tbody>
