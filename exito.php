@@ -17,16 +17,14 @@ $dia = $_REQUEST['d'];
 $sem = $_REQUEST["s"];
 $fecha = getdate();
 
-//Abrir conexion con la base de datos y seleccionar base de datos
+//Abrir conexion con la base de datos
 $idiomas = getConection();
-mysql_select_db($database_idiomas, $idiomas);
 
 //Obtener la informacion del alumno
-$query_matricula = mysql_query("SELECT * FROM tbl_matriculas WHERE matricula = ". $_SESSION['user'] . "", $idiomas) or die(mysql_error());
-$alumno = mysql_fetch_array($query_matricula);
-$result_rows = mysql_num_rows($query_matricula);
+$query_matricula = $idiomas->query("SELECT * FROM tbl_matriculas WHERE matricula = ". $_SESSION['user'] . "");
+$alumno = $query_matricula->fetch_assoc();
 
-if($result_rows == 1)
+if($query_matricula->num_rows == 1)
 {
 	$cantidad = $alumno['cantidad'];
 }
@@ -34,7 +32,7 @@ if($result_rows == 1)
 
 //****************para mandar el correo electronico **************
 /* subject */
-$subject = "Reservación :: Laboratorio de Idiomas";
+$subject = "Reservaciï¿½n :: Laboratorio de Idiomas";
 
 /* message */
 $message = '<table width="75%" border="0" align="center">
@@ -66,13 +64,13 @@ $message = '<table width="75%" border="0" align="center">
 
 //****************busquedas en BD ********************************
 //Obtener la informacion de las reservaciones del alumno para la semana
-	$query_reservaciones = mysql_query("SELECT * FROM tbl_reservaciones WHERE matricula = $mat AND semana = $sem", $idiomas) or die(mysql_error());
-	$total_reservaciones = mysql_num_rows($query_reservaciones);
+	$query_reservaciones = $idiomas->query("SELECT * FROM tbl_reservaciones WHERE matricula = $mat AND semana = $sem");
+	//$total_reservaciones = mysql_num_rows($query_reservaciones);
 	
 	//Validar que el alumno no tenga ya una reservacion para esta hora
-	$query_reservaciones_hoy = mysql_query("SELECT matricula FROM tbl_reservaciones WHERE semana = $sem AND dia = $dia AND mes = '$mes' AND salon = $salon AND hora = $hora", $idiomas) or die(mysql_error());
-	$row_query32 = mysql_fetch_assoc($query_reservaciones_hoy);
-	$total_reservaciones_hoy = mysql_num_rows($query_reservaciones_hoy);
+	$query_reservaciones_hoy = $idiomas->query("SELECT matricula FROM tbl_reservaciones WHERE semana = $sem AND dia = $dia AND mes = '$mes' AND salon = '$salon' AND hora = '$hora'");
+	$row_query32 = $query_reservaciones_hoy->fetch_assoc();
+	//$total_reservaciones_hoy = mysql_num_rows($query_reservaciones_hoy);
 //************ termina busquedas en BD ********************
 
 ?>
@@ -85,7 +83,7 @@ $message = '<table width="75%" border="0" align="center">
 			<table width="75%" border="0" align="center">
 				<tr>
 					<td class="mensajeError">
-						Lo sentimos, la reservación debe ser a futuro.
+						Lo sentimos, la reservaciï¿½n debe ser a futuro.
 						<br><br>
 						<input name="Button" type="button" onClick="location.href='index.php?p=reservaciones'" value="Regresar a Reservaciones">
 					</td>
@@ -97,7 +95,7 @@ $message = '<table width="75%" border="0" align="center">
 	else
 	{
 		//Si excede el numero maximo de reservaciones que puede hacer
-		if($total_reservaciones >= $cantidad)
+		if($query_reservaciones->num_rows >= $cantidad)
 		{  
 			?>
 			<table width="75%" border="0" align="center">
@@ -108,7 +106,7 @@ $message = '<table width="75%" border="0" align="center">
 						</p>
 					  	<!-- Mostrarle sus reservaciones de esta semana -->
 						<table width="40%" border="1" align="center">
-							<? while($rows = mysql_fetch_array($query_reservaciones)) { ?>
+							<? while($rows = $query_reservaciones->fetch_assoc()) { ?>
 							<tr bgcolor="#336699"> 
 						  		<td width="35%" class="mensajeNormal">
 									Matr&iacute;cula:
@@ -156,7 +154,7 @@ $message = '<table width="75%" border="0" align="center">
 		else
 		{ //si aunpuede reservar...
 			$mismodiahora =0;
-			while($row_query1 = mysql_fetch_array($query_reservaciones))
+			while($row_query1 = $query_reservaciones->fetch_assoc())
 				if($row_query1[3] == $dia && $row_query1[4] == $hora)
 					$mismodiahora = 1;
 
@@ -184,12 +182,11 @@ $message = '<table width="75%" border="0" align="center">
 				}
 				else
 				{   
-					if($total_reservaciones_hoy < 40) 
+					if($query_reservaciones_hoy->num_rows < 40) 
 					{   
 						//Paso todas las validaciones
 						//Insertar la reservacion en la base de datos.
-						$insertSQL = "INSERT INTO tbl_reservaciones (matricula, salon, dia, hora, mes, semana) VALUES (". $mat .", " . $salon . ", " . $dia . ", " . $hora . ", '" .$mes . "', " . $sem. ");";
-						mysql_query($insertSQL, $idiomas) or die(mysql_error());
+						$idiomas->query("INSERT INTO tbl_reservaciones (matricula, salon, dia, hora, mes, semana) VALUES (". $mat .", " . $salon . ", " . $dia . ", " . $hora . ", '" .$mes . "', " . $sem. ");");
 						?>
 						<table width="75%" border="0" align="center">
 						  <tr>
@@ -218,7 +215,7 @@ $message = '<table width="75%" border="0" align="center">
 								{
 									$to = $alumno['email'];
 									enviarEmail($to, $subject, $message);
-									echo '<p class="mensajeGris"><img src="imagenes/email.jpg" />Se envi&oacute; un correo electrónico a tu cuenta: ' . $to . ' con la informaci&oacute;n de tu reservaci&oacute;n</p>';
+									echo '<p class="mensajeGris"><img src="imagenes/email.jpg" />Se envi&oacute; un correo electrï¿½nico a tu cuenta: ' . $to . ' con la informaci&oacute;n de tu reservaci&oacute;n</p>';
 								}?>
 							  	<br><br>
 								<div align="center"><input name="Button" type="button" onClick="location.href='index.php?p=reservaciones'" value="Regresar a Reservaciones""></div>
@@ -264,8 +261,6 @@ $message = '<table width="75%" border="0" align="center">
 	
 ?>
 <?php
-mysql_free_result($query_reservaciones);
-mysql_free_result($query_reservaciones_hoy);
 closeConection($idiomas);
 ?>
 
