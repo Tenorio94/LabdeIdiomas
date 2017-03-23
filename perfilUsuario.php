@@ -69,25 +69,25 @@ function validaPerfilUsuarioForm()
 	var stringError = '';
 	
 	if (document.perfilUsuarioForm.email.value == '')
-	{   stringError = stringError + ' \n Correo Electr�nico es un campo requerido';
+	{   stringError = stringError + ' \n Correo Electrónico es un campo requerido';
 		document.perfilUsuarioForm.email.focus();
 	} else {
 		if(!validEmail(document.perfilUsuarioForm.email.value)){
-			stringError = stringError + ' \n Correo Electr�nico es invalido';
+			stringError = stringError + ' \n Correo Electrónico es invalido';
 			document.perfilUsuarioForm.email.focus();
 		}
 	}
 	
 	if (document.perfilUsuarioForm.password.value == '')
-	{   stringError = stringError + ' \n Contrase�a es un campo requerido';
+	{   stringError = stringError + ' \n Contraseña es un campo requerido';
 		document.perfilUsuarioForm.password.focus();
 	}
 	if (document.perfilUsuarioForm.password2.value == '')
-	{   stringError = stringError + ' \n Confirmaci�n de Contrase�a es un campo requerido';
+	{   stringError = stringError + ' \n Confirmación de Contraseña es un campo requerido';
 		document.perfilUsuarioForm.password2.focus();
 	}
 	if (document.perfilUsuarioForm.password.value != document.perfilUsuarioForm.password2.value)
-	{   stringError = stringError + ' \n La contrase�a y la confirmaci�n de contrase�a deben ser iguales';
+	{   stringError = stringError + ' \n La contraseña y la confirmación de contraseña deben ser iguales';
 		document.perfilUsuarioForm.password.focus();
 	}
 	
