@@ -1,6 +1,4 @@
-
-	
-  	<form name="form3" method="POST" action="index.php?p=semanasBD">
+<form name="form3" method="POST" action="index.php?p=semanasBD">
     
   <p align="center" class="titulo">Cambiar Semanas</p>
   <table border="1" align="center" class="contenido">
