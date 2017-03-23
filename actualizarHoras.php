@@ -37,8 +37,7 @@ while($string = fgets($handle))
 	//Se busca un alumno y si lo encuentra incrementa en 1 la cantidad de alumnos modificados y se modifica.
 	$alumnos_query = $idiomas->query("SELECT matricula FROM tbl_matriculas WHERE matricula = ".$matricula));
 	$alumno = $alumnos_query->fetch_assoc();
-	$total_alumno = mysql_num_rows($alumnos_query);
-	if($alumno->num_rows > 0) {
+	if($alumnos_query->num_rows > 0) {
 		//Se modifican las horas de cada alumno
 		$idiomas->query("UPDATE tbl_matriculas SET hora = ".$horas." WHERE matricula = ".$matricula,$idiomas);	
 		$contadorInicial = $contadorInicial + 1; 
