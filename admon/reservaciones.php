@@ -1,13 +1,12 @@
 <?php
+
+$idiomas = getConection();
+
 function getSemanaHrefLink($day)
 {
-	//Si la conexion no existe, abrirla
-	if($idiomas == NULL) {
-		$idiomas = getConection();
-	}
-	//mysql_select_db($database_idiomas, $idiomas);
-    $semana_query = mysql_query("SELECT * FROM tbl_semanas WHERE id = $day", $idiomas) or die(mysql_error());
-	$semana = mysql_fetch_assoc($semana_query);
+	global $idiomas;
+    $semana_query = $idiomas->query("SELECT * FROM tbl_semanas WHERE id = $day");
+	$semana = $semana_query->fetch_assoc();
 	
 	//Por default $result = Asueto
 	$result = "Asueto";
@@ -21,13 +20,11 @@ function getSemanaHrefLink($day)
 
 function getSemanaHrefLinkSabado($day)
 {
-	//Si la conexion no existe, abrirla
-	if($idiomas == NULL) {
-		$idiomas = getConection();
-	}
-	//mysql_select_db($database_idiomas, $idiomas);
-    $semana_query = mysql_query("SELECT * FROM tbl_semanas WHERE id = $day", $idiomas) or die(mysql_error());
-	$semana = mysql_fetch_assoc($semana_query);
+
+	global $idiomas;
+
+    $semana_query = $idiomas->query("SELECT * FROM tbl_semanas WHERE id = $day");
+	$semana = $semana_query->fetch_assoc();
 	
 	//Por default $result = Asueto
 	$result = "Asueto";
@@ -49,7 +46,7 @@ function getSemanaHrefLinkSabado($day)
       <tr bgcolor="#336699"> 
         <td align="center" class="diasSemana">Lunes</td>
         <td align="center" class="diasSemana">Martes</td>
-        <td align="center" class="diasSemana">Miércoles</td>
+        <td align="center" class="diasSemana">Miï¿½rcoles</td>
         <td align="center" class="diasSemana">Jueves</td>
         <td align="center" class="diasSemana">Viernes</td>
 		<td align="center" class="diasSemana">S&aacute;bado</td>
@@ -97,5 +94,6 @@ function getSemanaHrefLinkSabado($day)
   </table>
 <? 
 //Cerrando conexion a la base de datos
+global $idiomas;
 closeConection($idiomas); 
 ?>

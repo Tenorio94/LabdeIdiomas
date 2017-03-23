@@ -14,13 +14,13 @@ $success = 0;
 
 //Guardando la informacion en la base de datos
 if($password != "") {
-	if(mysql_query("UPDATE tbl_matriculas set nombre = '$nombre', ap_paterno = '$ap_paterno', ap_materno = '$ap_materno', email = '$email', password = '$password', flagPassword = 0 WHERE id = $id_alumno",$idiomas) or die(mysql_error()))
+	if($idiomas->query("UPDATE tbl_matriculas set nombre = '$nombre', ap_paterno = '$ap_paterno', ap_materno = '$ap_materno', email = '$email', password = '$password', flagPassword = 0 WHERE id = $id_alumno"))
 		$success = 1;
 		
 		//Maybe send email.
 		
 } else {
-	if(mysql_query("UPDATE tbl_matriculas set nombre = '$nombre', ap_paterno = '$ap_paterno', ap_materno = '$ap_materno', email = '$email' WHERE id = $id_alumno",$idiomas) or die(mysql_error()))
+	if($idiomas->query("UPDATE tbl_matriculas set nombre = '$nombre', ap_paterno = '$ap_paterno', ap_materno = '$ap_materno', email = '$email' WHERE id = $id_alumno"))
 		$success = 1;
 }
 
@@ -33,15 +33,15 @@ if($success == 0) {
 ?>
 	<tr>
 		<td><p><strong><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">
-				Lo sentimos, no fue posible guardar la información en nuestra base de datos.<br>
-                Intenta más tarde.</font></strong></p>
+				Lo sentimos, no fue posible guardar la informaciï¿½n en nuestra base de datos.<br>
+                Intenta mï¿½s tarde.</font></strong></p>
 			<p>&nbsp;</p>
 		</td>
 	</tr>
 <? } else { ?>
 	<tr>
 		<td><p><strong><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">
-				La información fue guardada exitosamente.
+				La informaciï¿½n fue guardada exitosamente.
 			<p>&nbsp;</p>
 		</td>
 	</tr>

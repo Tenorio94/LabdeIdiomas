@@ -62,7 +62,7 @@ $user = $_SESSION['usuario'];
 									<li><a href='index.php?p=reservaciones' style="margin-left:0px; width:100px;">Reservaciones</a></li>
 									<li><a href='index.php?p=amatriculas' style="width:100px;">Alta Matriculas</a></li>
 									<li><a href='index.php?p=semanas' style="width:75px;">Semanas</a></li>
-									<li><a href='index.php?p=busqueda' style="width:75px;">Búsqueda</a></li>
+									<li><a href='index.php?p=busqueda' style="width:75px;">Bï¿½squeda</a></li>
 									<li><a href='index.php?p=testimonios' style="width:100px;">Testimonios</a></li>
 									<li><a href='index.php?p=avisos' style="width:75px;">Avisos</a></li>
 									<li><a href='index.php?p=varios' style="width:75px;">Varios</a></li>
@@ -216,7 +216,7 @@ $user = $_SESSION['usuario'];
 				&nbsp;
 			</div>
 			<div style="height:30px;background-color:#FFFFFF; font-size:10px; font-weight:bold;">
-				Instituto Tecnológico y de Estudios Superiores de Monterrey  - Laboratorio de Idiomas <br>
+				Instituto Tecnolï¿½gico y de Estudios Superiores de Monterrey  - Laboratorio de Idiomas <br>
 				&copy; <?php echo date('Y'); ?>, Derechos Reservados.
 			</div>
 		</div>

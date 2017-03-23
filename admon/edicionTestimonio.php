@@ -6,8 +6,8 @@ $idiomas = getConection();
 $id = $_REQUEST['cs'];
 
 //Obtenemos el testimonio de la base de datos
-$testimonio_array = mysql_query("SELECT * FROM tbl_videos WHERE id = $id", $idiomas) or die(mysql_error());
-$testimonio = mysql_fetch_array($testimonio_array);
+$testimonio_array = $idiomas->query("SELECT * FROM tbl_videos WHERE id = $id");
+$testimonio = $testimonio_array->fetch_assoc();
 
 //Darle formato a la fecha
 $exploded_fecha = explode('-', $testimonio['fecha']); 
@@ -19,7 +19,7 @@ closeConection($idiomas);
 
 <table align="center">
 	<tr>
-		<td class="title">Edición de Testimonio</td>
+		<td class="title">Ediciï¿½n de Testimonio</td>
 	</tr>
 </table>
 <form name="forma" method="post" action="index.php?p=petestimonio" enctype="multipart/form-data">
@@ -30,7 +30,7 @@ closeConection($idiomas);
 		<td align="left"><input type="text" name="nombreAlumno" size="50" value="<? echo $testimonio['autor']; ?>"/></td>
 	</tr>
 	<tr>
-		<td align="left"><br>Descripción:</td>
+		<td align="left"><br>Descripciï¿½n:</td>
 		<td align="left"><br><textarea name="descripcion" rows="5" cols="37"><? echo $testimonio['descripcion']; ?></textarea></td>
 	</tr>
 	<tr>

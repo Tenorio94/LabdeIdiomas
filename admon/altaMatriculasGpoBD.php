@@ -30,13 +30,13 @@ while($string = fgets($handle))
 
 	list ($matriculax, $cantidadx) = $str_aux2;
 	
-	$alumnos_query = mysql_query("SELECT matricula FROM tbl_matriculas WHERE matricula = $matriculax", $idiomas) or die(mysql_error());
-	$alumno = mysql_fetch_assoc($alumnos_query);
-	$total_alumno = mysql_num_rows($alumnos_query);
+	$alumnos_query = $idiomas->query("SELECT matricula FROM tbl_matriculas WHERE matricula = $matriculax");
+	$alumno = $alumnos_query->fetch_assoc();
+	$total_alumno = $alumnos_query->num_rows;
 
 	if($total_alumno == 0)
 	{
-		mysql_query("INSERT INTO tbl_matriculas (matricula, cantidad, password) VALUES (". $matriculax .", ". $cantidadx .", '". $matriculax . "')", $idiomas);		
+		$idiomas->query("INSERT INTO tbl_matriculas (matricula, cantidad, password) VALUES (". $matriculax .", ". $cantidadx .", '". $matriculax . "')");		
 			echo '<tr class="contenido">
 				<td class="barraArriba" align="center">' . $contadorInicial . '</td>
 				<td class="barraArriba" align="center">' . $matriculax . '</td>
@@ -45,7 +45,7 @@ while($string = fgets($handle))
 	}
 	else
 	{
-		mysql_query("UPDATE tbl_matriculas set cantidad = $cantidadx WHERE matricula = $matriculax",$idiomas);		
+		$idiomas->query("UPDATE tbl_matriculas set cantidad = $cantidadx WHERE matricula = $matriculax");		
 			echo '<tr class="contenido">
 				<td class="barraArriba">' . $contadorInicial . '</td>
 				<td class="barraArriba">' . $matriculax . '</td>

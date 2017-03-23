@@ -7,11 +7,11 @@
 $idiomas = getConection();
 
 $query_recomendaciones = "SELECT * FROM tbl_recomendaciones";
-$recomendaciones_matriz = mysql_query($query_recomendaciones, $idiomas) or die(mysql_error());
-while ($row = mysql_fetch_assoc($recomendaciones_matriz)) {
+$recomendaciones_matriz = $idiomas->query($query_recomendaciones);
+while ($row = $recomendaciones_matriz->fetch_assoc()) {
 	?><li><a href="index.php?p=editRecommendation&idrec=<?php echo $row["id"];?>"><?php echo $row["name"];?></a></li><?php
 }
-?><br><a href="index.php?p=createCustomRecomendation">Crear nueva recomendación</a>
+?><br><a href="index.php?p=createCustomRecomendation">Crear nueva recomendaciï¿½n</a>
 <?php
 
 //Cerrando la conexion con la base de datos

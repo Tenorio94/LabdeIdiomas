@@ -88,10 +88,10 @@ while($string = fgets($handle))
 }
 //Cerramos el archivo
 fclose($handle);
-mysql_query( substr($QUERY, 0, -1)." ON DUPLICATE KEY UPDATE horas=VALUES(horas)", $idiomas);
+$idiomas->query( substr($QUERY, 0, -1)." ON DUPLICATE KEY UPDATE horas=VALUES(horas)");
 $fecha = date("Y-m-d H:i:s");
 echo $fecha;
-mysql_query("INSERT INTO tbl_fecha VALUES ('". $fecha ."')", $idiomas);
+$idioms->query("INSERT INTO tbl_fecha VALUES ('". $fecha ."')");
 //
 //Cerramos conexion con la base de datos
 closeConection($idiomas);

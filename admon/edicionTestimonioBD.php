@@ -8,7 +8,7 @@
 		//Copiar el archivo
 		move_uploaded_file($_FILES['archivoTestimonio']['tmp_name'], $uploadfile);
 	}
-	//Obtener la información que guardaremos en la base de datos.
+	//Obtener la informaciï¿½n que guardaremos en la base de datos.
 	$id = $_POST['id'];
 	$autor = $_POST['nombreAlumno'];
 	$descripcion = $_POST['descripcion'];
@@ -22,16 +22,15 @@
 	
 	//Abrir conexion con la base de datos
 	$idiomas = getConection();
-	mysql_select_db($database_idiomas, $idiomas);
 
 	//Insertar en la base de datos
 	$inserted = 0;
 	
 	if($_FILES['archivoTestimonio']['name'] != "") {
-		if(mysql_query("UPDATE tbl_videos SET descripcion = '$descripcion', autor = '$autor', archivo = '$archivo', tipo = '$tipo', fecha = '$fecha' WHERE id = $id", $idiomas))
+		if($idiomas->query("UPDATE tbl_videos SET descripcion = '$descripcion', autor = '$autor', archivo = '$archivo', tipo = '$tipo', fecha = '$fecha' WHERE id = $id"))
 			$inserted = 1;
 	} else {
-		if(mysql_query("UPDATE tbl_videos SET descripcion = '$descripcion', autor = '$autor', tipo = '$tipo', fecha = '$fecha' WHERE id = $id", $idiomas))
+		if($idiomas->query("UPDATE tbl_videos SET descripcion = '$descripcion', autor = '$autor', tipo = '$tipo', fecha = '$fecha' WHERE id = $id"))
 			$inserted = 1;
 	}		
 

@@ -11,7 +11,7 @@ $query_matricula = $idiomas->query("SELECT * FROM tbl_matriculas WHERE matricula
 $matricula = $query_matricula->fetch_assoc();
 
 //Si no hay registros en la base de datos, enviar mensaje
-if($total_matricula->num_rows < 1)
+if($query_matricula->num_rows < 1)
 {
 	echo "La matr�cula no esta registrada en nuestra base de datos. Verifica que este correcta.";
 } else {

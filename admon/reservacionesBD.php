@@ -15,31 +15,31 @@ $idiomas = getConection();
 	
 //**********************************************************************************************************
 //Obtenemos la informacion del salon en el que se quiere hacer la reservacion
-$reservacion_salon = mysql_query("SELECT matricula FROM tbl_reservaciones WHERE semana = $sem AND dia = $dia AND mes = '$mes' AND salon = $salon AND hora = $hora", $idiomas) or die(mysql_error());
-$row_query32 = mysql_fetch_assoc($reservacion_salon);
-$total_reservacion_salon = mysql_num_rows($reservacion_salon);
+$reservacion_salon = $idiomas->query("SELECT matricula FROM tbl_reservaciones WHERE semana = $sem AND dia = $dia AND mes = '$mes' AND salon = $salon AND hora = $hora");
+$row_query32 = $reservacion_salon->fetch_assoc();
+$total_reservacion_salon = $reservacion_salon->num_rows;
 	
 //Obtenemos la informacion del otro salon disponible
-$reservacion_salon_otro = mysql_query("SELECT matricula FROM tbl_reservaciones WHERE semana = $sem AND dia = $dia AND mes = '$mes' AND hora = $hora AND salon = $salonotro", $idiomas) or die(mysql_error());
-$row_Recordset1 = mysql_fetch_assoc($reservacion_salon_otro);
-$total_reservacion_salon_otro = mysql_num_rows($reservacion_salon_otro);
+$reservacion_salon_otro = $idiomas->query("SELECT matricula FROM tbl_reservaciones WHERE semana = $sem AND dia = $dia AND mes = '$mes' AND hora = $hora AND salon = $salonotro");
+$row_Recordset1 = $reservacion_salon_otro->fetch_assoc();
+$total_reservacion_salon_otro = $reservacion_salon_otro->num_rows;
 //**********************************************************************************************************
 
 //--------------------------------------------------------------------------------------------------------
 /* subject */
-$subject = "Cambio en Reservación :: Laboratorio de Idiomas";
+$subject = "Cambio en Reservaciï¿½n :: Laboratorio de Idiomas";
 
 /* message */
 $message = '
 <html>
 <head>
-<title>Laboratorio de Idiomas :: Confirmación</title>
+<title>Laboratorio de Idiomas :: Confirmaciï¿½n</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 <body>
 <table width="75%" border="0" align="center">
   <tr>
-    <td><p align="center"><font size="4"><strong>Hubo un cambio en tu salón para el Laboratorio de Idiomas</strong></font></p>
+    <td><p align="center"><font size="4"><strong>Hubo un cambio en tu salï¿½n para el Laboratorio de Idiomas</strong></font></p>
       <table width="40%" border="1" align="center">
         <tr> 
           <td bgcolor="#CCFF66"><strong>D&iacute;a:</strong></td>
@@ -80,7 +80,7 @@ $headers .= "From: Laboratorio de Idiomas <iaranda@itesm.mx>\r\n";
 	 {
 ?> 		<table border="0" align="center" class="contenido">
   			<tr>
-			    <td><p class="titulo">Lo sentimos, tu reservación debe ser a pasado.</p>
+			    <td><p class="titulo">Lo sentimos, tu reservaciï¿½n debe ser a pasado.</p>
 					</td>
 			  </tr>
 			</table>
@@ -98,9 +98,8 @@ $headers .= "From: Laboratorio de Idiomas <iaranda@itesm.mx>\r\n";
 				{
 						$mat = $row_query32['matricula']; 
 						$deleteSQL = "DELETE FROM tbl_reservaciones WHERE matricula = '" . $mat . "' AND salon = " . $salon . " AND dia = " . $dia . " AND hora = " . $hora . " AND semana = " . $sem . ";" ;
-						mysql_select_db($database_idiomas, $idiomas);
-						mysql_query($deleteSQL, $idiomas) or die(mysql_error());
-						$row_query32 = mysql_fetch_assoc($reservacion_salon);
+						$idiomas->query($deleteSQL);
+						$row_query32 = $reservacion_salon->fetch_assoc();
 						$ocupados_salon = $ocupados_salon - 1;
 				}
 			}
@@ -121,8 +120,7 @@ $headers .= "From: Laboratorio de Idiomas <iaranda@itesm.mx>\r\n";
 									{
 										$mat = "Reservado"; 
 										$insertSQL = "INSERT INTO tbl_reservaciones (matricula, salon, dia, hora, mes, semana) VALUES ('". $mat ."', " . $salon . ", " . $dia . ", " . $hora . ", '" .$mes . "', " . $sem. ");";
-										mysql_select_db($database_idiomas, $idiomas);
-										mysql_query($insertSQL, $idiomas) or die(mysql_error());
+										$idiomas->query($insertSQL);
 										$f = $f + 1;
 									}
 									$lugres = 40;
@@ -135,8 +133,7 @@ $headers .= "From: Laboratorio de Idiomas <iaranda@itesm.mx>\r\n";
 								{
 									$mat = "Reservado"; 
 									$insertSQL = "INSERT INTO tbl_reservaciones (matricula, salon, dia, hora, mes, semana) VALUES ('". $mat ."', " . $salon . ", " . $dia . ", " . $hora . ", '" .$mes . "', " . $sem. ");";
-									mysql_select_db($database_idiomas, $idiomas);
-									mysql_query($insertSQL, $idiomas) or die(mysql_error());
+									$idiomas->query($insertSQL);
 									$f = $f + 1;
 								}
 								$lugres = $t;
@@ -153,17 +150,15 @@ $headers .= "From: Laboratorio de Idiomas <iaranda@itesm.mx>\r\n";
 							{	
 									$mat = $row_query32['matricula']; 
 									$insertSQL = "INSERT INTO tbl_reservaciones (matricula, salon, dia, hora, mes, semana) VALUES ('". $mat ."', " . $salonotro . ", " . $dia . ", " . $hora . ", '" .$mes . "', " . $sem. ");";
-									mysql_select_db($database_idiomas, $idiomas);
-									mysql_query($insertSQL, $idiomas) or die(mysql_error());
+									$idiomas->query($insertSQL);
 									$deleteSQL = "DELETE FROM tbl_reservaciones WHERE matricula = '" . $mat . "' AND salon = " . $salon . " AND dia = " . $dia . " AND hora = " . $hora . " AND semana = " . $sem . ";" ;
-									mysql_select_db($database_idiomas, $idiomas);
-									mysql_query($deleteSQL, $idiomas) or die(mysql_error());
+									$idiomas->query($deleteSQL);
 									
 										 $to = $row_query32['email'];
 										 if($to != null && $to != '')
 											mail($to, $subject, $message, $headers);
 
-									$row_query32 = mysql_fetch_assoc($reservacion_salon);
+									$row_query32 = $reservacion_salon->fetch_assoc();
 									$i = $i + 1;
 									$ocupados_salon = $ocupados_salon - 1;
 							}
