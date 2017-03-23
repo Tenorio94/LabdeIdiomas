@@ -2,10 +2,10 @@
 	//Obtener el estado de la insercion para saber si desplegamos mensaje
 	$inserted = $_REQUEST['t'];
 	
-	if(inserted == "1")
+	if($inserted == "1")
 		echo "El aviso fue dado de alta correctamente";
-	else if(inserted == "0")
-		echo "Hubo un error al dar de alta el aviso, por favor, intente más tarde.";
+	else if($inserted == "0")
+		echo "Hubo un error al dar de alta el aviso, por favor, intente mï¿½s tarde.";
 ?>
 	<div align="center" style="width:90%; text-align:right" class="content">
 		<img src="../imagenes/alta.jpg" /><a href="index.php?p=aaviso">Dar de alta un aviso</a>
@@ -28,12 +28,12 @@
 	$idiomas = getConection();
 	
 	//Obteniendo todos los registros de la base de datos
-	$query_avisos = mysql_query("SELECT * FROM tbl_avisos ORDER BY id ASC", $idiomas) or die(mysql_error());
+	$query_avisos = $idiomas->query("SELECT * FROM tbl_avisos ORDER BY id ASC");
 	//Cerramos la conexion
 	closeConection($idiomas);
 	
 	//Por cada video en la base de datos, desplegaremos 
-	while($aviso = mysql_fetch_array($query_avisos)) {
+	while($aviso = $query_avisos->fetch_assoc()) {
 	
 	//Darle formato a la fecha
 	$exploded_fecha = explode('-', $aviso['fecha']); 
@@ -58,7 +58,7 @@
 </table>
 <script>
 	function confirmarBaja() {
-		var ok = confirm("¿Deseas eliminar el aviso seleccionado?");
+		var ok = confirm("ï¿½Deseas eliminar el aviso seleccionado?");
 		if(ok) {
 			return true;
 		}

@@ -1,6 +1,6 @@
 
 <?php
-	//Obtener la información que guardaremos en la base de datos.
+	//Obtener la informaciï¿½n que guardaremos en la base de datos.
 	$descripcion = $_POST['descripcion'];
 	$activo = $_POST['activo'];
 	
@@ -9,11 +9,10 @@
 
 	//Abrir conexion con la base de datos
 	$idiomas = getConection();
-	mysql_select_db($database_idiomas, $idiomas);
 
 	//Insertar en la base de datos
 	$inserted = 0;
-	if(mysql_query("INSERT INTO tbl_avisos (descripcion, fecha, activo) VALUES ('". $descripcion ."', '". $fecha ."', '". $activo . "')", $idiomas))
+	if($idiomas->query("INSERT INTO tbl_avisos (descripcion, fecha, activo) VALUES ('". $descripcion ."', '". $fecha ."', '". $activo . "')"))
 		$inserted = 1;		
 
 	//Cerrar conexion

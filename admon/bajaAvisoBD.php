@@ -1,13 +1,12 @@
 <?php
 	//Abrir conexion con la base de datos
 	$idiomas = getConection();
-	mysql_select_db($database_idiomas, $idiomas);
 	
 	//Id del testimonio a borrar
 	$id = $_REQUEST['cs'];
 
 	//Borrar de la base de datos
-	mysql_query("DELETE FROM tbl_avisos WHERE id=$id", $idiomas);
+	$idiomas->query("DELETE FROM tbl_avisos WHERE id=$id");
 
 	//Cerrar conexion
 	closeConection($idiomas);
