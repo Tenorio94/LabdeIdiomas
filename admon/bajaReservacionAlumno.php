@@ -6,13 +6,13 @@ $id_reservacion = $_REQUEST['cs'];
 $idiomas = getConection();
 
 
-$delete_query = mysql_query("DELETE FROM tbl_reservaciones WHERE id = $id_reservacion", $idiomas) or die(mysql_error());
+$delete_query = $idiomas->query("DELETE FROM tbl_reservaciones WHERE id = $id_reservacion");
 
 //Cerrando la conexion con la base de datos
 closeConection($idiomas);
 ?>
 
-<p align="center" class="titulo">La Reservación del Alumno ha sido borrada satisfactoriamente</p>
+<p align="center" class="titulo">La Reservaciï¿½n del Alumno ha sido borrada satisfactoriamente</p>
 <p align="center">&nbsp;</p>
 
 
