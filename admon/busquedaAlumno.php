@@ -16,7 +16,7 @@
 
 <!-- en caso de que venga de alguna b�squeda -->
 <?php
-global $matricula;
+$matricula = $_POST['matricula'];
 //Si viene de una busqueda realizamos todo el procedimiento.
 if($matricula != ""  && $matricula != NULL){
 	//Abrimos la conexion a la base de datos
@@ -106,9 +106,6 @@ if($matricula != ""  && $matricula != NULL){
 }?>
 
 
-
-
-<!-- mis validaciones de campos --->
 <script language="javascript">
 function verificaMat()
 {
