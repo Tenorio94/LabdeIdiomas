@@ -1,16 +1,15 @@
 <?php
 	//Abrir conexion con la base de datos
 	$idiomas = getConection();
-	mysql_select_db($database_idiomas, $idiomas);
 
 	//Borrar cancelaciones de la base de datos
-	mysql_query("DELETE FROM tbl_cancelaciones", $idiomas);
+	$idiomas->query("DELETE FROM tbl_cancelaciones");
 
 	//Borrar reservaciones de la base de datos
-	mysql_query("DELETE FROM tbl_reservaciones", $idiomas);
+	$idiomas->query("DELETE FROM tbl_reservaciones");
 
 	//Borrar alumnos de la base de datos
-	mysql_query("DELETE FROM tbl_matriculas", $idiomas);
+	$idiomas->query("DELETE FROM tbl_matriculas");
 	
 	//Cerrar conexion
 	closeConection($idiomas);
