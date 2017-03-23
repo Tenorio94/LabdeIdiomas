@@ -5,6 +5,7 @@ if(($_SESSION['user'] == null && $_SESSION['user'] == '') || !hasChangedPassword
 </script>
 <? }
 
+$idiomas = getConection();
 $dia = $_REQUEST["d"];
 $mes = $_REQUEST["m"];
 $sem = $_REQUEST["s"];
@@ -12,11 +13,12 @@ $sem = $_REQUEST["s"];
 
 function getReservacionPorHora($hora, $dia, $mes)
 {
-	//Abrimos la conexion a la base de datos
+	global $idiomas;
+        //Abrimos la conexion a la base de datos
 	if($idiomas == NULL) 
 		$idiomas = getConection();
 
-	$reservacion_query = mysql_query("SELECT matricula FROM tbl_reservaciones WHERE dia = $dia and hora = $hora and salon = 424 and mes = '$mes'", $idiomas) or die(mysql_error());
+	$reservacion_query = $idiomas->query("SELECT matricula FROM tbl_reservaciones WHERE dia = '$dia' and hora = '$hora' and salon = 424 and mes = '$mes'");
 	return $reservacion_query;
 }
 
@@ -84,17 +86,17 @@ $reservacion18 = getReservacionPorHora(18, $dia, $mes);
         <?php $i = $i+1; echo $i; ?>
 </span>        </th>
                
-        <td><?php $row_reservacion8 = mysql_fetch_assoc($reservacion8); echo $row_reservacion8['matricula']; ?>&nbsp;</td>
-	<td><?php $row_reservacion9 = mysql_fetch_assoc($reservacion9); echo $row_reservacion9['matricula']; ?>&nbsp;</td>
-	<td><?php $row_reservacion10 = mysql_fetch_assoc($reservacion10); echo $row_reservacion10['matricula']; ?>&nbsp;</td>
-        <td><?php $row_reservacion11 = mysql_fetch_assoc($reservacion11); echo $row_reservacion11['matricula']; ?>&nbsp;</td>
-        <td><?php $row_reservacion12 = mysql_fetch_assoc($reservacion12); echo $row_reservacion12['matricula']; ?>&nbsp;</td>
-        <td><?php $row_reservacion13 = mysql_fetch_assoc($reservacion13); echo $row_reservacion13['matricula']; ?>&nbsp;</td>
-        <td><?php $row_reservacion14 = mysql_fetch_assoc($reservacion14); echo $row_reservacion14['matricula']; ?>&nbsp;</td>
-        <td><?php $row_reservacion15 = mysql_fetch_assoc($reservacion15); echo $row_reservacion15['matricula']; ?>&nbsp;</td>
-        <td><?php $row_reservacion16 = mysql_fetch_assoc($reservacion16); echo $row_reservacion16['matricula']; ?>&nbsp;</td>
-        <td><?php $row_reservacion17 = mysql_fetch_assoc($reservacion17); echo $row_reservacion17['matricula']; ?>&nbsp;</td>
-	<td><?php $row_reservacion18 = mysql_fetch_assoc($reservacion18); echo $row_reservacion18['matricula']; ?>&nbsp;</td>
+        <td><?php $row_reservacion8 = $reservacion8->fetch_assoc(); echo $row_reservacion8['matricula']; ?>&nbsp;</td>
+	<td><?php $row_reservacion9 = $reservacion9->fetch_assoc(); echo $row_reservacion9['matricula']; ?>&nbsp;</td>
+	<td><?php $row_reservacion10 = $reservacion10->fetch_assoc(); echo $row_reservacion10['matricula']; ?>&nbsp;</td>
+        <td><?php $row_reservacion11 = $reservacion11->fetch_assoc(); echo $row_reservacion11['matricula']; ?>&nbsp;</td>
+        <td><?php $row_reservacion12 = $reservacion12->fetch_assoc(); echo $row_reservacion12['matricula']; ?>&nbsp;</td>
+        <td><?php $row_reservacion13 = $reservacion13->fetch_assoc(); echo $row_reservacion13['matricula']; ?>&nbsp;</td>
+        <td><?php $row_reservacion14 = $reservacion14->fetch_assoc(); echo $row_reservacion14['matricula']; ?>&nbsp;</td>
+        <td><?php $row_reservacion15 = $reservacion15->fetch_assoc(); echo $row_reservacion15['matricula']; ?>&nbsp;</td>
+        <td><?php $row_reservacion16 = $reservacion16->fetch_assoc(); echo $row_reservacion16['matricula']; ?>&nbsp;</td>
+        <td><?php $row_reservacion17 = $reservacion17->fetch_assoc(); echo $row_reservacion17['matricula']; ?>&nbsp;</td>
+	<td><?php $row_reservacion18 = $reservacion18->fetch_assoc(); echo $row_reservacion18['matricula']; ?>&nbsp;</td>
       </tr>
       <?php }  ?>
     </table>
@@ -131,18 +133,6 @@ $reservacion18 = getReservacionPorHora(18, $dia, $mes);
 
 
 <?php
-mysql_free_result($reservacion8);
-mysql_free_result($reservacion9);
-mysql_free_result($reservacion10);
-mysql_free_result($reservacion11);
-mysql_free_result($reservacion12);
-mysql_free_result($reservacion13);
-mysql_free_result($reservacion14);
-mysql_free_result($reservacion15);
-mysql_free_result($reservacion16);
-mysql_free_result($reservacion17);
-mysql_free_result($reservacion18);
-
 //Cerramos la conexion
 closeConection($idiomas);
 ?>

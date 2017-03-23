@@ -1,8 +1,8 @@
-<?php?>
+<?php ?>
 <script>
 	location.href = 'index.php?p=uDes';
 </script>
-<? }
+<?
 
 //Abriendo conexion con la base de datos
 $idiomas = getConection();
@@ -18,7 +18,7 @@ $password = $_POST['password'];
 $success = 0;
 
 //Guardando la informacion en la base de datos
-if(mysql_query("UPDATE tbl_matriculas set nombre = '$nombre', ap_paterno = '$ap_paterno', ap_materno = '$ap_materno', email = '$email', password = '$password', flagPassword = 1 WHERE matricula = $matricula",$idiomas) or die(mysql_error()))
+if($idiomas->query("UPDATE tbl_matriculas set nombre = '$nombre', ap_paterno = '$ap_paterno', ap_materno = '$ap_materno', email = '$email', password = '$password', flagPassword = 1 WHERE matricula = '$matricula'"))
 	$success = 1;
 
 //Cerrando la conexion con la base de datos
@@ -30,15 +30,15 @@ if($success == 0) {
 ?>
 	<tr>
 		<td><p><strong><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">
-				Lo sentimos, no fue posible guardar la información en nuestra base de datos.<br>
-                Intenta más tarde.</font></strong></p>
+				Lo sentimos, no fue posible guardar la informaciï¿½n en nuestra base de datos.<br>
+                Intenta mï¿½s tarde.</font></strong></p>
 			<p>&nbsp;</p>
 		</td>
 	</tr>
 <? } else { ?>
 	<tr>
 		<td><p><strong><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">
-				Tu información fue guardada exitosamente.
+				Tu informaciï¿½n fue guardada exitosamente.
 			<p>&nbsp;</p>
 		</td>
 	</tr>
