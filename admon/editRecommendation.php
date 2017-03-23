@@ -4,15 +4,15 @@ $idiomas = getConection();
 $id_recomendacion = $_REQUEST['idrec'];
 //Para sacar las recomendaciones, se obtienen sus datos.
 $query_recomendacion_nombre = "SELECT * FROM tbl_recomendaciones WHERE id = ".$id_recomendacion;
-$recomendacion_nombre = mysql_query($query_recomendacion_nombre, $idiomas) or die(mysql_error());
-$recomendacion = mysql_fetch_assoc($recomendacion_nombre);
+$recomendacion_nombre = $idiomas->query($query_recomendacion_nombre);
+$recomendacion = $recomendacion_nombre->fetch_assoc();
 
 $query_recomendaciones = "SELECT * FROM tbl_recomendaciones_elementos WHERE id_recomendacion = ".$id_recomendacion;
-$recomendaciones_matriz = mysql_query($query_recomendaciones, $idiomas) or die(mysql_error());
+$recomendaciones_matriz = $idiomas->query($query_recomendaciones);
 $elementos=array();
 $name=array("id", "id_recomendacion", "id_parent", "name", "children");
 
-while ($row = mysql_fetch_assoc($recomendaciones_matriz)) {
+while ($row = $recomendaciones_matriz->fetch_assoc()) {
 	$row["children"] = array();
 	if(isset($row["id_parent"])) array_push($elementos[$row["id_parent"]]["children"], $row["id"]);
 	$elementos[$row["id"]]=$row;

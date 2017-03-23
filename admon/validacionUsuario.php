@@ -1,12 +1,16 @@
 <?php session_start(); ?>
+
 <?php require_once('../php/connections.php'); 
 
 $idiomas = getConection();
 
-$query_consultauser = sprintf("SELECT * FROM tbl_admon WHERE user = '%s' AND password = '%s'", $u_consultauser,$p_consultauser);
+$usernameR = $_REQUEST["TxUsername"];
+$passwordR = $_REQUEST["TxPassword"];
+
+$query_consultauser = "SELECT * FROM tbl_admon WHERE user = '$usernameR' AND password = '$passwordR'" ;
 $consultauser = $idiomas->query($query_consultauser);
 $row_consultauser = $consultauser->fetch_assoc();
-$totalRows_consultauser = mysql_num_rows($consultauser);
+
 ?>
 <?php 
 		$user = $_REQUEST["TxUsername"];
@@ -17,7 +21,7 @@ $totalRows_consultauser = mysql_num_rows($consultauser);
 		{
 			$_SESSION["usuario"] = $user;
 		}
-mysql_free_result($consultauser);
+
 closeConection($idiomas);
 		echo "<script type=\"text/javascript\">location.href='index.php';</script>";
 		
