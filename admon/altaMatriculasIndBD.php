@@ -8,9 +8,9 @@ $idiomas = getConection();
 
 //Obteniendo informacion del alumno ( para ver si ya esta en la base de datos
 
-$query_alumno = mysql_query("SELECT matricula FROM tbl_matriculas WHERE matricula = $matricula", $idiomas) or die(mysql_error());
-$alumno = mysql_fetch_assoc($query_alumno);
-$total_alumno = mysql_num_rows($query_alumno);
+$query_alumno = $idiomas->query("SELECT matricula FROM tbl_matriculas WHERE matricula = $matricula");
+$alumno = $query_alumno->fetch_assoc();
+$total_alumno = $query_alumno->num_rows;
 
 //Para validar si se realiza o no la transaccion
 $transactionSucceded = false;
@@ -19,12 +19,12 @@ $transactionSucceded = false;
 if($matricula != "") {
 	if($total_alumno == 0)
 	{
-		if(mysql_query("INSERT INTO tbl_matriculas (matricula, cantidad, password) VALUES (". $matricula .", ". $cantidad .", '".$matricula."')", $idiomas)) 
+		if($idiomas->query("INSERT INTO tbl_matriculas (matricula, cantidad, password) VALUES (". $matricula .", ". $cantidad .", '".$matricula."')")) 
 			$transactionSucceded = true;
 	}
 	else
 	{
-		if(mysql_query("UPDATE tbl_matriculas set cantidad = $cantidad WHERE matricula = $matricula",$idiomas)) 
+		if($idiomas->query("UPDATE tbl_matriculas set cantidad = $cantidad WHERE matricula = $matricula"))
 			$transactionSucceded = true;
 	}
 }
