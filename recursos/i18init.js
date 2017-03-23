@@ -26,7 +26,10 @@
             "puesto1": "Coordinador Academico Administrativo Laboratorio de Idiomas",
             "puesto2": "Coordinador Tecnológico Laboratorio de Idiomas",
             "puesto3": "Auxiliar Administrativo",
-            "personal": "Personal"
+            "personal": "Personal",
+            "objetivos_message_1": "• Brindar atención personalizada a los estudiantes de los cursos de inglés, idiomas y de español para extranjeros del Departamento de Lenguas Modernas, que asisten a este espacio de aprendizaje con el propósito de mejorar su desempeño.",
+            "objetivos_message_2": "• Apoyar a los docentes de idiomas en la integración de nuevas tecnologías que faciliten el aprendizaje de un idioma en sus cursos (digitalización, multimedia, etc.). ",
+            "nuestros_objetivos": "Nuestros Objetivos"
 
       
           }
@@ -53,7 +56,12 @@
             "puesto1": "Administrative coordinator of Laboratorio de Idiomas",
             "puesto2": "Technological coordinator of Laboratorio de Idiomas",
             "puesto3": "Administrative Assistant",
-            "personal": "Staff"
+            "personal": "Staff",
+            "objetivos_message_1": "• Give personalized atention to the students of the english, languages and spanish courses for foreigners of the Modern Languages Department, which come to this learning space with the purpose of improving their performance.",
+            "objetivos_message_2": "• Support the language teachers with new technology integration which makes the process of learning a language easier (digitalization, multimedia, etc.). ",
+            "nuestros_objetivos": "Our Objectives"
+
+
           }
         },
         de: {
