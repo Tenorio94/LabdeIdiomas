@@ -1,8 +1,8 @@
 <?php
-$dia = $HTTP_GET_VARS["d"];
-$mes = $HTTP_GET_VARS["m"];
-$sem = $HTTP_GET_VARS["s"];
-$diasem = $HTTP_GET_VARS["ds"];
+$dia = $_GET["d"];
+$mes = $_GET["m"];
+$sem = $_GET["s"];
+$diasem = $_GET["ds"];
 
 $idiomas = getConection();
 
@@ -72,9 +72,9 @@ $reservacion14 = getReservacionPorHora(14, $dia, $mes);
       <th scope="row"> <input type="submit" name="Submit" value="Aceptar" onClick="valida();">
       </th>
       <input type="hidden" name="hiddensalon" value="424">
-      <input type="hidden" name="hiddendia" value="<?php echo $HTTP_GET_VARS['d']; ?>">
-      <input type="hidden" name="hiddenmes" value="<?php echo $HTTP_GET_VARS['m']; ?>">
-	   <input type="hidden" name="hiddensemana" value="<?php echo $HTTP_GET_VARS['s']; ?>">
+      <input type="hidden" name="hiddendia" value="<?php echo $_GET['d']; ?>">
+      <input type="hidden" name="hiddenmes" value="<?php echo $_GET['m']; ?>">
+	   <input type="hidden" name="hiddensemana" value="<?php echo $_GET['s']; ?>">
       <td> <div align="center"> </div> <input type="hidden" name="MM_insert" value="form3">
   </form>
   </td>

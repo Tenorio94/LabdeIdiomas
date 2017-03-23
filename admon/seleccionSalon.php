@@ -1,8 +1,8 @@
 <?php
-	$dia = $HTTP_GET_VARS["d"];
-	$mes = $HTTP_GET_VARS["m"];
-	$sem = $HTTP_GET_VARS["s"];
-	$diasem = $HTTP_GET_VARS["ds"];
+	$dia = $_GET["d"];
+	$mes = $_GET["m"];
+	$sem = $_GET["s"];
+	$diasem = $_GET["ds"];
 ?>
 <table align="center" class="contenido">
 	<tr>
