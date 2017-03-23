@@ -3,14 +3,14 @@
 $idiomas = getConection();
 
 //Obteniendo informacion de las semanas
-$semanas_query = mysql_query("SELECT semana FROM tbl_semanas WHERE id = 12", $idiomas) or die(mysql_error());
-$semana = mysql_fetch_assoc($semanas_query);
+$semanas_query = $idiomas->query("SELECT semana FROM tbl_semanas WHERE id = 12");
+$semana = $semanas_query->fetch_assoc();
 
 //Borrando la primer semana de la base de datos
-$delete_query = mysql_query("DELETE FROM tbl_semanas WHERE id < 7", $idiomas) or die(mysql_error());
+$delete_query = $idiomas->query("DELETE FROM tbl_semanas WHERE id < 7");
 
 //Ahora la segunda semana debe convertirse en la primer semana
-$cambio_semana_query = mysql_query("UPDATE tbl_semanas SET id = (id - 6)", $idiomas) or die(mysql_error());
+$cambio_semana_query = $idiomas->query("UPDATE tbl_semanas SET id = (id - 6)");
 
 //Obteniendo la informacion de la forma
 $lunes = $_POST["lunes"];
@@ -44,17 +44,17 @@ $semana_nueva = $semana1 + 1;
 
 //Insertar los registros de la nueva semana
 $in1 = "INSERT INTO tbl_semanas (id, dia, mes, semana, diasem, asueto) VALUES (7, $lunes, '$lunesm', $semana_nueva, 'lunes', $lunes_asueto)";
-$qin1 = mysql_query($in1, $idiomas) or die(mysql_error());
+$qin1 = $idiomas->query($in1);
 $in2 = "INSERT INTO tbl_semanas (id, dia, mes, semana, diasem, asueto) VALUES (8, $martes, '$martesm', $semana_nueva, 'martes', $martes_asueto)";
-$qin2 = mysql_query($in2, $idiomas) or die(mysql_error());
+$qin2 = $idiomas->query($in2);
 $in3 = "INSERT INTO tbl_semanas (id, dia, mes, semana, diasem, asueto) VALUES (9, $miercoles, '$miercolesm', $semana_nueva , 'miercoles', $miercoles_asueto)";
-$qin3 = mysql_query($in3, $idiomas) or die(mysql_error());
+$qin3 = $idiomas->query($in3);
 $in4 = "INSERT INTO tbl_semanas (id, dia, mes, semana, diasem, asueto) VALUES (10, $jueves , '$juevesm', $semana_nueva , 'jueves', $jueves_asueto)";
-$qin4 = mysql_query($in4, $idiomas) or die(mysql_error());
+$qin4 = $idiomas->query($in4);
 $in5 = "INSERT INTO tbl_semanas (id, dia, mes, semana, diasem, asueto) VALUES (11, $viernes, '$viernesm', $semana_nueva, 'viernes', $viernes_asueto)";
-$qin5 = mysql_query($in5, $idiomas) or die(mysql_error());
+$qin5 = $idiomas->query($in5);
 $in6 = "INSERT INTO tbl_semanas (id, dia, mes, semana, diasem, asueto) VALUES (12, $sabado, '$sabadom', $semana_nueva, 'sabado', $sabado_asueto)";
-$qin6 = mysql_query($in6, $idiomas) or die(mysql_error());
+$qin6 = $idiomas->query($in6);
 
 //Cerrando conexion
 closeConection($idiomas);
