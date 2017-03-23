@@ -4,14 +4,16 @@ $mes = $HTTP_GET_VARS["m"];
 $sem = $HTTP_GET_VARS["s"];
 $diasem = $HTTP_GET_VARS["ds"];
 
+$idiomas = getConection();
 
 function getReservacionPorHora($hora, $dia, $mes)
 {
+  global $idiomas;
 	//Abrimos la conexion a la base de datos
 	if($idiomas == NULL) 
 		$idiomas = getConection();
 
-	$reservacion_query = mysql_query("SELECT matricula FROM tbl_reservaciones WHERE dia = $dia and hora = $hora and salon = 424 and mes = '$mes'", $idiomas) or die(mysql_error());
+	$reservacion_query = $idiomas->query("SELECT matricula FROM tbl_reservaciones WHERE dia = $dia and hora = $hora and salon = 424 and mes = '$mes'");
 	return $reservacion_query;
 }
 
@@ -45,11 +47,11 @@ $reservacion14 = getReservacionPorHora(14, $dia, $mes);
         <th bgcolor="#CCFF66" scope="row"> 
           <?php $i = $i+1; echo $i ?>
         </th>
-        <td><?php $row_reservacion10 = mysql_fetch_assoc($reservacion10); echo $row_reservacion10['matricula']; ?>&nbsp;</td>
-        <td><?php $row_reservacion11 = mysql_fetch_assoc($reservacion11); echo $row_reservacion11['matricula']; ?>&nbsp;</td>
-        <td><?php $row_reservacion12 = mysql_fetch_assoc($reservacion12); echo $row_reservacion12['matricula']; ?>&nbsp;</td>
-        <td><?php $row_reservacion13 = mysql_fetch_assoc($reservacion13); echo $row_reservacion13['matricula']; ?>&nbsp;</td>
-        <td><?php $row_reservacion14 = mysql_fetch_assoc($reservacion14); echo $row_reservacion14['matricula']; ?>&nbsp;</td>
+        <td><?php $row_reservacion10 = $reservacion10->fetch_assoc(); echo $row_reservacion10['matricula']; ?>&nbsp;</td>
+        <td><?php $row_reservacion11 = $reservacion11->fetch_assoc(); echo $row_reservacion11['matricula']; ?>&nbsp;</td>
+        <td><?php $row_reservacion12 = $reservacion12->fetch_assoc(); echo $row_reservacion12['matricula']; ?>&nbsp;</td>
+        <td><?php $row_reservacion13 = $reservacion13->fetch_assoc(); echo $row_reservacion13['matricula']; ?>&nbsp;</td>
+        <td><?php $row_reservacion14 = $reservacion14->fetch_assoc(); echo $row_reservacion14['matricula']; ?>&nbsp;</td>
        
       </tr>
       <?php }  ?>
@@ -81,12 +83,7 @@ $reservacion14 = getReservacionPorHora(14, $dia, $mes);
 </div>
 <?php
 
-mysql_free_result($reservacion10);
-mysql_free_result($reservacion11);
-mysql_free_result($reservacion12);
-mysql_free_result($reservacion13);
-mysql_free_result($reservacion14);
-
 //Cerramos la conexion
+global $idiomas;
 closeConection($idiomas);
 ?>
