@@ -5,7 +5,7 @@
 <?php
 $idiomas = getConection();
 
-mysql_query("INSERT INTO tbl_recomendaciones (name) VALUES ('Nuevo programa de recomendaciones')", $idiomas);
+$idiomas->query("INSERT INTO tbl_recomendaciones (name) VALUES ('Nuevo programa de recomendaciones')");
 //Cerrando la conexion con la base de datos
 closeConection($idiomas);
 ?>

@@ -15,11 +15,11 @@ require 'PHPMailer-master/PHPMailerAutoload.php';
 $id_recomendacion = $_REQUEST['idrec'];
 
 $query_recomendaciones = "SELECT * FROM tbl_recomendaciones_elementos WHERE id_recomendacion = ".$id_recomendacion;
-$recomendaciones_matriz = mysql_query($query_recomendaciones, $idiomas) or die(mysql_error());
+$recomendaciones_matriz = $idiomas->query($query_recomendaciones);
 $elementos=array();
 $name=array("id", "id_recomendacion", "id_parent", "name", "children");
 
-while ($row = mysql_fetch_assoc($recomendaciones_matriz)) {
+while ($row = $recomendaciones_matriz->fetch_assoc()) {
 	$row["children"] = array();
 	if($row["id_parent"]!=-1) array_push($elementos[$row["id_parent"]]["children"], $row["id"]);
 	$row["show_recommendation"] = false;
@@ -78,8 +78,8 @@ function getSugerencias($id) {
 	global $nivel;
 	if($elementos[$id]["show_element"]==true) {
 		$query_sugerencia = "SELECT * FROM tbl_sugerencias WHERE id_elemento='".$id ."' AND nivel='" .$nivel. "'";
-		$sugerencia = mysql_query($query_sugerencia, $idiomas) or die(mysql_error());
-		$row_sugerencia = mysql_fetch_assoc($sugerencia);
+		$sugerencia = $idiomas->query($query_sugerencia);
+		$row_sugerencia = $sugerencia->fetch_assoc();
 		$mail->Body .= "<li>" . $elementos[$id]["name"];
 		if($elementos[$id]["show_recommendation"]==true) {
 			if(!isset($row_sugerencia["recommendation"])) $row_sugerencia["recommendation"] = "Lo sentimos, por el momento no tenemos sugerencias sobre este tema.";

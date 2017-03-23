@@ -2,14 +2,14 @@
 $idiomas = getConection();
 	//Para sacar las horas acreditadas, se obtienen las horas acumuladas de todas las materias.
 	$query_horas = "SELECT * FROM tbl_horas WHERE matricula = ".$_SESSION['user'];
-	$horas_matriz = mysql_query($query_horas, $idiomas) or die(mysql_error());
+	$horas_matriz = $idiomas->query($query_horas);
 	
-	// Para sacar la última fecha de actualización.
+	// Para sacar la ï¿½ltima fecha de actualizaciï¿½n.
 	$query_fecha = "SELECT DATE_FORMAT(fecha, '%e, %M %Y a las %H:%i:%s') FROM tbl_fecha
  ORDER BY fecha DESC
 LIMIT 1;";
-	$fecha_matriz = mysql_query($query_fecha, $idiomas) or die(mysql_error());
-	$fecha = mysql_fetch_array($fecha_matriz);
+	$fecha_matriz = $idiomas->query($query_fecha);
+	$fecha = $fecha_matriz->fetch_assoc();
 	
 $periodo_output = array("Primer", "Segundo", "Tercer", "Cuarto", "Quinto", "Sexto", "Septimo", "Octavo", "Noveno", "Decimo");
 ?>
@@ -25,7 +25,7 @@ $periodo_output = array("Primer", "Segundo", "Tercer", "Cuarto", "Quinto", "Sext
 				$lastIdioma="ninguno";
 				$lastSeg=0;
 				
-				while($horas_totales = mysql_fetch_assoc($horas_matriz)) { //Se empieza a mostrar las horas
+				while($horas_totales = $horas_matriz->fetch_assoc()) { //Se empieza a mostrar las horas
 						
 						$periodo = $horas_totales['periodo'];
 				
@@ -55,12 +55,12 @@ $periodo_output = array("Primer", "Segundo", "Tercer", "Cuarto", "Quinto", "Sext
 						$horas=((3*($seg)/2)/3600);
 						$horas= number_format( $horas, $decimals = 1 );
 						?>
-					•  <? echo $periodo_output[$horas_totales['periodo']] ?> periodo <? echo  getIdioma($horas_totales['idioma']) ?>: <? echo  $horas_totales['horas'] ?>, equivalente a <b><? echo  $horas ?></b>	sesiones.			  <br />
+					ï¿½  <? echo $periodo_output[$horas_totales['periodo']] ?> periodo <? echo  getIdioma($horas_totales['idioma']) ?>: <? echo  $horas_totales['horas'] ?>, equivalente a <b><? echo  $horas ?></b>	sesiones.			  <br />
 			    <br /> <?
 				}
 				?>
 				
-					• La última fecha de actualización fue el <? echo  $fecha[0] ?>. 
+					ï¿½ La ï¿½ltima fecha de actualizaciï¿½n fue el <? echo  $fecha[0] ?>. 
 				</div>
 		  </td>
 		</tr>

@@ -3,6 +3,8 @@
 # Type="MYSQL"
 # HTTP="true"
 
+date_default_timezone_set("America/Monterrey");
+
 function getConection() {
 	$hostname_idiomas = "localhost";
 	$database_idiomas = "wlmreservacion";
@@ -28,7 +30,7 @@ function getConection() {
 // 	$password_idiomas = "landpeac";
 // 	$idiomas = mysql_pconnect($hostname_idiomas, $username_idiomas, $password_idiomas) or die(mysql_error());
 // 	mysql_select_db($database_idiomas, $idiomas);
-// 	date_default_timezone_set("America/Monterrey");
+// 	
 	
 // 	return $idiomas;
 // }

@@ -11,8 +11,8 @@ function validLoguedUserToInclude($page) {
 
 function hasChangedPassword () {
 	$idiomas = getConection();
-	$consulta_mat = mysql_query("SELECT * FROM tbl_matriculas WHERE matricula = " . $_SESSION['user'] ."", $idiomas) or die(mysql_error());
-	$matricula = mysql_fetch_array($consulta_mat);
+	$consulta_mat = $idiomas->query("SELECT * FROM tbl_matriculas WHERE matricula = " . $_SESSION['user'] ."");
+	$matricula = $consulta_mat->fetch_assoc();
 	if($matricula['flagPassword'] == 1) {
 		return true;
 	}

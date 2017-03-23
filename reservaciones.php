@@ -1,4 +1,4 @@
-<?php
+<?php ?>
 <?
 if(($_SESSION['user'] == null && $_SESSION['user'] == '') || !hasChangedPassword()) { ?>
 <script>
@@ -6,10 +6,10 @@ if(($_SESSION['user'] == null && $_SESSION['user'] == '') || !hasChangedPassword
 </script>
 <? }
 $idiomas = getConection();
-//Para sacar las reservaciones próximas
-	$query_reservaciones_semanas = "SELECT * FROM tbl_reservaciones WHERE matricula = ".$_SESSION['user']." AND semana IN ( SELECT DISTINCT semana FROM tbl_semanas)";
-	$reservaciones_array = mysql_query($query_reservaciones_semanas, $idiomas) or die(mysql_error());
-	$num_reservaciones = mysql_num_rows($reservaciones_array);
+//Para sacar las reservaciones prï¿½ximas
+	//$query_reservaciones_semanas = "SELECT * FROM tbl_reservaciones WHERE matricula = ".$_SESSION['user']." AND semana IN ( SELECT DISTINCT semana FROM tbl_semanas)";
+	$reservaciones_array = $idiomas->query("SELECT * FROM tbl_reservaciones WHERE matricula = ".$_SESSION['user']." AND semana IN ( SELECT DISTINCT semana FROM tbl_semanas)");
+	//$num_reservaciones = mysql_num_rows($reservaciones_array);
 ?>
 
 <div class="title">Proceso de Reservaciones</div>
@@ -19,12 +19,12 @@ $idiomas = getConection();
 			<div style="width:600px"  class="content">
 			<br>
 			<div align="justify">
-					A continuación se detalla el procedimiento para realizar tu reservación para el laboratorio de idiomas.
-				<br /><br />
-					<li>Selecciona el día de la semana.</li> 
-				<li>Selecciona el salón 424.</li>
-				<!--<li>Selecciona el salón 422.</li>-->
-				<li>Selecciona la hora en el menú deslizante y oprime el botón "Aceptar".</li> 
+					A continuaciï¿½n se detalla el procedimiento para realizar tu reservaciï¿½n para el laboratorio de idiomas.
+				<br /><br />	
+					<li>Selecciona el dï¿½a de la semana.</li> 
+				<li>Selecciona el salï¿½n 424.</li>
+				<!--<li>Selecciona el salï¿½n 422.</li>-->
+				<li>Selecciona la hora en el menï¿½ deslizante y oprime el botï¿½n "Aceptar".</li> 
 		 
 				<br /><br /><br /><br />
 				<br /><br /><br /><br />
@@ -36,20 +36,20 @@ $idiomas = getConection();
 		<td align="left">
 			<div class="bordeAzul content" style="width:250px; height:350px; margin:10px; overflow:auto;">
 				<br>
-				<? if ($num_reservaciones > 0) {?>
-					&nbsp;&nbsp;Tus reservaciones próximas:
+				<? if ($reservaciones_array->num_rows > 0) {?>
+					&nbsp;&nbsp;Tus reservaciones prï¿½ximas:
 					<br><br>
 					
-					<? while ($reservacion = mysql_fetch_array($reservaciones_array)) { ?>
+					<? while ($reservacion = $reservaciones_array->fetch_assoc()) { ?>
 						<li><? echo $reservacion['dia'] . ' ' . $reservacion['mes'] ;  ?><br>
 							&nbsp;&nbsp;&nbsp;&nbsp;Hora: <? echo $reservacion['hora']; ?> <br>
-							&nbsp;&nbsp;&nbsp;&nbsp;Salón: <? echo $reservacion['salon']; ?> <br>
+							&nbsp;&nbsp;&nbsp;&nbsp;Salï¿½n: <? echo $reservacion['salon']; ?> <br>
 							&nbsp;&nbsp;&nbsp;&nbsp;<a onClick="return confirmarCancelacion();" href="index.php?p=cancelacion&i=<? echo $reservacion['id']; ?>&s=<? echo $reservacion['semana']; ?>">Cancelar</a>
 						</li> 
 						<br><br>
 					<? } ?>
 				<? } else { ?>
-					No tienes reservaciones próximas.
+					No tienes reservaciones prï¿½ximas.
 				<? } ?>
 			</div>
 		</td>
@@ -58,7 +58,7 @@ $idiomas = getConection();
 <? closeConection($idiomas);?>
 <script>
 	function confirmarCancelacion() {
-		var ok = confirm("¿Deseas continuar con la cancelación de tu reservación?");
+		var ok = confirm("ï¿½Deseas continuar con la cancelaciï¿½n de tu reservaciï¿½n?");
 		if(ok) {
 			return true;
 		}

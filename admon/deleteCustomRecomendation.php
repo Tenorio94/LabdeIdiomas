@@ -6,7 +6,7 @@
 $idiomas = getConection();
 $id_recomendacion = $_REQUEST['idrec'];
 
-mysql_query("DELETE FROM tbl_recomendaciones WHERE id=".$id_recomendacion, $idiomas);
+$idiomas->query("DELETE FROM tbl_recomendaciones WHERE id=".$id_recomendacions);
 //Cerrando la conexion con la base de datos
 closeConection($idiomas);
 ?>
