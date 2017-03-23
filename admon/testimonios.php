@@ -5,7 +5,7 @@
 	if(inserted == "1")
 		echo "El testimonio fue dado de alta correctamente";
 	else if(inserted == "0")
-		echo "Hubo un error al dar de alta el testimonio, por favor, intente más tarde.";
+		echo "Hubo un error al dar de alta el testimonio, por favor, intente mï¿½s tarde.";
 ?>
 	<div align="center" style="width:90%; text-align:right" class="content">
 		<img src="../imagenes/alta.jpg" /><a href="index.php?p=atestimonio">Dar de alta un testimonio</a>
@@ -21,7 +21,7 @@
 			<td align="center" width="70px" class="trheader">Fecha</td>
 			<td align="center" width="100px;" class="trheader">Alumno</td>
 			<td align="center" width="150px" class="trheader">Foto/Video</td>
-			<td align="center" width="450px" class="trheader">Descripción</td>
+			<td align="center" width="450px" class="trheader">Descripciï¿½n</td>
 			<td width="100px" class="trheader">&nbsp;</td>
 		</tr>
 <?
@@ -29,12 +29,12 @@
 	$idiomas = getConection();
 	
 	//Obteniendo todos los registros de la base de datos
-	$query_testimonios = mysql_query("SELECT * FROM tbl_videos ORDER BY id DESC", $idiomas) or die(mysql_error());
+	$query_testimonios = $idiomas->query("SELECT * FROM tbl_videos ORDER BY id DESC");
 	//Cerramos la conexion
 	closeConection($idiomas);
 	
 	//Por cada video en la base de datos, desplegaremos 
-	while($testimonio = mysql_fetch_array($query_testimonios)) {
+	while($testimonio = $query_testimonios->fetch_assoc()) {
 	
 	//Darle formato a la fecha
 	$exploded_fecha = explode('-', $testimonio['fecha']); 
@@ -51,7 +51,7 @@
 				<td align="center" class="trBottonBorder">
 					<object id="MediaPlayer1" width="180" height="200" classid="CLSID:22D6F312-B0F6-11D0-94AB-0080C74C7E95"
 						codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701"
-						standby="Loading Microsoft® Windows® Media Player components..."
+						standby="Loading Microsoftï¿½ Windowsï¿½ Media Player components..."
 						type="application/x-oleobject" align="middle">
 						<param name="FileName" value="testimonios/<? echo $testimonio['archivo']; ?>">
 						<param name="ShowStatusBar" value="True">
@@ -82,7 +82,7 @@
 </table>
 <script>
 	function confirmarBaja() {
-		var ok = confirm("¿Deseas eliminar el testimonio seleccionado?");
+		var ok = confirm("ï¿½Deseas eliminar el testimonio seleccionado?");
 		if(ok) {
 			return true;
 		}
