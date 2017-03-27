@@ -23,7 +23,7 @@
     <?php
 
     // Create connection
-    $con=mysqli_connect("localhost","wlmuser1","landpeac","wlmreservacion");
+    $idiomas = getConection();
 
     // Check connection
     if (mysqli_connect_errno()) {
@@ -54,15 +54,12 @@
 
     <?php
 
-      	$result = mysqli_query($con,"SELECT * FROM resource WHERE Tags LIKE '%".$tema ."%'");
+      	$result = $idiomas->query("SELECT * FROM resource WHERE Tags LIKE '%".$tema ."%'");
         $resultado = array();
           // Nmero de renglones del resultado de la consulta
           
         // Realiza el fetch al arreglo, con el modo asociativo y de ndice
-        for ($i = 0; $i < $result->num_rows; $i++)
-          $resultado[$i] = mysqli_fetch_array($result, MYSQL_BOTH);
-
-        while($resource = mysqli_fetch_array($result)) {
+        while($resource = $result->fetch_assoc()) {
 
           if ($resource['year'] == "") {
             $resource['year'] = "<i>No hay informaci&oacute;n</i>";

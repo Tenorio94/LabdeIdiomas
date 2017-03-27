@@ -1,7 +1,4 @@
 <?php ?>
-<script>
-	location.href = 'index.php?p=uDes';
-</script>
 <?
 
 //Abriendo conexion con la base de datos
@@ -31,14 +28,14 @@ if($success == 0) {
 	<tr>
 		<td><p><strong><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">
 				Lo sentimos, no fue posible guardar la informaci�n en nuestra base de datos.<br>
-                Intenta m�s tarde.</font></strong></p>
+                Intenta más tarde.</font></strong></p>
 			<p>&nbsp;</p>
 		</td>
 	</tr>
 <? } else { ?>
 	<tr>
 		<td><p><strong><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">
-				Tu informaci�n fue guardada exitosamente.
+				Tu información fue guardada exitosamente.
 			<p>&nbsp;</p>
 		</td>
 	</tr>
