@@ -41,17 +41,40 @@ $user = $_SESSION['user'];
 						</div>
 						</td>
 						<td width="500px">
-						<div style="width:100%;font-size:12px;margin-right:10px; text-align:right; margin-top:4px; letter-spacing:2px;">
-								<a onclick="location.href='index.php?p=eperfil'" style="cursor:pointer;"><? echo $_SESSION['user']; ?></a>
+						<div>
+							<span class="flag-container">
+								<span id="united-kingdom">
+									<input type="image" src="imagenes/banderas/gb.png" style="width:30px; height: 19px;" />
+								</span>
+								<span id="spain">
+									<input type="image" src="imagenes/banderas/es.png"/>
+								</span>
+								<span id="france">
+									<input type="image" src="imagenes/banderas/fr.png"/>
+								</span>
+								<span id="germany">
+									<input type="image" src="imagenes/banderas/de.png"/>
+								</span>
+								<span id="korea">
+									<input type="image" src="imagenes/banderas/kr.png"/>
+								</span>
+								
+							</span>
+						<span style="width:100%;font-size:12px;margin-right:10px; text-align:right; margin-top:4px; letter-spacing:2px;">
+							<a onclick="location.href='index.php?p=eperfil'" style="cursor:pointer;"><? echo $_SESSION['user']; ?></a>
 								&nbsp; &nbsp; | &nbsp; &nbsp;
-								<? if($user == null ) { ?>
-									<a onclick="showLoginDiv(true);" style="cursor:pointer;" class="multilingual">entrar</a>
+							<? if($user == null ) { ?>
+							<a onclick="showLoginDiv(true);" style="cursor:pointer;" class="multilingual">entrar</a>
 								<? } else { ?>
-									<a onclick="location.href='index.php?p=salir'" style="cursor:pointer;" class="multilingual">salir</a>
+							<a onclick="location.href='index.php?p=salir'" style="cursor:pointer;" class="multilingual">salir</a>
 								<? }  ?>
 								&nbsp; &nbsp; &nbsp; &nbsp;
+						</span>
 						</div>
 						</td>
+						
+							
+
 					</tr>
 					</tbody>
 				</table>
