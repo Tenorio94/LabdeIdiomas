@@ -16,7 +16,7 @@ if(!isset($_SESSION['user'])) {
 }
 $user = $_SESSION['user'];
 ?>
-<html lang="en">
+<html>
 	<head>
 		<title>LABDEI :: <?php echo date('y'); ?></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -43,20 +43,20 @@ $user = $_SESSION['user'];
 						<td width="500px">
 						<div>
 							<span class="flag-container">
-								<span id="united-kingdom">
-									<input type="image" src="imagenes/banderas/gb.png" style="width:30px; height: 19px;" />
+								<span>
+									<input type="image" id="united-kingdom-button" src="imagenes/banderas/gb.png" style="width:30px; height: 19px;" onclick="changeLanguage(this.id)" />
 								</span>
-								<span id="spain">
-									<input type="image" src="imagenes/banderas/es.png"/>
+								<span>
+									<input type="image" id="spain-button" src="imagenes/banderas/es.png" onclick="changeLanguage(this.id)"/>
 								</span>
-								<span id="france">
-									<input type="image" src="imagenes/banderas/fr.png"/>
+								<span>
+									<input type="image" id="france-button" src="imagenes/banderas/fr.png" onclick="changeLanguage(this.id)"/>
 								</span>
-								<span id="germany">
-									<input type="image" src="imagenes/banderas/de.png"/>
+								<span>
+									<input type="image" id="germany-button" src="imagenes/banderas/de.png" onclick="changeLanguage(this.id)"/>
 								</span>
-								<span id="korea">
-									<input type="image" src="imagenes/banderas/kr.png"/>
+								<span>
+									<input type="image" id="korea-button" src="imagenes/banderas/kr.png" onclick="changeLanguage(this.id)"/>
 								</span>
 								
 							</span>
@@ -258,6 +258,14 @@ $user = $_SESSION['user'];
 			<!-- TERMINA SECCION DE PIE DE PAGINA -->
 		</div>
 		</center>
+		<script>
+			if(window.sessionStorage.getItem('lang') == ""){
+				document.documentElement.lang = 'es';
+			}else{
+				document.documentElement.lang = window.sessionStorage.getItem('lang');
+			}
+			window.sessionStorage.setItem('lang', document.documentElement.lang);
+		</script>
 		<script src="recursos/i18init.js"></script>
 		<script>
 			Utils.applyMultilingualLabels('.bigContainer', '.multilingual');
@@ -337,4 +345,32 @@ function verificaMat()
       }
 	  return IsNumber;
 }
+
+function changeLanguage(lang){
+	/*if (typeof(Storage) !== "undefined") {
+	    alert("localstorage support")
+	} else {
+	    // Sorry! No Web Storage support..
+	}*/
+	switch(lang) {
+		case 'united-kingdom-button':
+			window.sessionStorage.setItem('lang', 'en');
+			location.reload();
+			break;
+		case 'spain-button':
+			window.sessionStorage.setItem('lang', 'es');
+			location.reload();
+			break;
+		case 'germany-button':
+			document.documentElement.lang = 'de';
+			break;
+		case 'france-button':
+			document.documentElement.lang = 'en';
+			break;
+		case 'korea-button':
+			document.documentElement.lang = 'en';
+			break;
+	}
+}
+
 </script>
