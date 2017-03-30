@@ -355,11 +355,17 @@ function changeLanguage(lang){
 	switch(lang) {
 		case 'united-kingdom-button':
 			window.sessionStorage.setItem('lang', 'en');
-			location.reload();
+			if (document.documentElement.lang !== 'en')
+			{
+				location.reload();
+			}
 			break;
 		case 'spain-button':
 			window.sessionStorage.setItem('lang', 'es');
-			location.reload();
+			if (document.documentElement.lang !== "es")
+			{
+				location.reload();
+			}
 			break;
 		case 'germany-button':
 			document.documentElement.lang = 'de';
