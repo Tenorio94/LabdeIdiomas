@@ -1,5 +1,3 @@
-document.documentElement.lang = 'es';
-
 function verificaMat()
 {
   strMat = document.form3.mat.value;

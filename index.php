@@ -259,7 +259,7 @@ $user = $_SESSION['user'];
 		</div>
 		</center>
 		<script>
-			if(window.sessionStorage.getItem('lang') == ""){
+			if(window.sessionStorage.getItem('lang') == 'null'){
 				document.documentElement.lang = 'es';
 			}else{
 				document.documentElement.lang = window.sessionStorage.getItem('lang');
