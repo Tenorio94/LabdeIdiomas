@@ -5,17 +5,19 @@ if(($_SESSION['user'] == null && $_SESSION['user'] == '') || !hasChangedPassword
 </script>
 <? }
 //agarro las variables que traigo de la pagina pasada.
+$idiomas = getConection();
  $dia = $_REQUEST["d"];
  $mes = $_REQUEST["m"];
  $sem = $_REQUEST["s"]; 
  
  function getReservacionPorHora($hora, $dia, $mes)
 {
+  global $idiomas;
 	//Abrimos la conexion a la base de datos
 	if($idiomas == NULL) 
 		$idiomas = getConection();
 
-	$reservacion_query = $idiomas->query("SELECT matricula FROM tbl_reservaciones WHERE dia = $dia and hora = $hora and salon = 422 and mes = '$mes'");
+	$reservacion_query = $idiomas->query("SELECT matricula FROM tbl_reservaciones WHERE dia = $dia and hora = $hora and salon = 423 and mes = '$mes'");
 	return $reservacion_query;
 }
 
@@ -135,5 +137,6 @@ $reservacion18 = getReservacionPorHora(18, $dia, $mes);
 <?php
 
 //Cerramos la conexion
+global $idiomas;
 closeConection($idiomas);
 ?>

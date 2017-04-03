@@ -7,6 +7,10 @@ if(($_SESSION['user'] == null && $_SESSION['user'] == '') || !hasChangedPassword
 	$dia = $_REQUEST['d'];
 	$mes = $_REQUEST["m"];
 	$sem = $_REQUEST["s"];
+
+	$idiomas = getConection();
+
+	$salones_query = $idiomas->query("SELECT * FROM tbl_salones;");
 ?>
 
 <style type="text/css">
@@ -33,32 +37,27 @@ if(($_SESSION['user'] == null && $_SESSION['user'] == '') || !hasChangedPassword
 <table align="center">
 	<tr>
 		<td class="style2">
-			Paso # 2: Selecciona el salón.
+			Paso # 2: Selecciona el salï¿½n.
 		</td>
 	</tr>
 </table>
 <br>
-
 	<table width="300" border="1" align="center" bordercolor="#336699" bgcolor="#FFFFFF">
     	<tr bordercolor="#336699">
-      		<!--<td align="center">
-				<p class="style14 style18">
-					<a href="index.php?p=salon423&d=<?php echo $dia .'&m=' . $mes . '&s=' . $sem;?>"><strong> Sal&oacute;n 422</strong></a>
-				</p>
-        		<p class="style19"><br>
-            		<span class="style15">
-						<a href="index.php?p=salon423&d=<?php echo $dia .'&m=' . $mes . '&s=' . $sem;?>"><strong>Horario </strong></a>
-				<br>
-          		<a href="index.php?p=salon423&d=<?php echo $dia .'&m=' . $mes . '&s=' . $sem;?>"><strong>8:00 a 18:00</strong></a></span></p>
-			</td>-->
-      		<td align="center">
-	     		<p class="style19"><a href="index.php?p=salon424&d=<?php echo $dia .'&m=' . $mes . '&s=' . $sem;?>"><strong> Sal&oacute;n 424 </strong></a></p>
-	    		<p class="style19"><br>
-             		<span class="style17">
-					<a href="index.php?p=salon424&d=<?php echo $dia .'&m=' . $mes . '&s=' . $sem; ?>">Horario </a><br>
-             		<a href="index.php?p=salon424&d=<?php echo $dia .'&m=' . $mes . '&s=' . $sem;?>">8:00 a 18:00</a></span>
-         		</p>
-			</td>
+		<?php
+			while ($row_salonesquery = $salones_query->fetch_assoc()) {
+				if ($row_salonesquery["isActive"]) { ?>
+					<td align="center">
+						<p class="style19"><a href="index.php?p=salon<?php $row_salonesquery["idSalon"]?>&d=<?php echo $dia .'&m=' . $mes . '&s=' . $sem;?>"><strong> Sal&oacute;n <?php echo $row_salonesquery["idSalon"]?> </strong></a></p>
+						<p class="style19"><br>
+							<span class="style17">
+							<a href="index.php?p=<?php $row_salonesquery["idSalon"]?>&d=<?php echo $dia .'&m=' . $mes . '&s=' . $sem; ?>">Horario </a><br>
+							<a href="index.php?p=<?php $row_salonesquery["idSalon"]?>&d=<?php echo $dia .'&m=' . $mes . '&s=' . $sem;?>">8:00 a 18:00</a></span>
+						</p>
+					</td>
+		<?php 	}
+			} ?>
+      		
     	</tr>
 	</table>
 
