@@ -18,8 +18,8 @@ $user = $_SESSION['usuario'];
 	<head>
 		<title>LABDEI :: <?php echo date('Y'); ?></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-		<link href="../recursos/template.css" rel="stylesheet" type="text/css" />
-		<link href="../recursos/labdei.js" type="text/javascript" />
+		<link href="../recursos/css/template.css" rel="stylesheet" type="text/css" />
+		<link href="../recursos/js/labdei.js" type="text/javascript" />
 	</head>
 	
 	<body bgcolor="#CCCCCC" style="text-align:center" leftmargin="0px" rightmargin="0px" topmargin="0px" margin-bottom="0px">
