@@ -4,7 +4,7 @@ $idiomas = getConection();
 	$query_horas = "SELECT * FROM tbl_horas WHERE matricula = ".$_SESSION['user'];
 	$horas_matriz = $idiomas->query($query_horas);
 	
-	// Para sacar la �ltima fecha de actualizaci�n.
+	// Para sacar la última fecha de actualización.
 	$query_fecha = "SELECT DATE_FORMAT(fecha, '%e, %M %Y a las %H:%i:%s') FROM tbl_fecha
  ORDER BY fecha DESC
 LIMIT 1;";
@@ -55,12 +55,12 @@ $periodo_output = array("Primer", "Segundo", "Tercer", "Cuarto", "Quinto", "Sext
 						$horas=((3*($seg)/2)/3600);
 						$horas= number_format( $horas, $decimals = 1 );
 						?>
-					�  <? echo $periodo_output[$horas_totales['periodo']] ?> periodo <? echo  getIdioma($horas_totales['idioma']) ?>: <? echo  $horas_totales['horas'] ?>, equivalente a <b><? echo  $horas ?></b>	sesiones.			  <br />
+					  <? echo $periodo_output[$horas_totales['periodo']] ?> periodo <? echo  getIdioma($horas_totales['idioma']) ?>: <? echo  $horas_totales['horas'] ?>, equivalente a <b><? echo  $horas ?></b>	sesiones.			  <br />
 			    <br /> <?
 				}
 				?>
 				
-					� La �ltima fecha de actualizaci�n fue el <? $string = join(',', $fecha); echo  $string; ?>. 
+					 La última fecha de actualización fue el <? $string = join(',', $fecha); echo  $string; ?>. 
 				</div>
 		  </td>
 		</tr>
