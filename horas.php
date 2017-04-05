@@ -17,10 +17,16 @@ $periodo_output = array("Primer", "Segundo", "Tercer", "Cuarto", "Quinto", "Sext
 <div class="title">Sesiones Acreditadas</div>
 
 <table width="800" align="center" class="content">
-	<tbody>
+	<thead>
 		<tr>
-			<td>
-				<div align="justify">
+			<th>Periodo</th>
+			<th>Idioma</th>
+			<th>Horas</th>
+			<th>Cantidad de Sesiones</th>
+		</tr>
+	</thead>
+	<tbody>
+		
 				<? 
 				$lastIdioma="ninguno";
 				$lastSeg=0;
@@ -54,15 +60,35 @@ $periodo_output = array("Primer", "Segundo", "Tercer", "Cuarto", "Quinto", "Sext
 						//Se obtienen las horas, ya considerando que 40 minutos=1 hora.
 						$horas=((3*($seg)/2)/3600);
 						$horas= number_format( $horas, $decimals = 1 );
+						$periodo = $periodo_output[$horas_totales['periodo']] . " periodo";
+						$idioma = getIdioma($horas_totales['idioma']);
+						$horasFinales = $horas_totales['horas'];
+						$sesiones = $horas;
 						?>
-					  <? echo $periodo_output[$horas_totales['periodo']] ?> periodo <? echo  getIdioma($horas_totales['idioma']) ?>: <? echo  $horas_totales['horas'] ?>, equivalente a <b><? echo  $horas ?></b>	sesiones.			  <br />
-			    <br /> <?
+						<tr>
+							<td>
+								<div align="center">
+					  				<? echo $periodo ?>
+								</div>
+							</td>
+							<td>
+								<div align="center">
+					  				<? echo $idioma ?>
+								</div>
+							</td>
+							<td>
+								<div align="center">
+					  				<? echo $horasFinales  ?>
+								</div>
+							</td>
+							<td>
+								<div align="center">
+					  				<? echo $horas  ?>
+								</div>
+							</td>
+						</tr> <?
 				}
-				?>
-				
-					 La última fecha de actualización fue el <? $string = join(',', $fecha); echo  $string; ?>. 
-				</div>
-		  </td>
-		</tr>
+				?> 
 	</tbody>
 </table>
+La última fecha de actualización fue el <? $string = join(',', $fecha); echo  $string; ?>.
