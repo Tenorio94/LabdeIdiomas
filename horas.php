@@ -60,7 +60,7 @@ $periodo_output = array("Primer", "Segundo", "Tercer", "Cuarto", "Quinto", "Sext
 				}
 				?>
 				
-					� La �ltima fecha de actualizaci�n fue el <? echo  $fecha[0] ?>. 
+					� La �ltima fecha de actualizaci�n fue el <? $string = join(',', $fecha); echo  $string; ?>. 
 				</div>
 		  </td>
 		</tr>

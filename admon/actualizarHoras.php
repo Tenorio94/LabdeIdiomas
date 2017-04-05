@@ -91,7 +91,7 @@ fclose($handle);
 $idiomas->query( substr($QUERY, 0, -1)." ON DUPLICATE KEY UPDATE horas=VALUES(horas)");
 $fecha = date("Y-m-d H:i:s");
 echo $fecha;
-$idioms->query("INSERT INTO tbl_fecha VALUES ('". $fecha ."')");
+$idiomas->query("INSERT INTO tbl_fecha VALUES ('". $fecha ."')");
 //
 //Cerramos conexion con la base de datos
 closeConection($idiomas);
