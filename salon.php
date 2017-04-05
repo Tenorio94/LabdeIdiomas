@@ -48,7 +48,7 @@ if(($_SESSION['user'] == null && $_SESSION['user'] == '') || !hasChangedPassword
 			while ($row_salonesquery = $salones_query->fetch_assoc()) {
 				if ($row_salonesquery["isActive"]) { ?>
 					<td align="center">
-						<p class="style19"><a href="index.php?p=salon<?php $row_salonesquery["idSalon"]?>&d=<?php echo $dia .'&m=' . $mes . '&s=' . $sem;?>"><strong> Sal&oacute;n <?php echo $row_salonesquery["idSalon"]?> </strong></a></p>
+						<p class="style19"><a href="index.php?p=salon<?php echo $row_salonesquery["idSalon"]?>&d=<?php echo $dia .'&m=' . $mes . '&s=' . $sem;?>"><strong> Sal&oacute;n <?php echo $row_salonesquery["idSalon"]?> </strong></a></p>
 						<p class="style19"><br>
 							<span class="style17">
 							<a href="index.php?p=<?php $row_salonesquery["idSalon"]?>&d=<?php echo $dia .'&m=' . $mes . '&s=' . $sem; ?>">Horario </a><br>
