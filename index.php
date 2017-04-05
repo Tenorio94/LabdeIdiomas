@@ -25,6 +25,7 @@ $user = $_SESSION['user'];
 		<script src="recursos/js/i18next.min.js"></script>
 		<script src="recursos/js/javascript_functions.js"></script>
 		<script src="recursos/js/jquery-3.1.1.min.js"></script>
+		<script>window.sessionStorage.setItem('lang', 'es');</script>
 
 	</head>
 
@@ -377,6 +378,9 @@ function changeLanguage(lang){
 			break;
 		case 'korea-button':
 			document.documentElement.lang = 'en';
+			break;
+		default : 
+			window.sessionStorage.setItem('lang', 'es');
 			break;
 	}
 }
