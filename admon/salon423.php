@@ -68,7 +68,7 @@ $reservacion18 = getReservacionPorHora(18, $dia, $mes);
         <td><?php $row_reservacion14 = $reservacion14->fetch_assoc(); echo $row_reservacion14['matricula']; ?>&nbsp;</td>
         <td><?php $row_reservacion15 = $reservacion15->fetch_assoc(); echo $row_reservacion15['matricula']; ?>&nbsp;</td>
         <td><?php $row_reservacion16 = $reservacion16->fetch_assoc(); echo $row_reservacion16['matricula']; ?>&nbsp;</td>
-        <td><?php $row_reservacion17 = $reservacion17); echo $row_reservacion17['matricula']; ?>&nbsp;</td>
+        <td><?php $row_reservacion17 = $reservacion17->fetch_assoc(); echo $row_reservacion17['matricula']; ?>&nbsp;</td>
         <td><?php $row_reservacion18 = $reservacion18->fetch_assoc(); echo $row_reservacion18['matricula']; ?>&nbsp;</td>
         
       </tr>
