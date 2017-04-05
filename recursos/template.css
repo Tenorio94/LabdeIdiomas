@@ -175,3 +175,10 @@ border-bottom-width:thin;
 .salonesSubmit {
 	margin-left: 6%;
 }
+
+.hoursTable {
+	width: 800;
+	align: center;
+	margin-top: 2%;
+	margin-bottom: 6%;
+}

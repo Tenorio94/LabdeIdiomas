@@ -16,7 +16,7 @@ $periodo_output = array("Primer", "Segundo", "Tercer", "Cuarto", "Quinto", "Sext
 
 <div class="title">Sesiones Acreditadas</div>
 
-<table width="800" align="center" class="content">
+<table width="800" align="center" class="content hoursTable">
 	<thead>
 		<tr>
 			<th>Periodo</th>
@@ -91,4 +91,4 @@ $periodo_output = array("Primer", "Segundo", "Tercer", "Cuarto", "Quinto", "Sext
 				?> 
 	</tbody>
 </table>
-La última fecha de actualización fue el <? $string = join(',', $fecha); echo  $string; ?>.
+<p>La última fecha de actualización fue el <? $string = join(',', $fecha); echo  $string; ?>. </p>
