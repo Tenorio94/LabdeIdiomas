@@ -3,10 +3,7 @@
 <script type="text/javascript" src="../recursos/js/jquery-ui.multidatespicker.js"></script>
 <link src="../recursos/css/jquery-ui.structure.css"></link>
 <link src="../recursos/css/jquery-ui.theme.css"></link>
-<link rel="stylesheet" type="text/css" media="all"
-		href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/smoothness/jquery-ui.css"/>
 <link rel="stylesheet" type="text/css" href="../recursos/css/mdp.css">
-<link rel="stylesheet" type="text/css" href="../recursos/css/prettify.css">
 <script type="text/javascript" src="../recursos/js/prettify.js"></script>
 <script type="text/javascript" src="../recursos/js/lang-css.js"></script>
 
