@@ -161,19 +161,19 @@ function enviarEmail($to, $subject, $message){
 function getIdioma($idioma) { //Regresa el idioma del que se trata. Son 2 digitos, el primero es el idioma y el segundo la cantidad de veces que lleva un idioma
 	switch (($idioma-($idioma%10))/10) {
 		case 0:
-			return "Ingl�s americano";
+			return "Inglés americano";
 		break;
 		case 1:
-			return "Alem�n";
+			return "Alemán";
 		break;
 		case 2:
 			return "Italiano";
 		break;
 		case 3:
-			return "Espa�ol";
+			return "Español";
 		break;
 		case 4:
-			return "Franc�s";
+			return "Francés";
 		break;
 	}
 }

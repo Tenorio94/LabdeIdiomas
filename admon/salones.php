@@ -33,7 +33,7 @@
         <input class="salonesSubmit" type="submit" name="desactivar" value="Desactivar">
     </form>
 <?php } ?>
-
+<!--
     <form name="altaSalon" method="POST" action="index.php?p=salonesBD">
         <h2> Alta de salones </h2>
         <input type="hidden" name="action" value="alta"/>
@@ -42,3 +42,4 @@
         </p>
         <p><label>¿Activo? <input type="checkbox" name="active" /></label></p>
     </form>
+-->
