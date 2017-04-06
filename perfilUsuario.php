@@ -68,6 +68,21 @@ function validaPerfilUsuarioForm()
 {
 	var stringError = '';
 	
+	if (document.perfilUsuarioForm.nombre.value == '')
+	{   stringError = stringError + ' \n Nombre es un campo requerido';
+		document.perfilUsuarioForm.nombre.focus();
+	}
+
+	if (document.perfilUsuarioForm.ap_paterno.value == '')
+	{   stringError = stringError + ' \n Apellido paterno es un campo requerido';
+		document.perfilUsuarioForm.ap_paterno.focus();
+	}
+
+	if (document.perfilUsuarioForm.ap_materno.value == '')
+	{   stringError = stringError + ' \n Apellido materno es un campo requerido';
+		document.perfilUsuarioForm.ap_materno.focus();
+	}
+
 	if (document.perfilUsuarioForm.email.value == '')
 	{   stringError = stringError + ' \n Correo Electrónico es un campo requerido';
 		document.perfilUsuarioForm.email.focus();

@@ -2,13 +2,14 @@
 //Obtenemos la informacion
 $fecha = getdate(); 
 $hora = $_POST["hora"];
-$cancelarReservacion = $_POST["cancelarReservacion"];
-$dia = $HTTP_GET_VARS["d"];
-$mes = $HTTP_GET_VARS["m"];
-$sem = $HTTP_GET_VARS["s"];
-$diasem = $HTTP_GET_VARS["ds"];
-$salon = $HTTP_GET_VARS["salon"];
-$salonotro = $HTTP_GET_VARS["salonotro"]; 
+if(isset($_POST["cancelarReservacion"]))
+	$cancelarReservacion = $_POST["cancelarReservacion"];
+$dia = $_GET["d"];
+$mes = $_GET["m"];
+$sem = $_GET["s"];
+$diasem = $_GET["ds"];
+$salon = $_GET["salon"];
+$salonotro = $_GET["salonotro"]; 
 
 //Abrimos conexion con la base de datos
 $idiomas = getConection();
@@ -169,8 +170,7 @@ $headers .= "From: Laboratorio de Idiomas <iaranda@itesm.mx>\r\n";
 								{
 									$mat = "Reservado"; 
 									$insertSQL = "INSERT INTO tbl_reservaciones (matricula, salon, dia, hora, mes, semana) VALUES ('". $mat ."', " . $salon . ", " . $dia . ", " . $hora . ", '" .$mes . "', " . $sem. ");";
-									mysql_select_db($database_idiomas, $idiomas);
-									mysql_query($insertSQL, $idiomas) or die(mysql_error());
+									$idiomas->query($insertSQL);
 									$f = $f + 1;
 								}
 								$lugres = 40;
@@ -183,8 +183,7 @@ $headers .= "From: Laboratorio de Idiomas <iaranda@itesm.mx>\r\n";
 								{
 									$mat = "Reservado"; 
 									$insertSQL = "INSERT INTO tbl_reservaciones (matricula, salon, dia, hora, mes, semana) VALUES ('". $mat ."', " . $salon . ", " . $dia . ", " . $hora . ", '" .$mes . "', " . $sem. ");";
-									mysql_select_db($database_idiomas, $idiomas);
-									mysql_query($insertSQL, $idiomas) or die(mysql_error());
+									$idiomas->query($insertSQL);
 									$f = $f + 1;
 								}
 								$lugres = $t;
@@ -246,10 +245,6 @@ $headers .= "From: Laboratorio de Idiomas <iaranda@itesm.mx>\r\n";
 ?>
 
 <?php
-//Querys
-mysql_free_result($reservacion_salon);
-mysql_free_result($reservacion_salon_otro);
-
 //Cerramos conexion
 closeConection($idiomas);
 ?>

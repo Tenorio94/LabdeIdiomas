@@ -1,6 +1,5 @@
 /* CSS Document */
 
-
 .smallHeader
 {
 	background-color	: #003366;
@@ -172,7 +171,16 @@ border-bottom-width:thin;
 .even {
 	background-color	: #e0e0e0;
 }
-
 .flag-container {
-	
+
+}
+.salonesSubmit {
+	margin-left: 6%;
+}
+
+.hoursTable {
+	width: 800;
+	align: center;
+	margin-top: 2%;
+	margin-bottom: 6%;
 }
