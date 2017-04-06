@@ -1,15 +1,14 @@
 <script src="../recursos/js/jquery-3.1.1.min.js"></script>
 <script src="../recursos/js/jquery-ui.js"></script>
-
+<script type="text/javascript" src="../recursos/js/jquery-ui.multidatespicker.js"></script>
 <link src="../recursos/css/jquery-ui.structure.css"></link>
 <link src="../recursos/css/jquery-ui.theme.css"></link>
 <link rel="stylesheet" type="text/css" media="all"
 		href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/smoothness/jquery-ui.css"/>
-<style>
-	table, th, td {
-		border: 1px solid black;
-	}
-</style>
+<link rel="stylesheet" type="text/css" href="../recursos/css/mdp.css">
+<link rel="stylesheet" type="text/css" href="../recursos/css/prettify.css">
+<script type="text/javascript" src="../recursos/js/prettify.js"></script>
+<script type="text/javascript" src="../recursos/js/lang-css.js"></script>
 
 <form name="form3" method="POST" action="index.php?p=semanasBD">
     
@@ -159,38 +158,30 @@
    </table>
 
 </form>
+<div>
+	<div id="calendar" class="box"></div>
+</div>
 
-<p>Fecha Asueto: <input type="text" id="datepicker"></p>
-<button id="add-date" onclick="addVacation()">Agregar asueto</button>
-<table id="vacation-dates">
-
-</table>
+<button id="register-holidays" onclick="registerHoliday()">Dar de alta sesiones</button>
 
 <script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  });
-
-	function addVacation() {
-		if($("#datepicker").val() !== ""){
-			var date = $("#datepicker").datepicker("getDate");
-			var table = document.getElementById("vacation-dates");
-		    var row = table.insertRow(-1);
-		    var cell1 = row.insertCell(0);
-		    var cell2 = row.insertCell(1);
-		    cell1.innerHTML = date;
-		    cell2.innerHTML = '<button type="button" onclick="deleteRow(this.parentNode.parentNode)">Delete</button>';
-    	$("#datepicker").val("");
-		}
-	}
-
-	function deleteRow(row) {
-		alert(row.rowIndex);
-		document.getElementById("vacation-dates").deleteRow(row.rowIndex);
-
-	}
-	
+	var date = new Date();
+	var year = date.getFullYear();
+	$('#calendar').multiDatesPicker({
+		maxDate: new Date(year+1, 6, 31),
+	    beforeShowDay: function(date) {
+	    	var day = date.getDay();
+	        return [(day != 0), ''];
+    	}
+	});
 </script>
 
-
+<script>
+	function registerHoliday(){
+		var dates = $('#calendar').multiDatesPicker('getDates');
+		var today = new Date();
+		console.log(dates);
+	}
+</script>
+					
 
