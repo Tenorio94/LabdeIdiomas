@@ -166,6 +166,7 @@
 	var year = date.getFullYear();
 	$('#calendar').multiDatesPicker({
 		maxDate: new Date(year+1, 6, 31),
+		dateFormat: 'yy-mm-dd',
 	    beforeShowDay: function(date) {
 	    	var day = date.getDay();
 	        return [(day != 0), ''];
@@ -178,6 +179,14 @@
 		var dates = $('#calendar').multiDatesPicker('getDates');
 		var today = new Date();
 		console.log(dates);
+		$.ajax({
+	       	url: "asuetos.php",
+	        type: "POST",
+	        data: { dates: dates },
+	        dataType: "json",
+	        success: alert("sesiones dadas de alta"),
+	        error: alert("problemas al registrar sesiones")
+    	});
 	}
 </script>
 					
