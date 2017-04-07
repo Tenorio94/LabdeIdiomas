@@ -9,7 +9,7 @@ $asuetos = isset($_POST['dates']) ? $_POST['dates'] : null;
 
 foreach ($asuetos as $asueto) {
 	echo($asueto);
-	$idiomas->query("INSERT INTO tbl_asuetos (asueto) VALUES (". $asueto .")");
+	$idiomas->query("INSERT INTO tbl_asuetos (asueto) VALUES ('$asueto')");
 }
  
 
