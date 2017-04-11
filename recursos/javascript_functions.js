@@ -10,7 +10,7 @@
                 var $current = $($items[i]);
 
                 // We use the globalTranslations object configured by the MENU
-                var key = !areInputElements ? $current.text() : $current.attr('placeholder'),
+                var key = !areInputElements ? $current.text().replace(/\s/g, "") : $current.attr('placeholder'),
                     translatedText = i18next.t(key);
 
                 if(typeof translatedText !== 'undefined') {

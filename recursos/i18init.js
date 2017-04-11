@@ -29,7 +29,14 @@
             "personal": "Personal",
             "objetivos_message_1": "• Brindar atención personalizada a los estudiantes de los cursos de inglés, idiomas y de español para extranjeros del Departamento de Lenguas Modernas, que asisten a este espacio de aprendizaje con el propósito de mejorar su desempeño.",
             "objetivos_message_2": "• Apoyar a los docentes de idiomas en la integración de nuevas tecnologías que faciliten el aprendizaje de un idioma en sus cursos (digitalización, multimedia, etc.). ",
-            "nuestros_objetivos": "Nuestros Objetivos"
+            "nuestros_objetivos": "Nuestros Objetivos",
+            "reservacion_inicio_sesion": `¡Lo sentimos! Para acceder al sistema de reservación, necesitas iniciar una sesión.
+
+1.  Oprime en la parte superior derecha de la pantalla en el espacio donde dice Entrar. 
+
+2.  El usuario y la contraseña son tu número de matrícula (sin la A ni los ceros). Los usuarios inscritos en los cursos de extensión deben usar como usuario y contraseña, el código de acceso que se les asigna.`
+
+
 
       
           }
@@ -59,7 +66,12 @@
             "personal": "Staff",
             "objetivos_message_1": "• Give personalized atention to the students of the english, languages and spanish courses for foreigners of the Modern Languages Department, which come to this learning space with the purpose of improving their performance.",
             "objetivos_message_2": "• Support the language teachers with new technology integration which makes the process of learning a language easier (digitalization, multimedia, etc.). ",
-            "nuestros_objetivos": "Our Objectives"
+            "nuestros_objetivos": "Our Objectives",
+            "reservacion_inicio_sesion": `¡We are sorry! To acces the reservation system, you need to log in.
+
+1.  Hit the upper right space on the screen where it says Enter.  
+
+2.  The username and the password are your student id number (without the A nor the 0's). The username and password for the users registered in the extension course, are the access code they were designated to.`
 
 
           }
