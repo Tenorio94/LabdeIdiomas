@@ -271,6 +271,7 @@ $user = $_SESSION['user'];
 			Utils.applyMultilingualLabels('.bigContainer', '.multilingual');
 			Utils.applyMultilingualLabels('.bigContainer', '.title-multilingual');
 			Utils.applyMultilingualLabels('.bigContainer', '.leftTitle-multilingual');
+			Utils.applyMultilingualLabels('.bigContainer', '.diasSemana-multilingual');
 			
 		</script>
 	</body>

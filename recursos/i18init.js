@@ -34,7 +34,29 @@
 
 1.  Oprime en la parte superior derecha de la pantalla en el espacio donde dice Entrar. 
 
-2.  El usuario y la contraseña son tu número de matrícula (sin la A ni los ceros). Los usuarios inscritos en los cursos de extensión deben usar como usuario y contraseña, el código de acceso que se les asigna.`
+2.  El usuario y la contraseña son tu número de matrícula (sin la A ni los ceros). Los usuarios inscritos en los cursos de extensión deben usar como usuario y contraseña, el código de acceso que se les asigna.`,
+            "bienvenida_aprendizaje": "Bienvenido al programa de Aprendizaje Autorregulado",
+            "selecciona_programa": "Selecciona el programa de tu interés: ",
+            "programa_autoestudio": "Programa de auto estudio",
+            "practicas_estructura": "Prácticas para estructura y expresión escrita",
+            "selecciona_recursos":"Selecciona el tema para desplegar sus recursos disponibles:",
+            "seleccionar": "Seleccionar",
+            "recursos_para": "Recursos para",
+            "no_info": "No hay información",
+            "fecha_publ": "Fecha publicación:",
+            "proceso_reservaciones": "Proceso de Reservaciones",
+            "mensaje_reservacion": "A continuación se detalla el procedimiento a realizar tu reservación para el laboratorio de idiomas.",
+            "selecciona_dia": "Selecciona el día de la semana.",
+            "selecciona_salon": "Selecciona el salón 424.",
+            "selecciona_hora": "Selecciona la hora en el menú deslizante y oprime 'Aceptar'.",
+            "continuar": "Continuar",
+            "no_reservaciones": "No tienes reservaciones próximas.",
+            "lunes": "Lunes",
+            "martes": "Martes",
+            "mier": "Miércoles",
+            "jueves": "Jueves",
+            "viernes": "Viernes",
+            "sabado": "Sábado"
 
 
 
@@ -71,7 +93,29 @@
 
 1.  Hit the upper right space on the screen where it says Enter.  
 
-2.  The username and the password are your student id number (without the A nor the 0's). The username and password for the users registered in the extension course, are the access code they were designated to.`
+2.  The username and the password are your student id number (without the A nor the 0's). The username and password for the users registered in the extension course, are the access code they were designated to.`,
+            "bienvenida_aprendizaje": "Welcome to the Self-Regulated learning program",
+            "selecciona_programa": "Choose the program of your interest: ",
+            "programa_autoestudio": "Self-learning program",
+            "practicas_estructura": "Structure and Written Expression exercises",
+            "selecciona_recursos": "Choose the subject to display its available resources:",
+            "seleccionar": "Choose",
+            "recursos_para": "Resources for",
+            "no_info": "No information",
+            "fecha_publ": "Publication date:",
+            "proceso_reservaciones": "Reservation Process",
+            "mensaje_reservacion": "Below is the detailed process for making a reservation for the Languages Laboratory.",
+            "selecciona_dia": "Pick a the weekday.",
+            "selecciona_salon": "Choose 424 room.",
+            "selecciona_hora": "Choose the hour you wish tu attend in the slider menu and hit 'Accept'.",
+            "continuar": "Continue",
+            "no_reservaciones": "You don't have coming reservations.",
+            "lunes": "Monday",
+            "martes": "Tuesday",
+            "mier": "Wednesday",
+            "jueves": "Thursday",
+            "viernes": "Friday",
+            "sabado": "Saturday"
 
 
           }

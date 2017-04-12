@@ -46,17 +46,17 @@ function getSemanaHrefLinkSabado($day)
 
 	<table align="center" class="title">
 		<tr>
-			<td>Reservaciones</td>
+			<td class="multilingual">reservaciones</td>
 		</tr>
 	</table>
   <table width="200" border="1" align="center" cellpadding="4px">
       <tr bgcolor="#336699"> 
-        <td align="center" class="diasSemana">Lunes</td>
-        <td align="center" class="diasSemana">Martes</td>
-        <td align="center" class="diasSemana">Mi�rcoles</td>
-        <td align="center" class="diasSemana">Jueves</td>
-        <td align="center" class="diasSemana">Viernes</td>
-		<td align="center" class="diasSemana">S&aacute;bado</td>
+        <td align="center" class="diasSemana-multilingual">lunes</td>
+        <td align="center" class="diasSemana-multilingual">martes</td>
+        <td align="center" class="diasSemana-multilingual">mier</td>
+        <td align="center" class="diasSemana-multilingual">jueves</td>
+        <td align="center" class="diasSemana-multilingual">viernes</td>
+		<td align="center" class="diasSemana-multilingual">sabado</td>
       </tr>
       <tr> 
         <td align="center" class="ligasSemana">

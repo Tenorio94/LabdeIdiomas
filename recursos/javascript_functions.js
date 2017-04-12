@@ -17,7 +17,7 @@
                     if(!areInputElements) {
                         // Translate the normal text of an span, paragraph, div, etc. and show it
                         // By default, all the labels are non-visible (using visibility attribute)
-                        $current.html(translatedText).css('visibility', 'visible');
+                        $current.html(translatedText);
                     }
                     else {
                         // Translate the placeholder of an input
