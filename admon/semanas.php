@@ -180,18 +180,23 @@
 		var today = new Date();
 		console.log(dates);
 
-		$.ajax({
-	       	url: "asuetos.php",
-	        type: "POST",
-	        data: { dates: dates },
-	        dataType: "json",
-	        success: function(response) {
-				console.log(response);	
-			},
-	        error: function(error){
-				console.log(error);
-			}
-    	});
+		if (dates.length > 0) {
+			$.ajax({
+				url: "asuetos.php",
+				type: "POST",
+				data: { dates: dates },
+				dataType: "json",
+				success: function(response) {
+					console.log(response);	
+				},
+				error: function(error){
+					console.log(error);
+				}
+			});
+		}
+		else {
+			alert("Favor de escoger al menos una fecha");
+		}
 	}
 </script>
 					

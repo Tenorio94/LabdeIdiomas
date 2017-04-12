@@ -28,10 +28,6 @@ if (isset($_POST['dates'])){
 
 		$idiomas->query("INSERT INTO tbl_semanas(`dia`, `mes`, `semana`, `diasem`, `asueto`)VALUES('$day', '$month', '$weekNumber', '$weekDay', '$asuetoBol')");
 	}
-
-	
-
-	/*$idiomas->query('INSERT INTO `tbl_semanas`( `dia`, `mes`, `semana`, `diasem`, `asueto`) VALUES (1,"mayo", 32, "viernes", 1)');*/
 }
 
  return;
