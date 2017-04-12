@@ -75,7 +75,35 @@ function esReservacionAFuturo($day, $month, $hora) {
 	} 
 }
 
+function getWeekDay($week) {
+	switch($week) {
+		case "1" : return "lunes"; break;
+		case "2" : return "martes"; break;
+		case "3" : return "miercoles"; break;
+		case "4" : return "jueves"; break;
+		case "5" : return "viernes"; break;
+		case "6" : return "sabado"; break;
+	}
+}
 
+
+
+function getMonthText($month) {
+	switch($month) {
+		case "01" : return "enero"; break;
+		case "02" : return "febrero"; break;
+		case "03" : return "marzo"; break;
+		case "04" : return "abril"; break;
+		case "05" : return "mayo"; break;
+		case "06" : return "junio"; break;
+		case "07" : return "julio"; break;
+		case "08" : return "agosto"; break;
+		case "09" : return "septiembre"; break;
+		case "10" : return "octubre"; break;
+		case "11" : return "noviembre"; break;
+		case "12" : return "diciembre"; break;
+	}
+}
 
 
 function getMonthNumber($month) {
@@ -94,6 +122,9 @@ function getMonthNumber($month) {
 		case "diciembre" : return "12"; break;
 	}
 }
+
+
+
 //---------------------------------------------------------------------------//
 
 // -------------------------- enviarMail ------------------------------ //
@@ -176,5 +207,48 @@ function getIdioma($idioma) { //Regresa el idioma del que se trata. Son 2 digito
 			return "Francés";
 		break;
 	}
+}
+
+
+function getDateRange($first, $last, $step = '+1 day', $output_format = 'd/m/Y', $asuetos) {
+
+    $dates = array();
+	$day = "";
+	$month = "";
+	$year = "";
+	$weekNumber = "";
+	$weekDay = "";
+	$asuetoBol = 0;
+    $current = strtotime($first);
+    $last = strtotime($last);
+
+	for ($asueto = 0; $asueto < sizeof($asuetos); $asueto += 1) {
+		$asuetos[$asueto] =  strtotime($asuetos[$asueto]);
+	}
+
+    while( $current <= $last ) {
+
+		if(date("w", $current) != 0){
+
+			for ($asueto = 0; $asueto < sizeof($asuetos); $asueto += 1){
+				if ($asuetos[$asueto] == $current) {
+					$asuetoBol = 1;
+				}
+			}
+
+			$day = date("j", $current);
+			$month = getMonthText(date("m", $current));
+			$year = date("Y", $current);
+			$weekNumber = date("W", $current);
+			$weekDay = getWeekDay(date("w", $current));
+
+			$currentDate = array("dia" => $day, "mes" => $month, "ano" => $year, "semana" => $weekNumber, "diasem" => $weekDay, "asueto" => $asuetoBol);
+			$dates[] = $currentDate;
+			$asuetoBol = 0;
+		}
+		$current = strtotime($step, $current);
+    }
+
+    return $dates;
 }
 ?>

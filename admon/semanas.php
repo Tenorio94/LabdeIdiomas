@@ -179,13 +179,18 @@
 		var dates = $('#calendar').multiDatesPicker('getDates');
 		var today = new Date();
 		console.log(dates);
+
 		$.ajax({
 	       	url: "asuetos.php",
 	        type: "POST",
 	        data: { dates: dates },
 	        dataType: "json",
-	        success: alert("sesiones dadas de alta"),
-	        error: alert("problemas al registrar sesiones")
+	        success: function(response) {
+				console.log(response);	
+			},
+	        error: function(error){
+				console.log(error);
+			}
     	});
 	}
 </script>
