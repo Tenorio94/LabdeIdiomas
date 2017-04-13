@@ -178,7 +178,6 @@
 	function registerHoliday(){
 		var dates = $('#calendar').multiDatesPicker('getDates');
 		var today = new Date();
-		console.log(dates);
 
 		if (dates.length > 0) {
 			$.ajax({
