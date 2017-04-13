@@ -35,6 +35,40 @@ function getSemanaHrefLinkSabado($day)
 	}
 	return $result;
 }
+
+function getSemanaCompletaHrefLink($week) {
+	global $idiomas;
+	$currentHTML = "";
+
+	if($idiomas == NULL) {
+		$idiomas = getConection();
+	}
+
+	$semana_query = $idiomas->query("SELECT * FROM tbl_semanas WHERE semana = '$week'");
+	
+	while($semana = $semana_query->fetch_assoc()) {
+
+		if($semana["diasem"] != "sabado")
+			$htmlLink = "index.php?p=selsalon&d=" . $semana['dia'] . "&m=" . $semana['mes'] ."&s=" .  $semana['semana']."&ds=" .  $semana['diasem'];
+		else
+			$htmlLink = "index.php?p=salon424s&d=" . $semana['dia'] . "&m=" . $semana['mes'] ."&s=" .  $semana['semana']."&ds=" .  $semana['diasem'];
+
+
+		if((int)$semana["asueto"] == 0) {
+			$result = '<a href="'.$htmlLink.'" id="' . $semana['dia'] . '"> '. $semana['dia'] . ' </a>';
+		}
+		else {
+			$result = "Asueto";
+		}
+
+		$currentHTML = $currentHTML . '<td align="center" class="ligasSemana">';
+			$currentHTML = $currentHTML . $result;
+		$currentHTML = $currentHTML .'</td>';
+		$result = "";
+	}
+
+	return $currentHTML;
+}
 ?>
 
 	<table align="center" class="title">
@@ -52,44 +86,10 @@ function getSemanaHrefLinkSabado($day)
 		<td align="center" class="diasSemana">S&aacute;bado</td>
       </tr>
       <tr> 
-        <td align="center" class="ligasSemana">
-			<? echo getSemanaHrefLink(1); ?>
-		</td>
-        <td align="center" class="ligasSemana">
-			<? echo getSemanaHrefLink(2); ?>
-		</td>
-        <td align="center" class="ligasSemana">
-			<? echo getSemanaHrefLink(3); ?>
-		</td>
-        <td align="center" class="ligasSemana">
-			<? echo getSemanaHrefLink(4); ?>	
-		</td>
-        <td align="center" class="ligasSemana">
-			<? echo getSemanaHrefLink(5); ?>
-		</td>
-        <td align="center" class="ligasSemana">
-			<? echo getSemanaHrefLinkSabado(6); ?>
-		</td>   
+	  	<? echo getSemanaCompletaHrefLink(date("W")); ?>
 	  </tr>
 	  <tr> 
-        <td align="center" class="ligasSemana">
-			<? echo getSemanaHrefLink(7); ?>
-		</td>
-        <td align="center" class="ligasSemana">
-			<? echo getSemanaHrefLink(8); ?>
-		</td>
-        <td align="center" class="ligasSemana">
-			<? echo getSemanaHrefLink(9); ?>
-		</td>
-        <td align="center" class="ligasSemana">
-			<? echo getSemanaHrefLink(10); ?>
-		</td>
-        <td align="center" class="ligasSemana">
-			<? echo getSemanaHrefLink(11); ?>
-		</td>
-        <td align="center" class="ligasSemana">
-			<? echo getSemanaHrefLink(12); ?>
-		</td>
+	  	<? echo getSemanaCompletaHrefLink((int)date("W") + 1); ?>
       </tr>
   </table>
 <? 
