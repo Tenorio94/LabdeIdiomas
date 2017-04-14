@@ -55,7 +55,14 @@
             "mier": "Miércoles",
             "jueves": "Jueves",
             "viernes": "Viernes",
-            "sabado": "Sábado"
+            "sabado": "Sábado",
+            "usuario_incorrecto": "Lo sentimos, tu usuario o contraseña son incorrectos.",
+            "recordatorio_usuario": "Recuerda que el usuario va sin A0.",
+            "cambio_contra": "Si no has cambiado tu contraseña intenta con el mismo que tu usuario.",
+            "ejemplo_inicio_sesion": `Ejemplo de inicio de sesión: 
+                                    ◦ Usuario: 1234567
+                                    ◦ Contraseña: 1234567`,
+            "mas_info": "Para más información contacta al Departamento de Laboratorio de Idiomas."
 
 
 
@@ -113,7 +120,14 @@
             "mier": "Wednesday",
             "jueves": "Thursday",
             "viernes": "Friday",
-            "sabado": "Saturday"
+            "sabado": "Saturday",
+            "usuario_incorrecto": "We are sorry, your user id or password are incorrect.",
+            "recordatorio_usuario": "Remember that the user id is without the A0.",
+            "cambio_contra": "If you haven't changed your password, try with the same user id.",
+            "ejemplo_inicio_sesion": `Login example: 
+                                    ◦ User: 1234567
+                                    ◦ Password: 1234567`,
+            "mas_info": "For more information contact the Language Laboratory Department."
 
 
           }
@@ -148,6 +162,7 @@
 1.  Schlage den oberen rechten Raum auf dem Bildschirm, wo es heißt Enter.  
 
 2.  Der Benutzername und das Passwort sind Ihre Schüler-ID-Nummer (ohne die A noch die 0). Der Benutzername und das Passwort für die im Erweiterungskurs registrierten Benutzer sind der Zugangscode, zu dem sie bestimmt wurden.`,
+            "bienvenida_aprendizaje": "Willkommen im Selbstregulierten Lernprogramm",
             "selecciona_programa": "Wählen Sie das Programm Ihres Interesses: ",
             "programa_autoestudio": "Selbstlernprogramm",
             "practicas_estructura": "Struktur und schriftliche Ausdrucksübungen",
@@ -168,7 +183,14 @@
             "mier": "Mittwoch",
             "jueves": "Donnerstag",
             "viernes": "Freitag",
-            "sabado": "Samstag"
+            "sabado": "Samstag",
+            "usuario_incorrecto": "Es tut uns leid, Ihre Benutzer-ID oder Ihr Passwort sind falsch.",
+            "recordatorio_usuario": "Denken Sie daran, dass die Benutzer-ID ohne A0 ist.",
+            "cambio_contra": "Wenn Sie Ihr Passwort nicht geändert haben, versuchen Sie es mit der gleichen Benutzer-ID.",
+            "ejemplo_inicio_sesion": `Login Beispiel: 
+                                    ◦ Benutzer: 1234567
+                                    ◦ Passwort: 1234567`,
+            "mas_info": "Für weitere Informationen wenden Sie sich bitte an die Sprachlaborabteilung."
           }
         },
         fr: {
@@ -222,7 +244,77 @@
             "mier": "Mercredi",
             "jueves": "Jeudi",
             "viernes": "Vendredi",
-            "sabado": "Samedi"
+            "sabado": "Samedi",
+            "usuario_incorrecto": "Nous sommes désolés, votre identifiant ou mot de passe est incorrect.",
+            "recordatorio_usuario": "N'oubliez pas que l'identifiant utilisateur est sans l'A0.",
+            "cambio_contra": "Si vous n'avez pas changé votre mot de passe, essayez avec le même identifiant utilisateur.",
+            "ejemplo_inicio_sesion": `Exemple de connexion: 
+                                    ◦ Utilisateur: 1234567
+                                    ◦ Mot de passe: 1234567`,
+            "mas_info": "Pour plus d'informations, contactez le département de laboratoire linguistique."
+
+
+          }
+        },
+        kr: {
+          translation: {
+            "principal": "본관",
+            "quienes_somos": "우리는 누구인가",
+            "objetivos": "목표",
+            "reservaciones": "전세",
+            "tutoriales": "자습서",
+            "aprendizaje_autoregulado": "자기 조절 학습",
+            "buscar_recursos": "리소스 검색",
+            "sesiones": "세션 수",
+            "entrar": "들어가다",
+            "salir": "출구",
+            "usuario": "사용자:",
+            "pass": "암호:",
+            "olvidaste_tu_contra": "비밀번호를 잊어 버렸습니까?",
+            "mensaje_bienvenida": "현대 언어 학부 Laboratorio de Idiomas의 웹 페이지에 오신 것을 환영합니다.",
+            "quienes_somos_message_1": "Laboratorio de Idiomas는 인간 공학 및 사회 과학의 현대 언어학과 및 국제 프로그램 부서의 외국인을위한 연구 부서에서 최첨단 기술 인프라를 통해 학습 된 언어의 학습 및 실습을 용이하게하는 학습 공간입니다.",
+            "quienes_somos_message_2": "우리는 CIAP 빌딩 423 및 424 방에 위치하고 있습니다. 실험실 일정은 월요일부터 금요일까지 오전 8 시부 터 오후 7 시까 지이며 토요일 오전 10 시부 터 오후 2 시까 지입니다.",
+            "puesto1": "Laboratorio de Idiomas의 행정 코디네이터",
+            "puesto2": "Laboratorio de Idiomas의 기술 코디네이터",
+            "puesto3": "행정 보조",
+            "personal": "직원",
+            "objetivos_message_1": "• 현대 언어학과의 외국인을위한 영어, 언어 및 스페인어 코스 학생들의 개인적 성 취를 학생들의 실력 향상을 목적으로이 학습 공간에 제공합니다.",
+            "objetivos_message_2": "• 언어 학습 과정을보다 쉽게 만들어주는 새로운 기술 통합 (디지털화, 멀티미디어 등)으로 언어 교사를 지원하십시오. ",
+            "nuestros_objetivos": "우리의 목표",
+            "reservacion_inicio_sesion": `미안 해요! 예약 시스템에 액세스하려면 로그인해야합니다.
+
+1.  Enter를 말하는 화면의 오른쪽 상단 공간을 치십시오.  
+
+2.  사용자 이름과 암호는 학생의 ID 번호입니다 (A 또는 0 제외). 확장 프로그램에 등록 된 사용자의 사용자 이름과 비밀번호는 지정된 액세스 코드입니다.`,
+            "bienvenida_aprendizaje": "자율 학습 프로그램에 오신 것을 환영합니다.",
+            "selecciona_programa": "관심있는 프로그램 선택: ",
+            "programa_autoestudio": "자기 학습 프로그램",
+            "practicas_estructura": "구조와 글쓰기 연습",
+            "selecciona_recursos": "사용 가능한 리소스를 표시 할 제목을 선택하십시오.",
+            "seleccionar": "고르다",
+            "recursos_para": "에 대한 자료",
+            "no_info": "정보 없음",
+            "fecha_publ": "발행일:",
+            "proceso_reservaciones": "예약 과정",
+            "mensaje_reservacion": "아래는 언어 연구소의 예약 절차입니다.",
+            "selecciona_dia": "평일을 선택하십시오.",
+            "selecciona_salon": "방 424를 선택하십시오.",
+            "selecciona_hora": "슬라이더 메뉴에서 참석할 시간을 선택하고 '동의'를 누르십시오.",
+            "continuar": "잇다",
+            "no_reservaciones": "너는 오는 예약이 없다.",
+            "lunes": "월요일",
+            "martes": "화요일",
+            "mier": "수요일",
+            "jueves": "목요일",
+            "viernes": "금요일",
+            "sabado": "토요일",
+            "usuario_incorrecto": "죄송합니다. 사용자 ID 또는 비밀번호가 잘못되었습니다.",
+            "recordatorio_usuario": "사용자 ID에는 A0이 없음을 기억하십시오.",
+            "cambio_contra": "암호를 변경하지 않았다면 동일한 사용자 ID로 시도하십시오.",
+            "ejemplo_inicio_sesion": `로그인 예제: 
+                                    ◦ 사용자: 1234567
+                                    ◦ 암호: 1234567`,
+            "mas_info": "더 자세한 정보는 어학 실습실에 문의하십시오."
 
 
           }

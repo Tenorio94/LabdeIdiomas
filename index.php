@@ -31,7 +31,7 @@ $user = $_SESSION['user'];
 	<center>
 		<div class="bigContainer">
 			<!-- INICIA SECCION DE HEADER MENOR -->
-			<div class="smallHeader" style="width:1000px; text-align:left; ">
+			<div class="smallHeader" style="width:1000px; height: 35px; text-align:left; ">
 				<table width="1000" align="center">
 					<tbody>
 					<tr>
@@ -383,7 +383,11 @@ function changeLanguage(lang){
 			}
 			break;
 		case 'korea-button':
-			document.documentElement.lang = 'en';
+			window.sessionStorage.setItem('lang', 'kr');
+			if (document.documentElement.lang !== "kr")
+			{
+				location.reload();
+			}
 			break;
 	}
 }
