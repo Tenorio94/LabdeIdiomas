@@ -10,14 +10,14 @@
                 var $current = $($items[i]);
 
                 // We use the globalTranslations object configured by the MENU
-                var key = !areInputElements ? $current.text() : $current.attr('placeholder'),
+                var key = !areInputElements ? $current.text().replace(/\s/g, "") : $current.attr('placeholder'),
                     translatedText = i18next.t(key);
 
                 if(typeof translatedText !== 'undefined') {
                     if(!areInputElements) {
                         // Translate the normal text of an span, paragraph, div, etc. and show it
                         // By default, all the labels are non-visible (using visibility attribute)
-                        $current.html(translatedText).css('visibility', 'visible');
+                        $current.html(translatedText);
                     }
                     else {
                         // Translate the placeholder of an input
