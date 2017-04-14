@@ -203,7 +203,7 @@ p.error {color: #FF6060; font-weight: bold;}
 </style>
 <body onload='cargar()'>
 </body>
-<h3>&nbsp&nbspBienvenido al sistema de auto diagn&oacutestico </h3>
+<h3>&nbsp&nbspBienvenido al sistema de auto diagn&oacutestico</h3>
 <p>&nbsp&nbsp&nbspPor favor llena <b>todos</b> los campos</p>
 <form action='index.php?p=resultados' onsubmit="return check()" method="post">
 <fieldset>

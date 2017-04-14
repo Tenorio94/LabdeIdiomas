@@ -5,7 +5,7 @@
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   </head>
   <body>
-    <p>Selecciona el tema para desplegar sus recursos disponibles:</p>
+    <p class="multilingual">selecciona_recursos</p>
 
       <form action="index.php?p=buscadorRec" method="post">
 
@@ -19,7 +19,7 @@
           <option value="writting">Writing</option>
           <option value="speaking">Speaking</option>
         </select>
-        <input type="submit" value="Seleccionar">
+        <button class="multilingual" onclick="submitForm()">seleccionar</button>
     <?php
 
     // Create connection
@@ -35,20 +35,8 @@
 
     ?>
 
-      <?php if($tema=="listenning"){ ?>
-      <h1>Recursos para Listening</h1>
-
-      <?php }else if($tema=="writting"){ ?>
-      <h1>Recursos para Writing</h1>
-
-      <?php }else if($tema=="business"){ ?>
-      <h1>Recursos para Business and Specific Purposes</h1>
-
-      <?php }else{ ?>
-      <br>
-      <h1>Recursos para <?=ucfirst($tema);?></h1>
-      <hr>
-      <?php } ?>
+    <h1 class="multilingual">recursos_para</h1> 
+    <h1><?=ucfirst($tema);?></h1>
 
 
 
@@ -62,7 +50,7 @@
         while($resource = $result->fetch_assoc()) {
 
           if ($resource['year'] == "") {
-            $resource['year'] = "<i>No hay informaci&oacute;n</i>";
+            $resource['year'] = "<i class='multilingual'>no_info</i>";
           } else {
             $resource['year'] = date("Y",strtotime($resource['year']));
           }
@@ -92,9 +80,10 @@
       <strong><?=$resource['name']?></strong> (<?=$resource_type?>)<br/>
       <i><?=$resource['author']?></i><br/>
       ISBN: <?=$resource['ISBN']?><br/>
-      Fecha de Publicaci&oacute;n: <?=$resource['year']?>
+      <u class="multilingual">fecha_publ</u> <?=$resource['year']?>
       <form class="" target="_blank" action="indice.php?id=<?=$resource['id']?>" method="post">
         <input target="_blank" type="submit" name="submitId" value="Ver contenido">
+        <button class="multilingual" onclick="submitForm()">ver_contenido</button>
       </form>
   </p>
     <p style="text-align:justify;">
@@ -107,5 +96,10 @@
     }
     }
     ?>
+    <script>
+      function submitForm() {
+        document.getElementById('forma-recursos').submit();
+      }
+    </script>
   </body>
 </html>

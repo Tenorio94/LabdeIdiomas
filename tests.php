@@ -1,11 +1,11 @@
-<h3>Bienvenido al programa de Aprendizaje Autorregulado</h3>
-<p>Selecciona el programa de tu inter&eacute;s:</p>
+<h3 class="multilingual">bienvenida_aprendizaje</h3>
+<p class="multilingual">selecciona_programa</p>
 <style>
 li {text-align:left}
 </style>
 <ul>
-<li><a href="index.php?p=autoestudio">Programa de auto estudio</a></li>
-<li><a href="index.php?p=practicasTOEFL">Pr&aacute;cticas para Structure and Written Expression</a></li>
+<li><a href="index.php?p=autoestudio" class="multilingual">programa_autoestudio</a></li>
+<li><a href="index.php?p=practicasTOEFL" class="multilingual">practicas_estructura</a></li>
 <?php
 	$idiomas = getConection();
 	$query_recomendaciones = "SELECT * FROM tbl_recomendaciones";
