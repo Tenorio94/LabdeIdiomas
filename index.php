@@ -369,10 +369,18 @@ function changeLanguage(lang){
 			}
 			break;
 		case 'germany-button':
-			document.documentElement.lang = 'de';
+			window.sessionStorage.setItem('lang', 'de');
+			if (document.documentElement.lang !== "de")
+			{
+				location.reload();
+			}
 			break;
 		case 'france-button':
-			document.documentElement.lang = 'en';
+			window.sessionStorage.setItem('lang', 'fr');
+			if (document.documentElement.lang !== "fr")
+			{
+				location.reload();
+			}
 			break;
 		case 'korea-button':
 			document.documentElement.lang = 'en';
