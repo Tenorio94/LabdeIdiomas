@@ -1,7 +1,16 @@
+<script src="../recursos/js/jquery-3.1.1.min.js"></script>
+<script src="../recursos/js/jquery-ui.js"></script>
+<script type="text/javascript" src="../recursos/js/jquery-ui.multidatespicker.js"></script>
+<link src="../recursos/css/jquery-ui.structure.css"></link>
+<link src="../recursos/css/jquery-ui.theme.css"></link>
+<link rel="stylesheet" type="text/css" href="../recursos/css/mdp.css">
+<script type="text/javascript" src="../recursos/js/prettify.js"></script>
+<script type="text/javascript" src="../recursos/js/lang-css.js"></script>
+
 <form name="form3" method="POST" action="index.php?p=semanasBD">
     
   <p align="center" class="titulo">Cambiar Semanas</p>
-  <table border="1" align="center" class="contenido">
+  	<table border="1" align="center" class="contenido">
     <tr> 
       <td>&nbsp;</td>
       <td class="titulo1" align="center">D&iacute;a</td>
@@ -138,12 +147,56 @@
 			</td>
 			<td><input type="checkbox" name="sabado_asueto" size="2" maxlength="2" value="1"></td>
     </tr>
-  <tr> 
+  	<tr> 
     <td colspan="3" align="center">
         <input type="submit" name="Submit" value="Aceptar">
    	</td>
    </tr>
    </table>
-    </form>
 
+</form>
+<div>
+	<div id="calendar" class="box"></div>
+</div>
+
+<button id="register-holidays" onclick="registerHoliday()">Dar de alta sesiones</button>
+
+<script>
+	var date = new Date();
+	var year = date.getFullYear();
+	$('#calendar').multiDatesPicker({
+		maxDate: new Date(year+1, 6, 31),
+		dateFormat: 'yy-mm-dd',
+	    beforeShowDay: function(date) {
+	    	var day = date.getDay();
+	        return [(day != 0), ''];
+    	}
+	});
+</script>
+
+<script>
+	function registerHoliday(){
+		var dates = $('#calendar').multiDatesPicker('getDates');
+		var today = new Date();
+
+		if (dates.length > 0) {
+			$.ajax({
+				url: "asuetos.php",
+				type: "POST",
+				data: { dates: dates },
+				dataType: "json",
+				success: function(response) {
+					console.log(response);	
+				},
+				error: function(error){
+					console.log(error);
+				}
+			});
+		}
+		else {
+			alert("Favor de escoger al menos una fecha");
+		}
+	}
+</script>
+					
 

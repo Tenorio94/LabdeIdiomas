@@ -18,8 +18,8 @@ $user = $_SESSION['usuario'];
 	<head>
 		<title>LABDEI :: <?php echo date('Y'); ?></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-		<link href="../recursos/template.css" rel="stylesheet" type="text/css" />
-		<link href="../recursos/labdei.js" type="text/javascript" />
+		<link href="../recursos/css/template.css" rel="stylesheet" type="text/css" />
+		<link href="../recursos/js/labdei.js" type="text/javascript" />
 	</head>
 	
 	<body bgcolor="#CCCCCC" style="text-align:center" leftmargin="0px" rightmargin="0px" topmargin="0px" margin-bottom="0px">
@@ -61,12 +61,13 @@ $user = $_SESSION['usuario'];
 								<ul id='menu2' style="width:1000px ">
 									<li><a href='index.php?p=reservaciones' style="margin-left:0px; width:100px;">Reservaciones</a></li>
 									<li><a href='index.php?p=amatriculas' style="width:100px;">Alta Matriculas</a></li>
-									<li><a href='index.php?p=semanas' style="width:75px;">Semanas</a></li>
-									<li><a href='index.php?p=busqueda' style="width:75px;">B�squeda</a></li>
+									<li><a href='index.php?p=semanas' style="width:60px;">Semanas</a></li>
+									<li><a href='index.php?p=salones' style="width:60px;">Salones</a></li>
+									<li><a href='index.php?p=busqueda' style="width:60px;">B�squeda</a></li>
 									<li><a href='index.php?p=testimonios' style="width:100px;">Testimonios</a></li>
-									<li><a href='index.php?p=avisos' style="width:75px;">Avisos</a></li>
-									<li><a href='index.php?p=varios' style="width:75px;">Varios</a></li>
-									<li><a href='index.php?p=horas' style="width:75px;">Sesiones</a></li>
+									<li><a href='index.php?p=avisos' style="width:60px;">Avisos</a></li>
+									<li><a href='index.php?p=varios' style="width:60px;">Varios</a></li>
+									<li><a href='index.php?p=horas' style="width:50px;">Sesiones</a></li>
 									<li><a href='index.php?p=recomendaciones' style="width:100px;">Recomendaciones</a></li>
 								</ul>
 					</td></tr></tbody>
@@ -127,7 +128,14 @@ $user = $_SESSION['usuario'];
 						break;
 					case "semanasBD":
 						include('semanasBD.php');
-						break;			
+						break;
+			//--------- Inician paginas de SALONES -----//						
+					case "salones":
+						include('salones.php');
+						break;
+					case "salonesBD":
+						include('salonesBD.php');
+						break;				
 			//--------- Inician paginas de BUSQUEDA de alumnos -----//						
 					case "busqueda":
 						include('busquedaAlumno.php');

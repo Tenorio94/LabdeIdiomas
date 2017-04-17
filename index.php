@@ -20,11 +20,13 @@ $user = $_SESSION['user'];
 	<head>
 		<title>LABDEI :: <?php echo date('y'); ?></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<link href="recursos/template.css" rel="stylesheet" type="text/css" />
-		<link href="recursos/labdei.js" type="text/javascript" />
-		<script src="recursos/i18next.min.js"></script>
-		<script src="recursos/javascript_functions.js"></script>
-		<script src="recursos/jquery-3.1.1.min.js"></script>
+		<link href="recursos/css/template.css" rel="stylesheet" type="text/css" />
+		<link href="recursos/js/labdei.js" type="text/javascript" />
+		<script src="recursos/js/i18next.min.js"></script>
+		<script src="recursos/js/javascript_functions.js"></script>
+		<script src="recursos/js/jquery-3.1.1.min.js"></script>
+		<script>window.sessionStorage.setItem('lang', 'es');</script>
+
 	</head>
 
 	<body bgcolor="#CCCCCC" style="text-align:center" leftmargin="0px" rightmargin="0px" topmargin="0px" margin-bottom="0px">
@@ -266,7 +268,7 @@ $user = $_SESSION['user'];
 			}
 			window.sessionStorage.setItem('lang', document.documentElement.lang);
 		</script>
-		<script src="recursos/i18init.js"></script>
+		<script src="recursos/js/i18init.js"></script>
 		<script>
 			Utils.applyMultilingualLabels('.bigContainer', '.multilingual');
 			Utils.applyMultilingualLabels('.bigContainer', '.title-multilingual');
@@ -274,6 +276,7 @@ $user = $_SESSION['user'];
 			Utils.applyMultilingualLabels('.bigContainer', '.diasSemana-multilingual');
 			
 		</script>
+
 	</body>
 </html>
 
@@ -388,6 +391,9 @@ function changeLanguage(lang){
 			{
 				location.reload();
 			}
+			break;
+		default : 
+			window.sessionStorage.setItem('lang', 'es');
 			break;
 	}
 }
