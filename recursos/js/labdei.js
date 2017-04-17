@@ -1,5 +1,3 @@
-
-	
 function verificaMat()
 {
   strMat = document.form3.mat.value;
@@ -14,14 +12,14 @@ function verificaMat()
       if (ValidChars.indexOf(Char) == -1) 
          {
          	IsNumber = false;
-  			alert("Sólo se aceptan números en la matrícula (Sin espacios)");
+  			alert("Sï¿½lo se aceptan nï¿½meros en la matrï¿½cula (Sin espacios)");
   			document.form3.mat.focus();
   			return false;
          }
       }
 	  if(strMat < 100000)
 	  {
-	  		alert("La matrícula no es valida");
+	  		alert("La matrï¿½cula no es valida");
 			document.form3.mat.focus();
 	  }
 	 
@@ -32,14 +30,14 @@ function valida()
 	verificaMat();
 	if(document.form3.mat.value == "")
 		{
-			alert("Favor de escribir su matrícula");
+			alert("Favor de escribir su matrï¿½cula");
 			document.form3.mat.focus();
 		}
 		else										
 		{
 			if(document.form3.hora.value == "0")
 			{
-				alert("Favor de seleccionar la hora para su reservación.");
+				alert("Favor de seleccionar la hora para su reservaciï¿½n.");
 				document.form3.hora.focus();
 			}
 		}

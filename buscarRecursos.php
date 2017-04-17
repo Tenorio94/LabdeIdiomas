@@ -7,9 +7,9 @@
 
     <body>
 
-      <p>Selecciona el tema para desplegar sus recursos disponibles:</p>
+      <p class="multilingual">selecciona_recursos</p>
 
-      <form action="index.php?p=buscadorRec" method="post">
+      <form action="index.php?p=buscadorRec" method="post" id="forma-recursos">
 
         <select id="temas" name="temas">
           <option value="grammar">Grammar</option>
@@ -21,9 +21,12 @@
           <option value="writting">Writing</option>
           <option value="speaking">Speaking</option>
         </select>
-        <input type="submit" value="Seleccionar">
-
-
+        <button class="multilingual" onclick="submitForm()">seleccionar</button>
       </form>
+      <script>
+        function submitForm() {
+          document.getElementById('forma-recursos').submit();
+        }
+      </script>
     </body>
 </html>

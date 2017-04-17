@@ -20,8 +20,13 @@ $user = $_SESSION['user'];
 	<head>
 		<title>LABDEI :: <?php echo date('y'); ?></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<link href="recursos/template.css" rel="stylesheet" type="text/css" />
-		<link href="recursos/labdei.js" type="text/javascript" />
+		<link href="recursos/css/template.css" rel="stylesheet" type="text/css" />
+		<link href="recursos/js/labdei.js" type="text/javascript" />
+		<script src="recursos/js/i18next.min.js"></script>
+		<script src="recursos/js/javascript_functions.js"></script>
+		<script src="recursos/js/jquery-3.1.1.min.js"></script>
+		<script>window.sessionStorage.setItem('lang', 'es');</script>
+
 	</head>
 
 	<body bgcolor="#CCCCCC" style="text-align:center" leftmargin="0px" rightmargin="0px" topmargin="0px" margin-bottom="0px">
@@ -38,17 +43,40 @@ $user = $_SESSION['user'];
 						</div>
 						</td>
 						<td width="500px">
-						<div style="width:100%;font-size:12px;margin-right:10px; text-align:right; margin-top:4px; letter-spacing:2px;">
-								<a onclick="location.href='index.php?p=eperfil'" style="cursor:pointer;"><? echo $_SESSION['user']; ?></a>
+						<div>
+							<span class="flag-container">
+								<span>
+									<input type="image" id="united-kingdom-button" src="imagenes/banderas/gb.png" style="width:30px; height: 19px;" onclick="changeLanguage(this.id)" />
+								</span>
+								<span>
+									<input type="image" id="spain-button" src="imagenes/banderas/es.png" onclick="changeLanguage(this.id)"/>
+								</span>
+								<span>
+									<input type="image" id="france-button" src="imagenes/banderas/fr.png" onclick="changeLanguage(this.id)"/>
+								</span>
+								<span>
+									<input type="image" id="germany-button" src="imagenes/banderas/de.png" onclick="changeLanguage(this.id)"/>
+								</span>
+								<span>
+									<input type="image" id="korea-button" src="imagenes/banderas/kr.png" onclick="changeLanguage(this.id)"/>
+								</span>
+								
+							</span>
+						<span style="width:100%;font-size:12px;margin-right:10px; text-align:right; margin-top:4px; letter-spacing:2px;">
+							<a onclick="location.href='index.php?p=eperfil'" style="cursor:pointer;"><? echo $_SESSION['user']; ?></a>
 								&nbsp; &nbsp; | &nbsp; &nbsp;
-								<? if($user == null ) { ?>
-									<a onclick="showLoginDiv(true);" style="cursor:pointer;">Entrar</a>
+							<? if($user == null ) { ?>
+							<a onclick="showLoginDiv(true);" style="cursor:pointer;" class="multilingual">entrar</a>
 								<? } else { ?>
-									<a onclick="location.href='index.php?p=salir'" style="cursor:pointer;">Salir</a>
+							<a onclick="location.href='index.php?p=salir'" style="cursor:pointer;" class="multilingual">salir</a>
 								<? }  ?>
 								&nbsp; &nbsp; &nbsp; &nbsp;
+						</span>
 						</div>
 						</td>
+						
+							
+
 					</tr>
 					</tbody>
 				</table>
@@ -68,10 +96,10 @@ $user = $_SESSION['user'];
 							<div id="loginDiv" style="color:#FFFFFF; font-size:14px; font-weight:bold; margin-top:15px; margin-right:30px; display:none">
 							  <form name="formLogin" method="POST" action="index.php?p=validuser" onSubmit="return validaLogin();">
 								<table align="center">
-									<tr><td> Usuario : </td><td> <input type="text" name="usuario" /></td></tr>
-									<tr><td> Contrase&ntildea: </td><td> <input type="password" name="password" /></td></tr>
+									<tr><td class="multilingual">usuario</td><td> <input type="text" name="usuario" /></td></tr>
+									<tr><td class="multilingual">pass</td><td> <input type="password" name="password" /></td></tr>
 									<tr><td colspan="2" align="center">
-										<a onclick="return validaOlvidoContra();" style="color:#FFFFFF;font-size:12px;cursor:pointer;">&iquestOlvidaste tu contrase&ntildea?</a>
+										<a onclick="return validaOlvidoContra();" style="color:#FFFFFF;font-size:12px;cursor:pointer;" class="multilingual">olvidaste_tu_contra</a>
 										<input type="submit" name="btnLogin" value="Entrar >>"/>
 									</td></tr>
 								</table>
@@ -89,15 +117,15 @@ $user = $_SESSION['user'];
 				<table width="900px">
 					<tbody><tr><td>
 					<ul id='menu2' style="width:1000px ">
-						<li><a href='index.php' style="margin-left:20px; width:90px;">Principal</a></li>
-						<li><a href='index.php?p=quienesSomos' style="width:100px;">Quienes Somos</a></li>
-						<li><a href='index.php?p=objetivos' style="width:90px;">Objetivos</a></li>
-						<li><a href='index.php?p=reservaciones' style="width:90px;">Reservaciones</a></li>
-						<li><a href='index.php?p=tutoriales' style="width:90px;">Tutoriales</a></li>
-						<li><a href='index.php?p=tests' style="width:90px;">Aprendizaje autorregulado</a></li>
-						<li><a href='index.php?p=buscarRecursos' style="width:90px;">Buscar Recursos</a></li>
+						<li><a class="multilingual" href='index.php' style="margin-left:20px; width:90px;">principal</a></li>
+						<li><a class="multilingual" href='index.php?p=quienesSomos' style="width:100px;">quienes_somos</a></li>
+						<li><a class="multilingual" href='index.php?p=objetivos' style="width:90px;">objetivos</a></li>
+						<li><a class="multilingual" href='index.php?p=reservaciones' style="width:90px;">reservaciones</a></li>
+						<li><a class="multilingual" href='index.php?p=tutoriales' style="width:90px;">tutoriales</a></li>
+						<li><a class="multilingual" href='index.php?p=tests' style="width:90px;">aprendizaje_autoregulado</a></li>
+						<li><a class="multilingual" href='index.php?p=buscarRecursos' style="width:90px;">buscar_recursos</a></li>
 						<? if($user != null ) { ?>
-						<li><a href='index.php?p=horas' style="width:90px;">Sesiones</a></li>
+						<li><a class="multilingual" href='index.php?p=horas' style="width:90px;">sesiones</a></li>
 						<? } ?>
 					</ul>
 					</td></tr></tbody>
@@ -232,6 +260,23 @@ $user = $_SESSION['user'];
 			<!-- TERMINA SECCION DE PIE DE PAGINA -->
 		</div>
 		</center>
+		<script>
+			if(window.sessionStorage.getItem('lang') == 'null'){
+				document.documentElement.lang = 'es';
+			}else{
+				document.documentElement.lang = window.sessionStorage.getItem('lang');
+			}
+			window.sessionStorage.setItem('lang', document.documentElement.lang);
+		</script>
+		<script src="recursos/js/i18init.js"></script>
+		<script>
+			Utils.applyMultilingualLabels('.bigContainer', '.multilingual');
+			Utils.applyMultilingualLabels('.bigContainer', '.title-multilingual');
+			Utils.applyMultilingualLabels('.bigContainer', '.leftTitle-multilingual');
+			Utils.applyMultilingualLabels('.bigContainer', '.diasSemana-multilingual');
+			
+		</script>
+
 	</body>
 </html>
 
@@ -304,4 +349,41 @@ function verificaMat()
       }
 	  return IsNumber;
 }
+
+function changeLanguage(lang){
+	/*if (typeof(Storage) !== "undefined") {
+	    alert("localstorage support")
+	} else {
+	    // Sorry! No Web Storage support..
+	}*/
+	switch(lang) {
+		case 'united-kingdom-button':
+			window.sessionStorage.setItem('lang', 'en');
+			if (document.documentElement.lang !== 'en')
+			{
+				location.reload();
+			}
+			break;
+		case 'spain-button':
+			window.sessionStorage.setItem('lang', 'es');
+			if (document.documentElement.lang !== "es")
+			{
+				location.reload();
+			}
+			break;
+		case 'germany-button':
+			document.documentElement.lang = 'de';
+			break;
+		case 'france-button':
+			document.documentElement.lang = 'en';
+			break;
+		case 'korea-button':
+			document.documentElement.lang = 'en';
+			break;
+		default : 
+			window.sessionStorage.setItem('lang', 'es');
+			break;
+	}
+}
+
 </script>
