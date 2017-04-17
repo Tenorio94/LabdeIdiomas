@@ -7,6 +7,9 @@
 <script type="text/javascript" src="../recursos/js/prettify.js"></script>
 <script type="text/javascript" src="../recursos/js/lang-css.js"></script>
 
+
+<p align="center" class="titulo">Cambiar Semanas</p>
+<!--
 <form name="form3" method="POST" action="index.php?p=semanasBD">
     
   <p align="center" class="titulo">Cambiar Semanas</p>
@@ -155,6 +158,7 @@
    </table>
 
 </form>
+-->
 <div>
 	<div id="calendar" class="box"></div>
 </div>
@@ -165,7 +169,8 @@
 	var date = new Date();
 	var year = date.getFullYear();
 	$('#calendar').multiDatesPicker({
-		maxDate: new Date(year+1, 6, 31),
+		maxDate: new Date(year, 11, 30),
+		minDate: new Date(year - 1, 12, 1),
 		dateFormat: 'yy-mm-dd',
 	    beforeShowDay: function(date) {
 	    	var day = date.getDay();
@@ -178,6 +183,7 @@
 	function registerHoliday(){
 		var dates = $('#calendar').multiDatesPicker('getDates');
 		var today = new Date();
+		console.log(dates);
 
 		if (dates.length > 0) {
 			$.ajax({

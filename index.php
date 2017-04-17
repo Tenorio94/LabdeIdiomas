@@ -25,7 +25,11 @@ $user = $_SESSION['user'];
 		<script src="recursos/js/i18next.min.js"></script>
 		<script src="recursos/js/javascript_functions.js"></script>
 		<script src="recursos/js/jquery-3.1.1.min.js"></script>
-		<script>window.sessionStorage.setItem('lang', 'es');</script>
+		<script>
+			if (document.documentElement.lang != ''){
+				window.sessionStorage.setItem('lang', 'es');
+			} 
+		</script>
 
 	</head>
 
