@@ -62,10 +62,13 @@
             "ejemplo_inicio_sesion": `Ejemplo de inicio de sesión: 
                                     ◦ Usuario: 1234567
                                     ◦ Contraseña: 1234567`,
-            "mas_info": "Para más información contacta al Departamento de Laboratorio de Idiomas."
-
-
-
+            "mas_info": "Para más información contacta al Departamento de Laboratorio de Idiomas.",
+            "sesiones_acreditadas": "Sesiones acreditadas",
+            "periodo": "Periodo",
+            "idioma": "Idioma",
+            "horas": "Horas",
+            "cantidad_sesiones": "Cantidad de sesiones",
+            "ultima_fecha": "La última fecha de actualización fue el"
       
           }
         },
@@ -127,9 +130,13 @@
             "ejemplo_inicio_sesion": `Login example: 
                                     ◦ User: 1234567
                                     ◦ Password: 1234567`,
-            "mas_info": "For more information contact the Language Laboratory Department."
-
-
+            "mas_info": "For more information contact the Language Laboratory Department.",
+            "sesiones_acreditadas": "Accredited Sessions",
+            "periodo": "Period",
+            "idioma": "Language",
+            "horas": "Hours",
+            "cantidad_sesiones": "Number of sessions",
+            "ultima_fecha": "The last update date was"
           }
         },
         de: {
@@ -190,7 +197,13 @@
             "ejemplo_inicio_sesion": `Login Beispiel: 
                                     ◦ Benutzer: 1234567
                                     ◦ Passwort: 1234567`,
-            "mas_info": "Für weitere Informationen wenden Sie sich bitte an die Sprachlaborabteilung."
+            "mas_info": "Für weitere Informationen wenden Sie sich bitte an die Sprachlaborabteilung.",
+            "sesiones_acreditadas": "Akkreditierte Sessions",
+            "periodo": "Periode",
+            "idioma": "Sprache",
+            "horas": "Öffnungszeiten",
+            "cantidad_sesiones": "Anzahl der Sitzungen",
+            "ultima_fecha": "Das letzte Aktualisierungsdatum war"
           }
         },
         fr: {
@@ -251,7 +264,13 @@
             "ejemplo_inicio_sesion": `Exemple de connexion: 
                                     ◦ Utilisateur: 1234567
                                     ◦ Mot de passe: 1234567`,
-            "mas_info": "Pour plus d'informations, contactez le département de laboratoire linguistique."
+            "mas_info": "Pour plus d'informations, contactez le département de laboratoire linguistique.",
+            "sesiones_acreditadas": "Sessions accréditées",
+            "periodo": "Période",
+            "idioma": "La langue",
+            "horas": "Heures",
+            "cantidad_sesiones": "Nombre de sessions",
+            "ultima_fecha": "La dernière date de mise à jour était"
 
 
           }
@@ -314,7 +333,13 @@
             "ejemplo_inicio_sesion": `로그인 예제: 
                                     ◦ 사용자: 1234567
                                     ◦ 암호: 1234567`,
-            "mas_info": "더 자세한 정보는 어학 실습실에 문의하십시오."
+            "mas_info": "더 자세한 정보는 어학 실습실에 문의하십시오.",
+            "sesiones_acreditadas": "공인 된 세션",
+            "periodo": "기간",
+            "idioma": "언어",
+            "horas": "시간",
+            "cantidad_sesiones": "세션 수",
+            "ultima_fecha": "마지막 업데이트 날짜"
 
 
           }
