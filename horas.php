@@ -14,15 +14,15 @@ LIMIT 1;";
 $periodo_output = array("Primer", "Segundo", "Tercer", "Cuarto", "Quinto", "Sexto", "Septimo", "Octavo", "Noveno", "Decimo");
 ?>
 
-<div class="title">Sesiones Acreditadas</div>
+<div class="title-multilingual">sesiones_acreditadas</div>
 
 <table width="800" align="center" class="content hoursTable">
 	<thead>
 		<tr>
-			<th>Periodo</th>
-			<th>Idioma</th>
-			<th>Horas</th>
-			<th>Cantidad de Sesiones</th>
+			<th class="multilingual">periodo</th>
+			<th class="multilingual">idioma</th>
+			<th class="multilingual">horas</th>
+			<th class="multilingual">cantidad_sesiones</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -91,4 +91,5 @@ $periodo_output = array("Primer", "Segundo", "Tercer", "Cuarto", "Quinto", "Sext
 				?> 
 	</tbody>
 </table>
-<p>La última fecha de actualización fue el <? $string = join(',', $fecha); echo  $string; ?>. </p>
+<p class="multilingual">ultima_fecha</p>
+<? $string = join(',', $fecha); echo  $string; ?>.

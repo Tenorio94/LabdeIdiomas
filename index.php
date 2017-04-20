@@ -25,7 +25,11 @@ $user = $_SESSION['user'];
 		<script src="recursos/js/i18next.min.js"></script>
 		<script src="recursos/js/javascript_functions.js"></script>
 		<script src="recursos/js/jquery-3.1.1.min.js"></script>
-		<script>window.sessionStorage.setItem('lang', 'es');</script>
+		<script>
+			if (document.documentElement.lang != ''){
+				window.sessionStorage.setItem('lang', 'es');
+			} 
+		</script>
 
 	</head>
 
@@ -33,7 +37,7 @@ $user = $_SESSION['user'];
 	<center>
 		<div class="bigContainer">
 			<!-- INICIA SECCION DE HEADER MENOR -->
-			<div class="smallHeader" style="width:1000px; text-align:left; ">
+			<div class="smallHeader" style="width:1000px; height: 35px; text-align:left; ">
 				<table width="1000" align="center">
 					<tbody>
 					<tr>
@@ -372,13 +376,25 @@ function changeLanguage(lang){
 			}
 			break;
 		case 'germany-button':
-			document.documentElement.lang = 'de';
+			window.sessionStorage.setItem('lang', 'de');
+			if (document.documentElement.lang !== "de")
+			{
+				location.reload();
+			}
 			break;
 		case 'france-button':
-			document.documentElement.lang = 'en';
+			window.sessionStorage.setItem('lang', 'fr');
+			if (document.documentElement.lang !== "fr")
+			{
+				location.reload();
+			}
 			break;
 		case 'korea-button':
-			document.documentElement.lang = 'en';
+			window.sessionStorage.setItem('lang', 'kr');
+			if (document.documentElement.lang !== "kr")
+			{
+				location.reload();
+			}
 			break;
 		default : 
 			window.sessionStorage.setItem('lang', 'es');

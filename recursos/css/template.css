@@ -172,9 +172,9 @@ border-bottom-width:thin;
 	background-color	: #e0e0e0;
 }
 .flag-container {
-<<<<<<< HEAD:recursos/css/template.css
 
 }
+
 .salonesSubmit {
 	margin-left: 6%;
 }
@@ -184,11 +184,14 @@ border-bottom-width:thin;
 	align: center;
 	margin-top: 2%;
 	margin-bottom: 6%;
-=======
 	
 }
 
 .multilingual p {
 	color:red;
->>>>>>> refs/remotes/origin/Idiomas:recursos/template.css
+}
+
+#calendar {
+	padding-left: 35%;
+    padding-bottom: 5%;;
 }
