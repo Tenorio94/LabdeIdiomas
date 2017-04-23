@@ -192,10 +192,10 @@
 				data: { dates: dates },
 				dataType: "json",
 				success: function(response) {
-					console.log(response);	
+					alert("Semanas actualizadas exitosamente.");
 				},
 				error: function(error){
-					console.log(error);
+					alert("Error actualizando semanas");
 				}
 			});
 		}
