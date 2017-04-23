@@ -26,7 +26,7 @@ $user = $_SESSION['user'];
 		<script src="recursos/js/javascript_functions.js"></script>
 		<script src="recursos/js/jquery-3.1.1.min.js"></script>
 		<script>
-			if (document.documentElement.lang != ''){
+			if (document.documentElement.lang != 'null'){
 				window.sessionStorage.setItem('lang', 'es');
 			} 
 		</script>
