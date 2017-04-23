@@ -1,6 +1,8 @@
 (function i18init(){
   window.preferredLanguage = document.documentElement.lang;
-  
+  if (window.preferredLanguage == 'null') {
+      window.preferredLanguage = 'es'
+  }
     i18next.init({
       lng: window.preferredLanguage,
       resources: {
