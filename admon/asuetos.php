@@ -30,6 +30,6 @@ if (isset($_POST['dates'])){
 	}
 }
 
- return;
+ echo json_encode("Success");
 
 ?>	
