@@ -26,9 +26,12 @@ $user = $_SESSION['user'];
 		<script src="recursos/js/javascript_functions.js"></script>
 		<script src="recursos/js/jquery-3.1.1.min.js"></script>
 		<script>
-			if (document.documentElement.lang == ''){
-				window.sessionStorage.setItem('lang', 'es');
-			} 
+			if(window.sessionStorage.getItem('lang') == 'null'){
+				document.documentElement.lang = 'es';
+			}else{
+				document.documentElement.lang = window.sessionStorage.getItem('lang');
+			}
+			window.sessionStorage.setItem('lang', document.documentElement.lang);
 		</script>
 
 	</head>
@@ -264,14 +267,6 @@ $user = $_SESSION['user'];
 			<!-- TERMINA SECCION DE PIE DE PAGINA -->
 		</div>
 		</center>
-		<script>
-			if(window.sessionStorage.getItem('lang') == 'null'){
-				document.documentElement.lang = 'es';
-			}else{
-				document.documentElement.lang = window.sessionStorage.getItem('lang');
-			}
-			window.sessionStorage.setItem('lang', document.documentElement.lang);
-		</script>
 		<script src="recursos/js/i18init.js"></script>
 		<script>
 			Utils.applyMultilingualLabels('.bigContainer', '.multilingual');
