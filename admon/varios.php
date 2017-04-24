@@ -5,7 +5,7 @@
 
 <script>
 	function confirmarBajaRegistros() {
-		var ok = confirm("¿Deseas eliminar todos los registros de la base de datos? Recuerda que una vez borrados no podrán ser recuperados.");
+		var ok = confirm("Â¿Deseas eliminar todos los registros de la base de datos? Recuerda que una vez borrados no podrÃ¡n ser recuperados.");
 		if(ok) {
 			return true;
 		}
@@ -13,7 +13,7 @@
 	}
 	
 	function confirmarBajaComentarios() {
-		var ok = confirm("¿Deseas eliminar todos los comentarios de la base de datos? Recuerda que una vez borrados no podrán ser recuperados.");
+		var ok = confirm("Â¿Deseas eliminar todos los comentarios de la base de datos? Recuerda que una vez borrados no podrÃ¡n ser recuperados.");
 		if(ok) {
 			return true;
 		}

@@ -80,7 +80,7 @@ function getSemanaCompletaHrefLink($week) {
       <tr bgcolor="#336699"> 
         <td align="center" class="diasSemana">Lunes</td>
         <td align="center" class="diasSemana">Martes</td>
-        <td align="center" class="diasSemana">Mi�rcoles</td>
+        <td align="center" class="diasSemana">Miércoles</td>
         <td align="center" class="diasSemana">Jueves</td>
         <td align="center" class="diasSemana">Viernes</td>
 		<td align="center" class="diasSemana">S&aacute;bado</td>

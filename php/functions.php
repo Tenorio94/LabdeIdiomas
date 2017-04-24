@@ -175,7 +175,7 @@ function enviarEmail($to, $subject, $message){
 								&nbsp;
 							</div>
 							<div style="height:30px;background-color:#FFFFFF; font-size:10px; font-weight:bold;">
-								Instituto Tecnol�gico y de Estudios Superiores de Monterrey  - Laboratorio de Idiomas <br>
+								Instituto Tecnológico y de Estudios Superiores de Monterrey  - Laboratorio de Idiomas <br>
 								&copy; Derechos Reservados.
 							</div>
 						</div>

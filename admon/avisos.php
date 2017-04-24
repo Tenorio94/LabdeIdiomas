@@ -5,7 +5,7 @@
 	if($inserted == "1")
 		echo "El aviso fue dado de alta correctamente";
 	else if($inserted == "0")
-		echo "Hubo un error al dar de alta el aviso, por favor, intente m�s tarde.";
+		echo "Hubo un error al dar de alta el aviso, por favor, intente más tarde.";
 ?>
 	<div align="center" style="width:90%; text-align:right" class="content">
 		<img src="../imagenes/alta.jpg" /><a href="index.php?p=aaviso">Dar de alta un aviso</a>
@@ -58,7 +58,7 @@
 </table>
 <script>
 	function confirmarBaja() {
-		var ok = confirm("�Deseas eliminar el aviso seleccionado?");
+		var ok = confirm("¿Deseas eliminar el aviso seleccionado?");
 		if(ok) {
 			return true;
 		}

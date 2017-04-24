@@ -13,7 +13,7 @@
 					<div style="margin-left:50px;"></div>
 	                <img src="imagenes/usuario-x-sem.JPG" width="968" height="657" /><br />
                 <br />
-					<div class="leftTitle"><img src="imagenes/numeralia.jpg" /><label style=" vertical-align:super;">Alumnos atendidos por día:</label></div>
+					<div class="leftTitle"><img src="imagenes/numeralia.jpg" /><label style=" vertical-align:super;">Alumnos atendidos por dÃ­a:</label></div>
 					<img src="imagenes/usuario-dia.JPG" width="963" height="655" />
 					<div style="margin-left:50px;"></div>
 			  </div>

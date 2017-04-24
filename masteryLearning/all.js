@@ -1183,7 +1183,7 @@ var ML;
                 this.scope = $scope;
             }
             ProfCoursesController.EmptyCourseName = "Curso sin nombre";
-            ProfCoursesController.EmptyCourseDescription = "Curso sin descripci�n";
+            ProfCoursesController.EmptyCourseDescription = "Curso sin descripción";
             return ProfCoursesController;
         })();
         Controllers.ProfCoursesController = ProfCoursesController;

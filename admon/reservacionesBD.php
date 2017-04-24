@@ -28,19 +28,19 @@ $total_reservacion_salon_otro = $reservacion_salon_otro->num_rows;
 
 //--------------------------------------------------------------------------------------------------------
 /* subject */
-$subject = "Cambio en Reservaci�n :: Laboratorio de Idiomas";
+$subject = "Cambio en Reservación :: Laboratorio de Idiomas";
 
 /* message */
 $message = '
 <html>
 <head>
-<title>Laboratorio de Idiomas :: Confirmaci�n</title>
+<title>Laboratorio de Idiomas :: Confirmación</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 <body>
 <table width="75%" border="0" align="center">
   <tr>
-    <td><p align="center"><font size="4"><strong>Hubo un cambio en tu sal�n para el Laboratorio de Idiomas</strong></font></p>
+    <td><p align="center"><font size="4"><strong>Hubo un cambio en tu salón para el Laboratorio de Idiomas</strong></font></p>
       <table width="40%" border="1" align="center">
         <tr> 
           <td bgcolor="#CCFF66"><strong>D&iacute;a:</strong></td>
@@ -81,7 +81,7 @@ $headers .= "From: Laboratorio de Idiomas <iaranda@itesm.mx>\r\n";
 	 {
 ?> 		<table border="0" align="center" class="contenido">
   			<tr>
-			    <td><p class="titulo">Lo sentimos, tu reservaci�n debe ser a pasado.</p>
+			    <td><p class="titulo">Lo sentimos, tu reservación debe ser a pasado.</p>
 					</td>
 			  </tr>
 			</table>

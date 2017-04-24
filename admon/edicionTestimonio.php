@@ -19,7 +19,7 @@ closeConection($idiomas);
 
 <table align="center">
 	<tr>
-		<td class="title">Edici�n de Testimonio</td>
+		<td class="title">Edición de Testimonio</td>
 	</tr>
 </table>
 <form name="forma" method="post" action="index.php?p=petestimonio" enctype="multipart/form-data">
@@ -30,7 +30,7 @@ closeConection($idiomas);
 		<td align="left"><input type="text" name="nombreAlumno" size="50" value="<? echo $testimonio['autor']; ?>"/></td>
 	</tr>
 	<tr>
-		<td align="left"><br>Descripci�n:</td>
+		<td align="left"><br>Descripción:</td>
 		<td align="left"><br><textarea name="descripcion" rows="5" cols="37"><? echo $testimonio['descripcion']; ?></textarea></td>
 	</tr>
 	<tr>

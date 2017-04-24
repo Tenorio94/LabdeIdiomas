@@ -25,10 +25,10 @@ closeConection($idiomas);
 
 <form name="perfilUsuarioForm" method="POST" action="index.php?p=peperfil" onSubmit="return validaPerfilUsuarioForm();">
     
-  <p align="center" class="titulo">Informaci�n del Usuario</p>
+  <p align="center" class="titulo">Información del Usuario</p>
   <table border="0" align="center" class="contenido" style="text-align:left ">
     	<tr>
-			<td>M�tricula:</td>
+			<td>Mítricula:</td>
 			<td><? echo $user_info['matricula']; ?></td>
 		</tr>
 		<tr>
@@ -44,15 +44,15 @@ closeConection($idiomas);
 			<td><input type="text" name="ap_materno" size="50" maxlength="50" value="<? echo $user_info['ap_materno']; ?>"></td>
 		</tr>				
 		<tr>
-			<td>Correo Electr�nico:</td>
+			<td>Correo Electrónico:</td>
 			<td><input type="text" name="email" size="50" maxlength="100" value="<? echo $user_info['email']; ?>"></td>
 		</tr>		
 		<tr>
-			<td>Contrase�a:</td>
+			<td>Contraseña:</td>
 			<td><input type="password" name="password" size="50" maxlength="50" value="<? echo $password;?>"></td>
 		</tr>			
 		<tr>
-			<td>Confirmaci�n de Contrase�a:</td>
+			<td>Confirmación de Contraseña:</td>
 			<td><input type="password" name="password2" size="50" maxlength="50" value="<? echo $password; ?>"></td>
 		</tr>
   		<tr> 

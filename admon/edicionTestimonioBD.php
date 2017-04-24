@@ -8,7 +8,7 @@
 		//Copiar el archivo
 		move_uploaded_file($_FILES['archivoTestimonio']['tmp_name'], $uploadfile);
 	}
-	//Obtener la informaci�n que guardaremos en la base de datos.
+	//Obtener la información que guardaremos en la base de datos.
 	$id = $_POST['id'];
 	$autor = $_POST['nombreAlumno'];
 	$descripcion = $_POST['descripcion'];

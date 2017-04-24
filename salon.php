@@ -37,7 +37,7 @@ if(($_SESSION['user'] == null && $_SESSION['user'] == '') || !hasChangedPassword
 <table align="center">
 	<tr>
 		<td class="style2">
-			Paso # 2: Selecciona el sal�n.
+			Paso # 2: Selecciona el salón.
 		</td>
 	</tr>
 </table>

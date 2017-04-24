@@ -233,7 +233,7 @@ $user = $_SESSION['user'];
 						case "cancelacion":
 							validLoguedUserToInclude('cancelacion.php');
 							break;
-			//--------- Paginas de INFORMACION ALUMNO (Perfil de Usuario/Olvido de contrase�a)  --------------//
+			//--------- Paginas de INFORMACION ALUMNO (Perfil de Usuario/Olvido de contraseña)  --------------//
 						case "eperfil":
 							validLoguedUserToInclude('perfilUsuario.php');
 							break;
@@ -261,7 +261,7 @@ $user = $_SESSION['user'];
 				&nbsp;
 			</div>
 			<div style="height:30px;background-color:#FFFFFF; font-size:10px; font-weight:bold;">
-				Instituto Tecnol�gico y de Estudios Superiores de Monterrey  - Laboratorio de Idiomas <br>
+				Instituto Tecnológico y de Estudios Superiores de Monterrey  - Laboratorio de Idiomas <br>
 				&copy; <?php echo date('Y'); ?>, Derechos Reservados.
 			</div>
 			<!-- TERMINA SECCION DE PIE DE PAGINA -->
@@ -295,13 +295,13 @@ function validaLogin()
 		document.formLogin.usuario.focus();
 	} else {
 		if( !verificaMat()){
-			stringError = stringError + ' \n El Usuario no es v�lido. \n S�lo se aceptan n�meros en la matr�cula (Sin espacios).';
+			stringError = stringError + ' \n El Usuario no es válido. \n Sólo se aceptan números en la matrícula (Sin espacios).';
 			document.formLogin.usuario.focus();
 		}
 	}
 	if (document.formLogin.password.value == '')
 	{
-		stringError = stringError + ' \n Falta de escribir la Contrase�a';
+		stringError = stringError + ' \n Falta de escribir la Contraseña';
 		document.formLogin.password.focus();
 	}
 
@@ -315,12 +315,12 @@ function validaOlvidoContra()
 {
 	if (document.formLogin.usuario.value == '')
 	{
-		alert( ' \n Favor de escribir el Usuario para poder enviarte la contrase�a a tu correo electr�nico');
+		alert( ' \n Favor de escribir el Usuario para poder enviarte la contraseña a tu correo electrónico');
 		document.formLogin.usuario.focus();
 		return false;
 	} else {
 		if(!verificaMat()) {
-			alert( ' \n El Usuario no es v�lido. \n S�lo se aceptan n�meros en la matr�cula (Sin espacios).');
+			alert( ' \n El Usuario no es válido. \n Sólo se aceptan números en la matrícula (Sin espacios).');
 			document.formLogin.usuario.focus();
 			return false;
 		} else {

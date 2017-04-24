@@ -6,7 +6,7 @@ if(($_SESSION['user'] == null && $_SESSION['user'] == '') || !hasChangedPassword
 </script>
 <? }
 $idiomas = getConection();
-//Para sacar las reservaciones pr�ximas
+//Para sacar las reservaciones próximas
 	//$query_reservaciones_semanas = "SELECT * FROM tbl_reservaciones WHERE matricula = ".$_SESSION['user']." AND semana IN ( SELECT DISTINCT semana FROM tbl_semanas)";
 	$reservaciones_array = $idiomas->query("SELECT * FROM tbl_reservaciones WHERE matricula = ".$_SESSION['user']." AND semana IN ( SELECT DISTINCT semana FROM tbl_semanas)");
 	//$num_reservaciones = mysql_num_rows($reservaciones_array);
@@ -23,7 +23,7 @@ $idiomas = getConection();
 				<br /><br />	
 				<li class="multilingual">selecciona_dia</li> 
 				<li class="multilingual">selecciona_salon</li>
-				<!--<li>Selecciona el sal�n 422.</li>-->
+				<!--<li>Selecciona el salón 422.</li>-->
 				<li class="multilingual">selecciona_hora</li> 
 		 
 				<br /><br /><br /><br />
@@ -40,14 +40,13 @@ $idiomas = getConection();
 			<p class="multilingual">
 				
 				<? if ($reservaciones_array->num_rows > 0) {?>
-					&nbsp;&nbsp;Tus reservaciones pr�ximas:
+					&nbsp;&nbsp;Tus reservaciones próximas:
 					<br><br>
 					
 					<? while ($reservacion = $reservaciones_array->fetch_assoc()) { ?>
 						<li><? echo $reservacion['dia'] . ' ' . $reservacion['mes'] ;  ?><br>
 							&nbsp;&nbsp;&nbsp;&nbsp;Hora: <? echo $reservacion['hora']; ?> <br>
-							&nbsp;&nbsp;&nbsp;&nbsp;Sal�n: <? echo $reservacion['salon']; ?> <br>
-							&nbsp;&nbsp;&nbsp;&nbsp;<a onClick="return confirmarCancelacion();" href="index.php?p=cancelacion&i=<? echo $reservacion['id']; ?>&s=<? echo $reservacion['semana']; ?>">Cancelar</a>
+							&nbsp;&nbsp;&nbsp;&nbsp;SalónClick="return confirmarCancelacion();" href="index.php?p=cancelacion&i=<? echo $reservacion['id']; ?>&s=<? echo $reservacion['semana']; ?>">Cancelar</a>
 						</li> 
 						<br><br>
 					<? } ?>
@@ -62,7 +61,7 @@ $idiomas = getConection();
 <? closeConection($idiomas);?>
 <script>
 	function confirmarCancelacion() {
-		var ok = confirm("�Deseas continuar con la cancelaci�n de tu reservaci�n?");
+		var ok = confirm("¿Deseas continuar con la cancelación de tu reservación?");
 		if(ok) {
 			return true;
 		}

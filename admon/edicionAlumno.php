@@ -14,10 +14,10 @@ closeConection($idiomas);
 
 <form name="form" method="POST" action="index.php?p=pealumno" onSubmit="return validaPerfilUsuarioForm();">
     
-  <p align="center" class="titulo">Informaci�n del Alumno</p>
+  <p align="center" class="titulo">Información del Alumno</p>
   <table border="0" align="center" class="contenido" style="text-align:left ">
     	<tr>
-			<td>M�tricula:</td>
+			<td>Matricula:</td>
 			<td><? echo $alumno['matricula']; ?></td>
 		</tr>
 		<tr>
@@ -33,7 +33,7 @@ closeConection($idiomas);
 			<td><input type="text" name="ap_materno" size="50" maxlength="50" value="<? echo $alumno['ap_materno']; ?>" /></td>
 		</tr>				
 		<tr>
-			<td>Correo Electr�nico:</td>
+			<td>Correo Electrónico:</td>
 			<td><input type="text" name="email" size="50" maxlength="100" value="<? echo $alumno['email']; ?>" /></td>
 		</tr>		
 		<tr>
@@ -41,15 +41,15 @@ closeConection($idiomas);
 			<td><input type="text" name="cantidad" size="50" maxlength="100" value="<? echo $alumno['cantidad']; ?>" /></td>
 		</tr>		
 		<tr>
-			<td>�Cambio contrase�a?</td>
+			<td>¿Cambio contraseña?</td>
 			<td><? echo $alumno['flagPassword']; ?></td>
 		</tr>
 		<tr>
-			<td>Contrase�a:</td>
+			<td>Contraseña:</td>
 			<td><input type="password" name="password" size="50" maxlength="50" /></td>
 		</tr>			
 		<tr>
-			<td>Confirmaci�n de Contrase�a:</td>
+			<td>Confirmación de Contraseña:</td>
 			<td><input type="password" name="password2" size="50" maxlength="50" /></td>
 		</tr>
   		<tr> 
@@ -68,14 +68,14 @@ function validaPerfilUsuarioForm()
 	
 	if (document.form.email.value != '') {
 		if(!validEmail(document.form.email.value)){
-			stringError = stringError + ' \n Correo Electr�nico es invalido';
+			stringError = stringError + ' \n Correo Electrónico es invalido';
 			document.form.email.focus();
 		}
 	}
 	
 	if (document.form.password.value != '') {
 		if (document.form.password.value != document.form.password2.value)
-		{   stringError = stringError + ' \n La contrase�a y la confirmaci�n de contrase�a deben ser iguales';
+		{   stringError = stringError + ' \n La contraseña y la confirmación de contraseña deben ser iguales';
 			document.form.password.focus();
 		}
 	}

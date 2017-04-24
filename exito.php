@@ -32,7 +32,7 @@ if($query_matricula->num_rows == 1)
 
 //****************para mandar el correo electronico **************
 /* subject */
-$subject = "Reservaci�n :: Laboratorio de Idiomas";
+$subject = "Reservación :: Laboratorio de Idiomas";
 
 /* message */
 $message = '<table width="75%" border="0" align="center">
@@ -83,7 +83,7 @@ $message = '<table width="75%" border="0" align="center">
 			<table width="75%" border="0" align="center">
 				<tr>
 					<td class="mensajeError">
-						Lo sentimos, la reservaci�n debe ser a futuro.
+						Lo sentimos, la reservación debe ser a futuro.
 						<br><br>
 						<input name="Button" type="button" onClick="location.href='index.php?p=reservaciones'" value="Regresar a Reservaciones">
 					</td>
@@ -215,7 +215,7 @@ $message = '<table width="75%" border="0" align="center">
 								{
 									$to = $alumno['email'];
 									enviarEmail($to, $subject, $message);
-									echo '<p class="mensajeGris"><img src="imagenes/email.jpg" />Se envi&oacute; un correo electr�nico a tu cuenta: ' . $to . ' con la informaci&oacute;n de tu reservaci&oacute;n</p>';
+									echo '<p class="mensajeGris"><img src="imagenes/email.jpg" />Se envi&oacute; un correo electrónico a tu cuenta: ' . $to . ' con la informaci&oacute;n de tu reservaci&oacute;n</p>';
 								}?>
 							  	<br><br>
 								<div align="center"><input name="Button" type="button" onClick="location.href='index.php?p=reservaciones'" value="Regresar a Reservaciones""></div>

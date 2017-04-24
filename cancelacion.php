@@ -33,7 +33,7 @@ if($id_reservacion != "") {
 			//Si borro la reservacion, hay que agregar la cancelacion a la tabla de cancelaciones
 			if($idiomas->query("DELETE FROM tbl_reservaciones WHERE id = $id_reservacion")){
 				$idiomas->query("INSERT INTO tbl_cancelaciones (id_alumno, semana) VALUES ( " . $_SESSION['user'] . ", $id_semana)");
-				echo "Tu cancelaci�n ha sido realizada con �xito.";
+				echo "Tu cancelación ha sido realizada con éxito.";
 				?>
 				<br><br>
 				<table width="40%" border="1" align="center">
@@ -57,7 +57,7 @@ if($id_reservacion != "") {
 				<?
 				//****************para mandar el correo electronico **************
 				/* subject */
-				$subject = "Cancelaci�n :: Laboratorio de Idiomas";
+				$subject = "Cancelación :: Laboratorio de Idiomas";
 				
 				/* message */
 				$message = '<table width="75%" border="0" align="center">
@@ -96,10 +96,10 @@ if($id_reservacion != "") {
 				}
 			}
 		} else {
-			echo "Para cancelar una reservaci�n, debes hacerlo al menos 1 hora antes.";
+			echo "Para cancelar una reservación, debes hacerlo al menos 1 hora antes.";
 		}
 	}  else {
-		echo "Lo sentimos, solo puedes hacer una cancelaci�n por semana.";
+		echo "Lo sentimos, solo puedes hacer una cancelación por semana.";
 	}
 	closeConection($idiomas);
 }

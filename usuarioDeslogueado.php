@@ -13,8 +13,8 @@
 						<? if( $_SESSION['user'] == null ) {  ?> 
 							reservacion_inicio_sesion
 						<? } else { ?>
-							<br>Lo sentimos, para acceder a esta p�gina necesitas cambiar tu contrase�a, recuerda que cuando entras por 
-							primera vez al sistema es necesario cambiar la contrase�a e introducir un correo electr�nico.
+							<br>Lo sentimos, para acceder a esta página necesitas cambiar tu contraseña, recuerda que cuando entras por 
+							primera vez al sistema es necesario cambiar la contraseña e introducir un correo electrónico.
 							<br>(En la parte superior derecha puedes dar clic en tu matricula para modificar tus datos)
 						<? } ?>
 					</p>

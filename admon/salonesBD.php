@@ -23,7 +23,7 @@ function deactivateSalon($salon, $idiomas) {
     ?>
         <tr>
             <td><p><strong><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">
-                    Lo sentimos, no fue posible guardar la informaci�n en nuestra base de datos.<br>
+                    Lo sentimos, no fue posible guardar la información en nuestra base de datos.<br>
                     Intenta más tarde.</font></strong></p>
                 <p>&nbsp;</p>
             </td>
@@ -57,7 +57,7 @@ function activateSalon($salon, $idiomas) {
     ?>
         <tr>
             <td><p><strong><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">
-                    Lo sentimos, no fue posible guardar la informaci�n en nuestra base de datos.<br>
+                    Lo sentimos, no fue posible guardar la información en nuestra base de datos.<br>
                     Intenta más tarde.</font></strong></p>
                 <p>&nbsp;</p>
             </td>
@@ -100,7 +100,7 @@ function altaSalon($salon, $idiomas) { ?>
             else { ?>
                 <tr>
                     <td><p><strong><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">
-                    Lo sentimos, no fue posible guardar la informaci�n en nuestra base de datos.<br>
+                    Lo sentimos, no fue posible guardar la información en nuestra base de datos.<br>
                     Intenta más tarde.</font></strong></p>
                         <p>&nbsp;</p>
                     </td>
@@ -119,7 +119,7 @@ function altaSalon($salon, $idiomas) { ?>
             else { ?>
                 <tr>
                     <td><p><strong><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">
-                    Lo sentimos, no fue posible guardar la informaci�n en nuestra base de datos.<br>
+                    Lo sentimos, no fue posible guardar la información en nuestra base de datos.<br>
                     Intenta más tarde.</font></strong></p>
                         <p>&nbsp;</p>
                     </td>

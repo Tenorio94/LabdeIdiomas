@@ -6,14 +6,14 @@
 <form name="forma" method="post" action="index.php?p=paaviso">
 <table align="center" width="50%" class="content">
 	<tr>
-		<td align="left"><br>Descripción:</td>
+		<td align="left"><br>DescripciÃ³n:</td>
 		<td align="left"><br><textarea name="descripcion" rows="5" cols="37"></textarea></td>
 	</tr>
 	<tr>
 		<td align="left"><br>Activo:</td>
 		<td align="left"><br>
 			<select name="activo">
-				<option value="Y" selected>Sí</option>
+				<option value="Y" selected>SÃ­</option>
 				<option value="N">No</option>				
 			</select>
 		</td>

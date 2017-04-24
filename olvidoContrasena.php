@@ -13,20 +13,20 @@ $matricula = $query_matricula->fetch_assoc();
 //Si no hay registros en la base de datos, enviar mensaje
 if($query_matricula->num_rows < 1)
 {
-	echo "La matr�cula no esta registrada en nuestra base de datos. Verifica que este correcta.";
+	echo "La matrícula no esta registrada en nuestra base de datos. Verifica que este correcta.";
 } else {
 	//Enviar correo
 
 	$subject = "Datos de Usuario :: Laboratorio de Idiomas";
 
 	$message = '<p align="left">
-					Has solicitado el env�o de tu contrase�a por correo electr�nico. <br><br>
-					Tu contrase�a es: ' . $matricula['password'] .' 
+					Has solicitado el envío de tu contraseña por correo electronico. <br><br>
+					Tu contraseña es: ' . $matricula['password'] .' 
 				</p>';
 
 	$to = $matricula['email'];
 	enviarEmail($to, $subject, $message);
-	echo '<p align="center"><strong>Se envi&oacute; un correo electronico a tu cuenta: ' . $to . ' con tu contrase�a.</strong></p>';
+	echo '<p align="center"><strong>Se envi&oacute; un correo electronico a tu cuenta: ' . $to . ' con tu contraseña.</strong></p>';
 
 }
 

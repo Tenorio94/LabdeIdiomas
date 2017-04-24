@@ -6,7 +6,7 @@
 			  <td><input type="text" name="TxUsername"></td>
 			</tr>
 			<tr> 
-			  <td class="titulo1">Contraseña:</td>
+			  <td class="titulo1">ContraseÃ±a:</td>
 			  <td><input type="password" name="TxPassword"></td>
 			</tr>
 			<tr> 

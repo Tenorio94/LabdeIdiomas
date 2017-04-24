@@ -12,7 +12,7 @@ $delete_query = $idiomas->query("DELETE FROM tbl_reservaciones WHERE id = $id_re
 closeConection($idiomas);
 ?>
 
-<p align="center" class="titulo">La Reservaci�n del Alumno ha sido borrada satisfactoriamente</p>
+<p align="center" class="titulo">La Reservación del Alumno ha sido borrada satisfactoriamente</p>
 <p align="center">&nbsp;</p>
 
 

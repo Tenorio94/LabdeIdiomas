@@ -1,4 +1,4 @@
-<p class="title" align="center">Alta de matrículas</p>
+<p class="title" align="center">Alta de matrÃ­culas</p>
 <table width="100%">
 	<tbody>
 		<tr>
@@ -26,7 +26,7 @@
 				<form name="form" method="post" action="index.php?p=pamatriculasind">
 					<table align="center" class="contenido">
 						<tr>
-							<td class="titulo1" align="right">Matrícula</td>
+							<td class="titulo1" align="right">MatrÃ­cula</td>
 							<td><input type="text" name="matricula" size="10"></td>
 						</tr>
 						<tr>

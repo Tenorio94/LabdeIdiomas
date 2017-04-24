@@ -13,17 +13,17 @@
 		</td>
 	</tr>
 	<tr>
-		<td align="center" width="60px"><img src="imagenes/pdfIcons.jpg" onclick="window.open('tutoriales/TellMeMoreEspañol.pdf');"  style="cursor:pointer;"/></td>
-		<td align="left">Tell Me More (Español)
+		<td align="center" width="60px"><img src="imagenes/pdfIcons.jpg" onclick="window.open('tutoriales/TellMeMoreEspaÃ±ol.pdf');"  style="cursor:pointer;"/></td>
+		<td align="left">Tell Me More (EspaÃ±ol)
 		</td>
 	</tr>
 	<tr>
 		<td align="center" width="60px"><img src="imagenes/pdfIconS.jpg" onclick="window.open('tutoriales/TellMeMoreEnglish.pdf');"  style="cursor:pointer;"/></td>
-		<td align="left">Tell Me More (Inglés)
+		<td align="left">Tell Me More (InglÃ©s)
 		</td>
 	<tr>
 		<td align="center" width="60px"><img src="imagenes/media.jpg" onclick="window.open('tutoriales/reservacion.mov');"  style="cursor:pointer;"/></td>
-		<td align="left">Como hacer una reservación- " en video "
+		<td align="left">Como hacer una reservaciÃ³n- " en video "
 		</td>
 	</tbody>
 </table>

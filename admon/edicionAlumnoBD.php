@@ -33,15 +33,15 @@ if($success == 0) {
 ?>
 	<tr>
 		<td><p><strong><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">
-				Lo sentimos, no fue posible guardar la informaci�n en nuestra base de datos.<br>
-                Intenta m�s tarde.</font></strong></p>
+				Lo sentimos, no fue posible guardar la información en nuestra base de datos.<br>
+                Intenta más tarde.</font></strong></p>
 			<p>&nbsp;</p>
 		</td>
 	</tr>
 <? } else { ?>
 	<tr>
 		<td><p><strong><font color="#333333" face="Verdana, Arial, Helvetica, sans-serif">
-				La informaci�n fue guardada exitosamente.
+				La información fue guardada exitosamente.
 			<p>&nbsp;</p>
 		</td>
 	</tr>

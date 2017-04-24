@@ -1,6 +1,6 @@
 
 <?php
-	//Obtener la informaci�n que guardaremos en la base de datos.
+	//Obtener la información que guardaremos en la base de datos.
 	$descripcion = $_POST['descripcion'];
 	$activo = $_POST['activo'];
 	

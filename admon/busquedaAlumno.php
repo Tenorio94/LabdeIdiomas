@@ -1,7 +1,7 @@
 <form name="formBusquedaAlumno" method="POST" action="index.php?p=busqueda">
 	<table align="center" class="contenido">
 		<tr>
-			<td align="center" colspan="2" class="title">B�squeda de Alumno <br><br></td>
+			<td align="center" colspan="2" class="title">Búsqueda de Alumno <br><br></td>
 		</tr>
 		<tr>
 			<td align="right" class="titulo1">Matr&iacute;cula:</td>
@@ -14,7 +14,7 @@
 </form>
 
 
-<!-- en caso de que venga de alguna b�squeda -->
+<!-- en caso de que venga de alguna búsqueda -->
 <?php
 $matricula = $_POST['matricula'];
 //Si viene de una busqueda realizamos todo el procedimiento.
@@ -40,19 +40,19 @@ if($matricula != ""  && $matricula != NULL){
 	?>
 	<table border="0" align="center" class="contenido" width="500px">
 		<tr>
-			<td class="title" align="center">Resultado de B�squeda</td>
+			<td class="title" align="center">Resultado de Búsqueda</td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td align="left">Informaci�n del Alumno:</td>
+			<td align="left">Información del Alumno:</td>
 		</tr>
 		<tr>
 			<td align="center">
 				<table border="1">
 					<tr>
-						<td align="left">Matr�cula:</td>
+						<td align="left">Matrícula:</td>
 						<td align="left"><? echo $alumno['matricula']; ?></td>
 					</tr>
 					<tr>
@@ -68,8 +68,8 @@ if($matricula != ""  && $matricula != NULL){
 						<td align="left"><? echo $alumno['cantidad']; ?></td>
 					</tr>												
 					<tr>
-						<td align="left">�Cambio Contrase�a?</td>
-						<td align="left"><? if($alumno['flagPassword'] == 1) echo "S�";  else echo "No"; ?></td>
+						<td align="left">¿Cambio Contraseña?</td>
+						<td align="left"><? if($alumno['flagPassword'] == 1) echo "Sí";  else echo "No"; ?></td>
 					</tr>	
 					<tr>
 						<td colspan="2" align="right"><a href="index.php?cs=<? echo $alumno['id']; ?>&p=ealumno">Editar</a></td>
@@ -84,9 +84,9 @@ if($matricula != ""  && $matricula != NULL){
 			<td align="center">
 				<table border="1">
 					<tr>
-						<td>D�a</td>
+						<td>Día</td>
 						<td>Hora</td>
-						<td>Sal�n</td>
+						<td>Salón</td>
 						<td>&nbsp;</td>
 					</tr>
 					<? while($reservacion = $query_reservaciones->fetch_assoc()) { ?>
@@ -123,7 +123,7 @@ function verificaMat()
       Char = strMat.charAt(i); 
       if (ValidChars.indexOf(Char) == -1)  {
          	IsNumber = false;
-  			alert("S�lo se aceptan n�meros en la matricula (Sin espacios)");
+  			alert("Sólo se aceptan números en la matricula (Sin espacios)");
   			document.formBusquedaAlumno.matricula.focus();
   			return false;
          }
@@ -132,7 +132,7 @@ function verificaMat()
 }
 
 	function confirmarBaja() {
-		var ok = confirm("�Deseas eliminar el testimonio seleccionado?");
+		var ok = confirm("¿Deseas eliminar el testimonio seleccionado?");
 		if(ok) {
 			return true;
 		}

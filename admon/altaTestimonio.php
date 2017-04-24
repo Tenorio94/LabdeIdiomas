@@ -10,7 +10,7 @@
 		<td align="left"><input type="text" name="nombreAlumno" size="50" /></td>
 	</tr>
 	<tr>
-		<td align="left"><br>Descripción:</td>
+		<td align="left"><br>DescripciÃ³n:</td>
 		<td align="left"><br><textarea name="descripcion" rows="5" cols="37"></textarea></td>
 	</tr>
 	<tr>
