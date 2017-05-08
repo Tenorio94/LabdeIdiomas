@@ -40,13 +40,13 @@ $idiomas = getConection();
 			<p class="multilingual">
 				
 				<? if ($reservaciones_array->num_rows > 0) {?>
-					&nbsp;&nbsp;Tus reservaciones próximas:
-					<br><br>
+					<p>Tus reservaciones próximas:</p>
+					<br>
 					
 					<? while ($reservacion = $reservaciones_array->fetch_assoc()) { ?>
 						<li><? echo $reservacion['dia'] . ' ' . $reservacion['mes'] ;  ?><br>
 							&nbsp;&nbsp;&nbsp;&nbsp;Hora: <? echo $reservacion['hora']; ?> <br>
-							&nbsp;&nbsp;&nbsp;&nbsp;SalónClick="return confirmarCancelacion();" href="index.php?p=cancelacion&i=<? echo $reservacion['id']; ?>&s=<? echo $reservacion['semana']; ?>">Cancelar</a>
+							&nbsp;&nbsp;&nbsp;&nbsp;<a SalonClick="return confirmarCancelacion();" href="index.php?p=cancelacion&i=<? echo $reservacion['id']; ?>&s=<? echo $reservacion['semana']; ?>">Cancelar</a>
 						</li> 
 						<br><br>
 					<? } ?>
