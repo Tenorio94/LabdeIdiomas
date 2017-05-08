@@ -44,7 +44,7 @@ $idiomas = getConection();
 					<br>
 					
 					<? while ($reservacion = $reservaciones_array->fetch_assoc()) { ?>
-						<li><? echo $reservacion['dia'] . ' ' . $reservacion['mes'] ;  ?><br>
+						<li style="margin-left: 8px;"><? echo $reservacion['dia'] . ' ' . $reservacion['mes'] ;  ?><br>
 							&nbsp;&nbsp;&nbsp;&nbsp;Hora: <? echo $reservacion['hora']; ?> <br>
 							&nbsp;&nbsp;&nbsp;&nbsp;<a SalonClick="return confirmarCancelacion();" href="index.php?p=cancelacion&i=<? echo $reservacion['id']; ?>&s=<? echo $reservacion['semana']; ?>">Cancelar</a>
 						</li> 
